@@ -1,0 +1,18 @@
+# Same runtime image, but copies an already built target/quarkus-app (used for OpenShift binary builds:
+# no Maven download inside the cluster). Context must contain quarkus-app/ and datasets/.
+FROM registry.access.redhat.com/ubi10/openjdk-25-runtime:latest
+ENV LANGUAGE='en_US:en' \
+    JAVA_APP_JAR=/deployments/quarkus-run.jar \
+    JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0" \
+    BENCH_DATASETS_DIR=/deployments/datasets \
+    BENCH_RESULTS_DIR=/deployments/results
+COPY --chown=185:0 quarkus-app/lib/ /deployments/lib/
+COPY --chown=185:0 quarkus-app/*.jar /deployments/
+COPY --chown=185:0 quarkus-app/app/ /deployments/app/
+COPY --chown=185:0 quarkus-app/quarkus/ /deployments/quarkus/
+COPY --chown=185:0 datasets/ /deployments/datasets/
+USER root
+RUN mkdir -p /deployments/results && chgrp -R 0 /deployments && chmod -R g=u /deployments
+USER 185
+EXPOSE 8080
+ENTRYPOINT ["/opt/jboss/container/java/run/run-java.sh"]

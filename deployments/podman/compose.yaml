@@ -1,0 +1,31 @@
+# Supporting services in Podman on a Mac, with Ollama running NATIVELY on the host (needed for MLX/Metal).
+# Containers reach the host's Ollama through host.containers.internal (Podman's host gateway name).
+#   podman compose -f deployments/podman/compose.yaml up --build
+# Note: Ollama must listen on an address reachable from the Podman VM:  OLLAMA_HOST=0.0.0.0:11434 ollama serve
+services:
+  gliner:
+    build: {context: ../../inference/gliner}
+    environment:
+      GLINER_MODELS: fastino/gliner2.5-base-v1
+      GLINER_DEVICE: cpu
+    volumes: [gliner-models:/models]
+    ports: ["8090:8090"]
+  backend:
+    build: {context: ../.., dockerfile: backend/Containerfile}
+    environment:
+      BENCH_OLLAMA_BASE_URL: http://host.containers.internal:11434
+      BENCH_GLINER_BASE_URL: http://gliner:8090
+      BENCH_GLINER_SMALL_URL: http://gliner:8090
+      BENCH_GLINER_MULTI_URL: http://gliner:8090
+      BENCH_GLINER_DECIDE_URL: http://gliner:8090
+    volumes: [../../results:/deployments/results:Z]
+    ports: ["8080:8080"]
+    depends_on: [gliner]
+  frontend:
+    build: {context: ../../frontend}
+    environment:
+      BACKEND_URL: http://backend:8080
+    ports: ["5173:8080"]
+    depends_on: [backend]
+volumes:
+  gliner-models: {}

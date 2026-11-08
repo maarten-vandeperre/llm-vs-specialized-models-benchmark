@@ -1,0 +1,23 @@
+# GLiNER2 inference service on UBI 10 Python 3.12 (CPU-only torch wheels; no CUDA, no root at runtime).
+#   podman build -t beyond-llm-gliner inference/gliner
+# Model weights are NOT baked in by default: they download to $HF_HOME (mount a PVC there) on first start.
+# Set --build-arg PRELOAD_MODELS=fastino/gliner2.5-base-v1 to bake weights into the image instead.
+FROM registry.access.redhat.com/ubi10/python-312-minimal:latest
+ARG PRELOAD_MODELS=""
+ENV HF_HOME=/models \
+    GLINER_MODELS=fastino/gliner2.5-base-v1 \
+    GLINER_DEVICE=cpu \
+    PORT=8090 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+WORKDIR /opt/app-root/src
+COPY requirements.txt .
+RUN pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0 && \
+    pip install -r requirements.txt
+COPY app.py .
+USER 0
+RUN mkdir -p /models && chgrp -R 0 /models /opt/app-root && chmod -R g=u /models /opt/app-root
+USER 1001
+RUN if [ -n "$PRELOAD_MODELS" ]; then python -c "import os;from gliner2 import AutoExtractor;[AutoExtractor.from_pretrained(m) for m in os.environ['PRELOAD_MODELS'].split(',')]"; fi
+EXPOSE 8090
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT}"]

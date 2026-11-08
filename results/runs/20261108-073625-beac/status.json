@@ -1,0 +1,32 @@
+{
+  "runId" : "20261108-073625-beac",
+  "label" : "cloud-smoke",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 104,
+    "total" : 104,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "openai-gpt-6-luna", "openai-gpt-6.1-sol", "claude-haiku-5.5", "claude-opus-5.5" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 20,
+    "warmup" : 1,
+    "repetitions" : 1,
+    "latencySampleSize" : 5,
+    "concurrency" : [ 1 ],
+    "throughputRequests" : 5,
+    "timeoutSeconds" : 180,
+    "coldStart" : false,
+    "seed" : 42,
+    "label" : "cloud-smoke"
+  },
+  "createdAt" : "2026-11-08T07:36:25.897777Z",
+  "startedAt" : "2026-11-08T07:36:25.913925Z",
+  "finishedAt" : "2026-11-08T07:39:00.205259Z"
+}

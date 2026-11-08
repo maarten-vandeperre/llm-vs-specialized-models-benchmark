@@ -1,0 +1,3 @@
+Running benchmark: BenchmarkConfig[models=[claude-haiku-5.5, claude-opus-5.5], dataset=coffee-v1, groups=null, split=evaluation, languages=null, limit=null, warmup=10, repetitions=5, latencySampleSize=30, concurrency=[1, 4, 8], throughputRequests=40, timeoutSeconds=180, coldStart=true, seed=42, label=full-cloud-anthropic]
+Run 20261108-073925-fab2 finished with status COMPLETED
+Report: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/runs/20261108-073925-fab2/report.md

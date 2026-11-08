@@ -1,0 +1,32 @@
+{
+  "runId" : "20261107-202221-3633",
+  "label" : "full-macbook",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 9890,
+    "total" : 9890,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "kev-0.8b", "kev-0.8b-candsel", "gliner2.5-base", "gliner2.5-small", "gliner2.5-multi", "gliner2.5-decide", "nuextract3", "qwen3.5-4b", "hybrid-gliner-kev", "hybrid-gliner-kev-qwen", "hybrid-gliner-qwen" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : null,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "full-macbook"
+  },
+  "createdAt" : "2026-11-07T20:22:21.359382Z",
+  "startedAt" : "2026-11-07T20:22:21.383021Z",
+  "finishedAt" : "2026-11-07T21:50:17.471047Z"
+}

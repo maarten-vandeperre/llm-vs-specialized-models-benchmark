@@ -1,0 +1,52 @@
+# OPTIONAL and NOT part of the default kustomization. A CPU-only Ollama for small models in the Sandbox.
+# Kev's *-mlx-* tags require Apple Silicon (MLX runner) and cannot run here; non-MLX Kev tags (e.g. kev:0.8b-q8_0)
+# are listed by Ollama but their Linux/CPU support is unverified by this project. Qwen3.5-4B / NuExtract3 on 2 vCPUs
+# will be slow (seconds to tens of seconds per request). Apply only if you accept that:
+#   oc apply -f deployments/openshift/optional/ollama-cpu.yaml
+#   oc exec deploy/beyond-llm-ollama -- ollama pull qwen3.5:4b
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: {name: beyond-llm-ollama-models}
+spec:
+  accessModes: [ReadWriteOnce]
+  resources: {requests: {storage: 20Gi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: beyond-llm-ollama, labels: {app: beyond-llm-ollama}}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  selector: {matchLabels: {app: beyond-llm-ollama}}
+  template:
+    metadata: {labels: {app: beyond-llm-ollama}}
+    spec:
+      containers:
+        - name: ollama
+          image: docker.io/ollama/ollama:0.40.15
+          ports: [{containerPort: 11434, name: http}]
+          env:
+            - {name: HOME, value: /models}
+            - {name: OLLAMA_MODELS, value: /models/.ollama/models}
+            - {name: OLLAMA_HOST, value: "0.0.0.0:11434"}
+            - {name: OLLAMA_NUM_PARALLEL, value: "1"}
+          resources:
+            requests: {cpu: "1", memory: 6Gi}
+            limits: {cpu: "4", memory: 10Gi}
+          volumeMounts: [{name: models, mountPath: /models}]
+          readinessProbe:
+            httpGet: {path: /api/version, port: http}
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities: {drop: [ALL]}
+      volumes:
+        - name: models
+          persistentVolumeClaim: {claimName: beyond-llm-ollama-models}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: beyond-llm-ollama}
+spec:
+  selector: {app: beyond-llm-ollama}
+  ports: [{name: http, port: 11434, targetPort: http}]

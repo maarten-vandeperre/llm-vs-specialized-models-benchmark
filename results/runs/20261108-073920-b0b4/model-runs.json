@@ -1,0 +1,128 @@
+{
+  "openai-gpt-6-luna" : {
+    "health" : {
+      "modelId" : "openai-gpt-6-luna",
+      "state" : "UP",
+      "detail" : "openai API reachable",
+      "info" : {
+        "model" : "gpt-6-luna"
+      }
+    },
+    "info" : {
+      "id" : "openai-gpt-6-luna",
+      "displayName" : "OpenAI GPT-6 Luna (simple)",
+      "kind" : "model",
+      "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+      "modelRef" : "gpt-6-luna",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "reasoning_effort=none, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 968.690167,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 37.457,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 11.118,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 4.869,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "openai-gpt-6.1-sol" : {
+    "health" : {
+      "modelId" : "openai-gpt-6.1-sol",
+      "state" : "UP",
+      "detail" : "openai API reachable",
+      "info" : {
+        "model" : "gpt-6.1-sol"
+      }
+    },
+    "info" : {
+      "id" : "openai-gpt-6.1-sol",
+      "displayName" : "OpenAI GPT-6.1 Sol (complex)",
+      "kind" : "model",
+      "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+      "modelRef" : "gpt-6.1-sol",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "reasoning_effort=low, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 1215.889875,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 72.016,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 17.549,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 9.523,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "claude-opus-5.5" : {
+    "health" : {
+      "modelId" : "claude-opus-5.5",
+      "state" : "UP",
+      "detail" : "anthropic API reachable",
+      "info" : {
+        "model" : "claude-opus-5-5"
+      }
+    },
+    "info" : {
+      "id" : "claude-opus-5.5",
+      "displayName" : "Claude Opus 5.5 (complex)",
+      "kind" : "model",
+      "runtime" : "Anthropic Messages API (commercial, hosted)",
+      "modelRef" : "claude-opus-5-5",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "effort=low, thinking=adaptive (cannot be disabled), strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 7.959,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "openai-gpt-6.1-sol" : {
+    "health" : {
+      "modelId" : "openai-gpt-6.1-sol",
+      "state" : "UP",
+      "detail" : "openai API reachable",
+      "info" : {
+        "model" : "gpt-6.1-sol"
+      }
+    },
+    "info" : {
+      "id" : "openai-gpt-6.1-sol",
+      "displayName" : "OpenAI GPT-6.1 Sol (complex)",
+      "kind" : "model",
+      "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+      "modelRef" : "gpt-6.1-sol",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "reasoning_effort=low, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 7.096,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "openai-gpt-6-luna" : {
+    "health" : {
+      "modelId" : "openai-gpt-6-luna",
+      "state" : "UP",
+      "detail" : "openai API reachable",
+      "info" : {
+        "model" : "gpt-6-luna"
+      }
+    },
+    "info" : {
+      "id" : "openai-gpt-6-luna",
+      "displayName" : "OpenAI GPT-6 Luna (simple)",
+      "kind" : "model",
+      "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+      "modelRef" : "gpt-6-luna",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "reasoning_effort=none, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 5.126,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "claude-haiku-5.5" : {
+    "health" : {
+      "modelId" : "claude-haiku-5.5",
+      "state" : "UP",
+      "detail" : "anthropic API reachable",
+      "info" : {
+        "model" : "claude-haiku-5-5"
+      }
+    },
+    "info" : {
+      "id" : "claude-haiku-5.5",
+      "displayName" : "Claude Haiku 5.5 (simple)",
+      "kind" : "model",
+      "runtime" : "Anthropic Messages API (commercial, hosted)",
+      "modelRef" : "claude-haiku-5-5",
+      "family" : "general-purpose LLM (commercial API)",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "effort=low, thinking=disabled, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 4.252,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  }
+}

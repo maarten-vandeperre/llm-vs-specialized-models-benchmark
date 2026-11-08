@@ -1,0 +1,32 @@
+{
+  "runId" : "20261108-073920-b0b4",
+  "label" : "full-cloud-openai",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 1888,
+    "total" : 1888,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "openai-gpt-6-luna", "openai-gpt-6.1-sol" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : null,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "full-cloud-openai"
+  },
+  "createdAt" : "2026-11-08T07:39:20.361932Z",
+  "startedAt" : "2026-11-08T07:39:20.380491Z",
+  "finishedAt" : "2026-11-08T08:20:30.985806Z"
+}

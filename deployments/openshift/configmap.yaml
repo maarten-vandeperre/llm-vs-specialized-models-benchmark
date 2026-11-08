@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: beyond-llm-config}
+data:
+  # GLiNER runs in-cluster on CPU.
+  BENCH_GLINER_BASE_URL: http://beyond-llm-gliner:8090
+  BENCH_GLINER_SMALL_URL: http://beyond-llm-gliner:8090
+  BENCH_GLINER_MULTI_URL: http://beyond-llm-gliner:8090
+  BENCH_GLINER_DECIDE_URL: http://beyond-llm-gliner:8090
+  # No Ollama in the default Sandbox deployment. Point this at an explicitly configured, separately hosted
+  # endpoint (e.g. optional/ollama-cpu.yaml or an external host) to enable Kev/NuExtract3/Qwen candidates.
+  BENCH_OLLAMA_BASE_URL: http://beyond-llm-ollama:11434
+  BENCH_TIMEOUT_SECONDS: "300"
+  BENCH_MODELS_ENABLED: "kev-0.8b,kev-0.8b-candsel,gliner2.5-base,nuextract3,qwen3.5-4b,hybrid-gliner-kev,hybrid-gliner-kev-qwen,hybrid-gliner-qwen"

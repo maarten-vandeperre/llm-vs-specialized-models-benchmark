@@ -1,0 +1,32 @@
+{
+  "runId" : "20261108-073925-fab2",
+  "label" : "full-cloud-anthropic",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 1888,
+    "total" : 1888,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "claude-haiku-5.5", "claude-opus-5.5" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : null,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "full-cloud-anthropic"
+  },
+  "createdAt" : "2026-11-08T07:39:25.013525Z",
+  "startedAt" : "2026-11-08T07:39:25.031117Z",
+  "finishedAt" : "2026-11-08T08:22:18.567325Z"
+}

@@ -1,0 +1,6 @@
+{
+  "source": "GET http://localhost:8090/stats inside pod beyond-llm-gliner-56d6b54555-rldw7, read after the run completed (2026-11-07T22:3x Z). The pod started for this run and served only health checks and this benchmark.",
+  "stats": {"pid":1,"rss_bytes":1868984320,"peak_rss_bytes":6594191360,"cpu_user_seconds":2737.72,"cpu_system_seconds":913.84},
+  "container_limits": {"cpu":"2","memory":"12Gi"},
+  "note": "The backend's ps-based sampler cannot see the GLiNER pod (separate container, and the UBI runtime image has no ps), so report.md shows n/a for RSS/CPU. Peak RSS here is the process high-water mark (ru_maxrss)."
+}

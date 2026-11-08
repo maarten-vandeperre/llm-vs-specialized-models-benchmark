@@ -1,0 +1,22 @@
+# ---- build ----
+FROM registry.access.redhat.com/ubi9/nodejs-22 AS build
+WORKDIR /opt/app-root/src
+COPY --chown=1001:0 package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY --chown=1001:0 . .
+RUN npm run build
+
+# ---- runtime ----
+FROM registry.access.redhat.com/ubi9/nginx-124
+USER 0
+COPY --from=build /opt/app-root/src/dist/ /opt/app-root/src/
+COPY deploy/nginx.conf.template /opt/app-root/etc/nginx.conf.template
+COPY deploy/start.sh /opt/app-root/bin/start-frontend.sh
+RUN chmod 0755 /opt/app-root/bin/start-frontend.sh && \
+    chgrp -R 0 /opt/app-root/src /opt/app-root/etc && \
+    chmod -R g=u /opt/app-root/src /opt/app-root/etc
+# Any UID in group 0 works (OpenShift restricted SCC).
+USER 1001
+ENV BACKEND_URL=http://benchmark-backend:8080
+EXPOSE 8080
+CMD ["/opt/app-root/bin/start-frontend.sh"]

@@ -1,0 +1,6936 @@
+{
+  "runId" : "20261107-202221-3633",
+  "label" : "full-macbook",
+  "status" : "COMPLETED",
+  "createdAt" : "2026-11-07T20:22:21.359382Z",
+  "finishedAt" : "2026-11-07T21:50:17.471047Z",
+  "synthetic" : true,
+  "disclaimer" : "Synthetic, fictional coffee-shop dataset. Results do not generalize to production customers.",
+  "datasetVersion" : "coffee-v1",
+  "environment" : {
+    "timestamp" : "2026-11-07T20:22:21.383946Z",
+    "os.name" : "Mac OS X",
+    "os.version" : "26.6.2",
+    "os.arch" : "aarch64",
+    "cpu.count" : 10,
+    "macos.productVersion" : "26.6.2",
+    "cpu.brand" : "Apple M1 Max",
+    "memory.bytes" : 68719476736,
+    "cpu.performanceCores" : "8",
+    "cpu.efficiencyCores" : "2",
+    "loadavg" : "{ 4.72 5.34 9.01 }",
+    "appleSilicon" : true,
+    "mlxSupported" : "yes (Apple Silicon; Ollama MLX runner)",
+    "gpu" : "Apple integrated GPU (unified memory); utilization not measured (requires root powermetrics)",
+    "disk.freeBytes" : 5661958144,
+    "java.version" : "25.0.2",
+    "java.vendor" : "Oracle Corporation",
+    "java.vm" : "OpenJDK 64-Bit Server VM",
+    "quarkus.version" : "3.40.1.1",
+    "quarkus.launchMode" : "NORMAL",
+    "ollama.baseUrl" : "http://localhost:11434",
+    "ollama.version" : "0.40.15",
+    "ollama.numParallel" : "not set (server default)",
+    "ollama.models" : {
+      "numind/nuextract3:q4_k_m" : {
+        "parameterSize" : "4.2B",
+        "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 3384386487
+      },
+      "qwen3.5:4b" : {
+        "parameterSize" : "",
+        "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+        "quantization" : "nvfp4",
+        "sizeBytes" : 3973305013
+      },
+      "kev:0.8b-mlx-bf16" : {
+        "parameterSize" : "",
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "quantization" : "BF16",
+        "sizeBytes" : 1519780825
+      },
+      "gemma4:latest" : {
+        "parameterSize" : "8.0B",
+        "digest" : "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 9608350718
+      },
+      "gemma3:4b" : {
+        "parameterSize" : "4.3B",
+        "digest" : "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 3338801804
+      },
+      "gemma4:26b" : {
+        "parameterSize" : "25.8B",
+        "digest" : "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 17987581215
+      },
+      "gemma3:12b" : {
+        "parameterSize" : "12.2B",
+        "digest" : "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 8149190253
+      },
+      "gemma4-agent:latest" : {
+        "parameterSize" : "8.0B",
+        "digest" : "89b70054091cc77c7034f19d433cc5a08258dab2846f1af22c32c075ad7870a8",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 9608350734
+      },
+      "qwen2.5-coder:14b-instruct" : {
+        "parameterSize" : "14.8B",
+        "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 8988124298
+      },
+      "granite-code:8b-instruct" : {
+        "parameterSize" : "8.1B",
+        "digest" : "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+        "quantization" : "Q4_0",
+        "sizeBytes" : 4590918937
+      },
+      "calendar-assistant-coder:latest" : {
+        "parameterSize" : "14.8B",
+        "digest" : "b6a7cfb25427efea055a9133932b55e32255b8e4b25eb0fad712f28f47e3eb37",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 8988125936
+      },
+      "qwen2.5-coder:14b" : {
+        "parameterSize" : "14.8B",
+        "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 8988124298
+      },
+      "qwen2.5-coder:7b" : {
+        "parameterSize" : "7.6B",
+        "digest" : "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+        "quantization" : "Q4_K_M",
+        "sizeBytes" : 4683087561
+      },
+      "llama3:70b" : {
+        "parameterSize" : "70.6B",
+        "digest" : "786f3184aec0e907952488b865362bdaa38180739a9881a8190d85bad8cab893",
+        "quantization" : "Q4_0",
+        "sizeBytes" : 39969745349
+      },
+      "mistral:latest" : {
+        "parameterSize" : "7B",
+        "digest" : "61e88e884507ba5e06c49b40e6226884b2a16e872382c2b44a42f2d119d804a5",
+        "quantization" : "Q4_0",
+        "sizeBytes" : 4109865159
+      },
+      "llama2:latest" : {
+        "parameterSize" : "7B",
+        "digest" : "78e26419b4469263f75331927a00a0284ef6544c1975b826b15abdaef17bb962",
+        "quantization" : "Q4_0",
+        "sizeBytes" : 3826793677
+      }
+    },
+    "gliner.baseUrl" : "http://localhost:8090",
+    "gliner.versions" : {
+      "python" : "3.12.14",
+      "gliner2" : "2.1.0",
+      "torch" : "2.15.0",
+      "transformers" : "5.22.2"
+    },
+    "gliner.models" : {
+      "fastino/gliner2.5-base-v1" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 5.359,
+        "storage_bytes" : 782713882
+      }
+    },
+    "synthetic" : true,
+    "modelOrder" : [ "hybrid-gliner-kev-qwen", "gliner2.5-multi", "nuextract3", "gliner2.5-base", "hybrid-gliner-qwen", "kev-0.8b-candsel", "gliner2.5-decide", "hybrid-gliner-kev", "kev-0.8b", "gliner2.5-small", "qwen3.5-4b" ],
+    "records.selected" : 693,
+    "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+    "hybridThresholds" : {
+      "kev" : 0.5862,
+      "source" : "/Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)",
+      "gliner" : 0.9649
+    }
+  },
+  "config" : {
+    "models" : [ "kev-0.8b", "kev-0.8b-candsel", "gliner2.5-base", "gliner2.5-small", "gliner2.5-multi", "gliner2.5-decide", "nuextract3", "qwen3.5-4b", "hybrid-gliner-kev", "hybrid-gliner-kev-qwen", "hybrid-gliner-qwen" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : null,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "full-macbook"
+  },
+  "errors" : [ ],
+  "models" : [ {
+    "modelId" : "hybrid-gliner-kev-qwen",
+    "displayName" : "Hybrid GLiNER+Kev+LLM",
+    "kind" : "pipeline",
+    "runtime" : "pipeline",
+    "modelRef" : "gliner2.5-base (extract) → kev-0.8b (classify) → decision → qwen3.5-4b fallback",
+    "quantization" : null,
+    "family" : "hybrid pipeline",
+    "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)",
+    "health" : {
+      "state" : "UP",
+      "detail" : "all stages up"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.8184,
+      "accuracyCi" : [ 0.7799, 0.8514 ],
+      "macroF1" : 0.8171,
+      "macroF1Ci" : [ 0.7851, 0.8472 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8745,
+      "meanFieldMacroF1" : 0.8802,
+      "allFieldsCorrect" : 0.6054,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.8184,
+          "accuracyCi" : [ 0.7799, 0.8514 ],
+          "macroF1" : 0.8171,
+          "macroF1Ci" : [ 0.7851, 0.8472 ],
+          "macroPrecision" : 0.8492,
+          "macroRecall" : 0.8364,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.92,
+              "recall" : 0.9426,
+              "f1" : 0.9312,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.8553,
+              "recall" : 1.0,
+              "f1" : 0.922,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9178,
+              "recall" : 1.0,
+              "f1" : 0.9571,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.8889,
+              "recall" : 1.0,
+              "f1" : 0.9412,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.5204,
+              "recall" : 0.6623,
+              "f1" : 0.5829,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.8421,
+              "recall" : 0.25,
+              "f1" : 0.3855,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.9148,
+          "accuracyCi" : [ 0.8852, 0.9373 ],
+          "macroF1" : 0.9109,
+          "macroF1Ci" : [ 0.877, 0.9395 ],
+          "macroPrecision" : 0.8993,
+          "macroRecall" : 0.9274,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.8605,
+              "recall" : 1.0,
+              "f1" : 0.925,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.9245,
+              "recall" : 0.9533,
+              "f1" : 0.9387,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.913,
+              "recall" : 0.8289,
+              "f1" : 0.869,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.8229,
+          "accuracyCi" : [ 0.7847, 0.8555 ],
+          "macroF1" : 0.8552,
+          "macroF1Ci" : [ 0.8201, 0.8856 ],
+          "macroPrecision" : 0.8364,
+          "macroRecall" : 0.9023,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.5985,
+              "recall" : 0.9186,
+              "f1" : 0.7248,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.9083,
+              "recall" : 0.9316,
+              "f1" : 0.9198,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.8462,
+              "recall" : 1.0,
+              "f1" : 0.9167,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.875,
+              "recall" : 1.0,
+              "f1" : 0.9333,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.9542,
+              "recall" : 0.6614,
+              "f1" : 0.7812,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.9417,
+          "accuracyCi" : [ 0.916, 0.9599 ],
+          "macroF1" : 0.9377,
+          "macroF1Ci" : [ 0.9123, 0.9604 ],
+          "macroPrecision" : 0.936,
+          "macroRecall" : 0.9499,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7273,
+              "f1" : 0.8421,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.7925,
+              "recall" : 1.0,
+              "f1" : 0.8842,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.9706,
+              "recall" : 1.0,
+              "f1" : 0.9851,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 0.9688,
+              "f1" : 0.9841,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.8333,
+              "recall" : 0.9615,
+              "f1" : 0.8929,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.8919,
+              "recall" : 1.0,
+              "f1" : 0.9429,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9418,
+              "f1" : 0.97,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.7807,
+      "exactMatchCi" : [ 0.7388, 0.8174 ],
+      "entityPrecision" : 0.9416,
+      "entityRecall" : 0.9516,
+      "entityF1" : 0.9466,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0426,
+      "fieldAccuracy" : {
+        "orderId" : 0.9976,
+        "items" : 0.783,
+        "total" : 0.9976,
+        "currency" : 0.9976
+      },
+      "offsetAccuracy" : 1.0,
+      "offsetN" : 387
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.9661,
+      "accuracyCi" : [ 0.928, 0.9844 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.25,
+      "falsePositiveRate" : 0.75,
+      "coverage" : 0.9574
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 1540,
+      "n" : 244,
+      "brier" : 0.1066,
+      "ece" : 0.212,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 2,
+        "meanConfidence" : 0.383,
+        "accuracy" : 0.5
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 14,
+        "meanConfidence" : 0.4758,
+        "accuracy" : 0.2857
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 40,
+        "meanConfidence" : 0.5652,
+        "accuracy" : 0.7
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 61,
+        "meanConfidence" : 0.6501,
+        "accuracy" : 0.9672
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 55,
+        "meanConfidence" : 0.7457,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 58,
+        "meanConfidence" : 0.8449,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 14,
+        "meanConfidence" : 0.9198,
+        "accuracy" : 1.0
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0984,
+        "accuracy" : 1.0,
+        "threshold" : 0.8767
+      }, {
+        "coverage" : 0.2008,
+        "accuracy" : 1.0,
+        "threshold" : 0.8357
+      }, {
+        "coverage" : 0.2992,
+        "accuracy" : 1.0,
+        "threshold" : 0.7991
+      }, {
+        "coverage" : 0.4016,
+        "accuracy" : 1.0,
+        "threshold" : 0.745
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 1.0,
+        "threshold" : 0.7102
+      }, {
+        "coverage" : 0.5984,
+        "accuracy" : 1.0,
+        "threshold" : 0.6683
+      }, {
+        "coverage" : 0.7008,
+        "accuracy" : 1.0,
+        "threshold" : 0.6341
+      }, {
+        "coverage" : 0.7992,
+        "accuracy" : 0.9897,
+        "threshold" : 0.5921
+      }, {
+        "coverage" : 0.9016,
+        "accuracy" : 0.9591,
+        "threshold" : 0.5406
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.8975,
+        "threshold" : 0.3666
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.2951,
+        "risk" : 0.0
+      }
+    },
+    "latency" : {
+      "n" : 659,
+      "p50" : 809.34,
+      "p90" : 1063.43,
+      "p95" : 1163.29,
+      "p99" : 4774.94,
+      "mean" : 697.23,
+      "min" : 64.07,
+      "max" : 5942.34,
+      "p50Ci" : [ 802.21, 827.12 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 589.68,
+      "p90" : 808.77,
+      "p95" : 849.31,
+      "p99" : 910.41,
+      "mean" : 454.57,
+      "min" : 6.99,
+      "max" : 921.67,
+      "p50Ci" : [ 580.61, 594.13 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 34,
+      "repeatFullHits" : 90,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 235,
+        "p50" : 828.15,
+        "p90" : 1035.95,
+        "p95" : 1176.14,
+        "p99" : 2942.21,
+        "mean" : 854.57,
+        "min" : 189.27,
+        "max" : 5256.71,
+        "p50Ci" : [ 817.57, 843.94 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 991.11,
+        "p90" : 1101.52,
+        "p95" : 1137.4,
+        "p99" : 1173.66,
+        "mean" : 922.8,
+        "min" : 276.8,
+        "max" : 1191.02,
+        "p50Ci" : [ 979.54, 997.27 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 72.16,
+        "p90" : 1077.34,
+        "p95" : 1676.7,
+        "p99" : 5258.15,
+        "mean" : 385.9,
+        "min" : 64.07,
+        "max" : 5942.34,
+        "p50Ci" : [ 71.64, 72.94 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 4609.252,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 18.453,
+      "rps" : 2.17,
+      "p50" : 590.8,
+      "p95" : 848.67,
+      "errors" : 0,
+      "cacheFullHits" : 30
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 16.011,
+      "rps" : 2.5,
+      "p50" : 2345.28,
+      "p95" : 2386.72,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 16.015,
+      "rps" : 2.5,
+      "p50" : 4410.61,
+      "p95" : 4754.98,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    } ],
+    "tokens" : {
+      "meanInput" : null,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ {
+        "name" : "kev:0.8b-mlx-bf16",
+        "sizeVramBytes" : 10169824748,
+        "contextLength" : 73728,
+        "sizeBytes" : 10169824748
+      }, {
+        "name" : "qwen3.5:4b",
+        "sizeVramBytes" : 12594488848,
+        "contextLength" : 16384,
+        "sizeBytes" : 12594488848
+      } ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.8276,
+        "extractionExactMatch" : 0.7816,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.7813,
+        "extractionExactMatch" : 0.7826,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.8315,
+        "extractionExactMatch" : 0.7742,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.25,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8683,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.9524,
+        "extractionExactMatch" : 0.8476,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.8418,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.4857,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.9861,
+        "extractionExactMatch" : 0.8194,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.7143,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 95.72,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.3333,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 98.1,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 101.57,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 227.7,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 218.17,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.4286,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 220.33,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1073.82,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1082.61,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.5714,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1135.06,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.6667,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4693.05,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.25,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4766.39,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3839.06,
+      "meanInputTokens" : null
+    } ],
+    "fallbackRate" : 0.5556,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "gliner2.5-multi",
+    "displayName" : "GLiNER2.5 multi (287M)",
+    "kind" : "model",
+    "runtime" : "gliner2 python service (FastAPI)",
+    "modelRef" : "fastino/gliner2.5-multi-v1",
+    "quantization" : null,
+    "family" : "schema-driven span extractor + classifier (encoder)",
+    "notes" : "service http://localhost:8091; threshold=0.5; label confidence is a model score, not a calibrated probability",
+    "health" : {
+      "state" : "UP",
+      "detail" : "loaded on cpu"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6682,
+      "accuracyCi" : [ 0.6232, 0.7103 ],
+      "macroF1" : 0.6511,
+      "macroF1Ci" : [ 0.6168, 0.6814 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.4412,
+      "meanFieldMacroF1" : 0.4619,
+      "allFieldsCorrect" : 0.0404,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6682,
+          "accuracyCi" : [ 0.6232, 0.7103 ],
+          "macroF1" : 0.6511,
+          "macroF1Ci" : [ 0.6168, 0.6814 ],
+          "macroPrecision" : 0.6407,
+          "macroRecall" : 0.7046,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.8103,
+              "recall" : 0.7705,
+              "f1" : 0.7899,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9107,
+              "recall" : 0.7846,
+              "f1" : 0.843,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.5372,
+              "recall" : 0.9701,
+              "f1" : 0.6915,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 0.9474,
+              "f1" : 0.973,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.5882,
+              "recall" : 0.9375,
+              "f1" : 0.7229,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.5132,
+              "recall" : 0.5065,
+              "f1" : 0.5098,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.125,
+              "recall" : 0.0156,
+              "f1" : 0.0278,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.4126,
+          "accuracyCi" : [ 0.3678, 0.4588 ],
+          "macroF1" : 0.4301,
+          "macroF1Ci" : [ 0.381, 0.4776 ],
+          "macroPrecision" : 0.4793,
+          "macroRecall" : 0.5912,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.3304,
+              "recall" : 1.0,
+              "f1" : 0.4966,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.8,
+              "recall" : 0.2802,
+              "f1" : 0.415,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.3074,
+              "recall" : 0.4934,
+              "f1" : 0.3788,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.2466,
+          "accuracyCi" : [ 0.2089, 0.2887 ],
+          "macroF1" : 0.1978,
+          "macroF1Ci" : [ 0.1417, 0.2512 ],
+          "macroPrecision" : 0.3646,
+          "macroRecall" : 0.2801,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.2103,
+              "recall" : 1.0,
+              "f1" : 0.3475,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.6129,
+              "recall" : 0.1624,
+              "f1" : 0.2568,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 1.0,
+              "recall" : 0.2381,
+              "f1" : 0.3846,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.4372,
+          "accuracyCi" : [ 0.3919, 0.4836 ],
+          "macroF1" : 0.5686,
+          "macroF1Ci" : [ 0.5196, 0.6104 ],
+          "macroPrecision" : 0.5993,
+          "macroRecall" : 0.6504,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 0.9167,
+              "recall" : 0.5,
+              "f1" : 0.6471,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.1786,
+              "recall" : 0.9524,
+              "f1" : 0.3008,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.7857,
+              "recall" : 0.6667,
+              "f1" : 0.7213,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.7353,
+              "recall" : 0.7813,
+              "f1" : 0.7576,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.5513,
+              "recall" : 0.8269,
+              "f1" : 0.6615,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.7174,
+              "recall" : 1.0,
+              "f1" : 0.8354,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 0.9091,
+              "recall" : 0.4762,
+              "f1" : 0.625,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.6014,
+      "exactMatchCi" : [ 0.5541, 0.6469 ],
+      "entityPrecision" : 0.7432,
+      "entityRecall" : 0.9096,
+      "entityF1" : 0.818,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0777,
+      "fieldAccuracy" : {
+        "orderId" : 1.0,
+        "items" : 0.6014,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : 1.0,
+      "offsetN" : 387
+    },
+    "decision" : {
+      "falseAutoRefunds" : 9,
+      "accuracy" : 0.7797,
+      "accuracyCi" : [ 0.713, 0.8344 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.0156,
+      "falsePositiveRate" : 0.9844,
+      "coverage" : 0.9821
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.2973,
+      "ece" : 0.2635,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 29,
+        "meanConfidence" : 0.2777,
+        "accuracy" : 0.3103
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 109,
+        "meanConfidence" : 0.3522,
+        "accuracy" : 0.2294
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 186,
+        "meanConfidence" : 0.4554,
+        "accuracy" : 0.3118
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 206,
+        "meanConfidence" : 0.554,
+        "accuracy" : 0.3495
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 276,
+        "meanConfidence" : 0.6565,
+        "accuracy" : 0.3297
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 359,
+        "meanConfidence" : 0.7507,
+        "accuracy" : 0.4039
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 307,
+        "meanConfidence" : 0.845,
+        "accuracy" : 0.5179
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 312,
+        "meanConfidence" : 0.961,
+        "accuracy" : 0.7308
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.8708,
+        "threshold" : 0.9546
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.7115,
+        "threshold" : 0.8813
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.6411,
+        "threshold" : 0.8196
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.6022,
+        "threshold" : 0.7759
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.5594,
+        "threshold" : 0.7247
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.529,
+        "threshold" : 0.6779
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.4956,
+        "threshold" : 0.6045
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.4772,
+        "threshold" : 0.5191
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.4626,
+        "threshold" : 0.4243
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.4411,
+        "threshold" : 0.2352
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.347,
+        "risk" : 0.3748
+      }
+    },
+    "latency" : {
+      "n" : 693,
+      "p50" : 194.42,
+      "p90" : 255.98,
+      "p95" : 278.65,
+      "p99" : 2439.84,
+      "mean" : 255.84,
+      "min" : 68.8,
+      "max" : 2593.98,
+      "p50Ci" : [ 192.65, 196.1 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 191.86,
+      "p90" : 203.81,
+      "p95" : 207.99,
+      "p99" : 213.7,
+      "mean" : 192.81,
+      "min" : 177.77,
+      "max" : 214.01,
+      "p50Ci" : [ 190.18, 193.0 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 693,
+      "p50" : 192.93,
+      "p90" : 254.55,
+      "p95" : 276.79,
+      "p99" : 2433.31,
+      "mean" : 254.21,
+      "min" : 67.5,
+      "max" : 2587.93,
+      "p50Ci" : [ 191.1, 194.52 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 269,
+        "p50" : 193.54,
+        "p90" : 205.14,
+        "p95" : 208.7,
+        "p99" : 223.28,
+        "mean" : 194.36,
+        "min" : 180.25,
+        "max" : 231.94,
+        "p50Ci" : [ 192.09, 194.6 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 241.81,
+        "p90" : 259.33,
+        "p95" : 264.05,
+        "p99" : 276.22,
+        "mean" : 244.26,
+        "min" : 221.45,
+        "max" : 287.83,
+        "p50Ci" : [ 240.83, 243.58 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 77.57,
+        "p90" : 1532.74,
+        "p95" : 2397.76,
+        "p99" : 2528.75,
+        "mean" : 331.08,
+        "min" : 68.8,
+        "max" : 2593.98,
+        "p50Ci" : [ 77.02, 78.66 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 416.027125,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.661,
+      "rps" : 5.22,
+      "p50" : 190.7,
+      "p95" : 203.61,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.784,
+      "rps" : 5.14,
+      "p50" : 774.76,
+      "p95" : 811.52,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 7.822,
+      "rps" : 5.11,
+      "p50" : 1542.28,
+      "p95" : 1616.0,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 209.63,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "--port 8091",
+      "samples" : 453,
+      "rssMeanMb" : 1732.2,
+      "rssPeakMb" : 4420.0,
+      "cpuMeanPct" : 313.8,
+      "cpuPeakPct" : 548.8,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : 1165502487,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.6858,
+        "extractionExactMatch" : 0.5768,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.6563,
+        "extractionExactMatch" : 0.5362,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.6292,
+        "extractionExactMatch" : 0.7903,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.0156,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.7659,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.7524,
+        "extractionExactMatch" : 0.6286,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.7797,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.0714,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.8472,
+        "extractionExactMatch" : 0.6389,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.2857,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 100.19,
+      "meanInputTokens" : 119.14285714285714
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 98.74,
+      "meanInputTokens" : 117.0
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.4286,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 99.8,
+      "meanInputTokens" : 119.57142857142857
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 259.84,
+      "meanInputTokens" : 547.6
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 265.47,
+      "meanInputTokens" : 546.0
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 266.5,
+      "meanInputTokens" : 544.2857142857143
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1560.1,
+      "meanInputTokens" : 2136.4
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1570.17,
+      "meanInputTokens" : 2122.4
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1554.43,
+      "meanInputTokens" : 2159.1428571428573
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2442.61,
+      "meanInputTokens" : 5339.166666666667
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2453.12,
+      "meanInputTokens" : 5328.0
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2493.81,
+      "meanInputTokens" : 5343.5
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "nuextract3",
+    "displayName" : "NuExtract3 (Q4_K_M)",
+    "kind" : "model",
+    "runtime" : "ollama /api/chat (template role)",
+    "modelRef" : "numind/nuextract3:q4_k_m",
+    "quantization" : "Q4_K_M",
+    "family" : "generative extraction LLM",
+    "notes" : "think=false, temperature=0, seed=42, num_ctx=16384, truncate=false",
+    "health" : {
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.7915,
+      "accuracyCi" : [ 0.7514, 0.8266 ],
+      "macroF1" : 0.7751,
+      "macroF1Ci" : [ 0.7429, 0.8037 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8021,
+      "meanFieldMacroF1" : 0.8245,
+      "allFieldsCorrect" : 0.5516,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.7915,
+          "accuracyCi" : [ 0.7514, 0.8266 ],
+          "macroF1" : 0.7751,
+          "macroF1Ci" : [ 0.7429, 0.8037 ],
+          "macroPrecision" : 0.761,
+          "macroRecall" : 0.8197,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.9444,
+              "recall" : 0.9754,
+              "f1" : 0.9597,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9155,
+              "recall" : 1.0,
+              "f1" : 0.9559,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9178,
+              "recall" : 1.0,
+              "f1" : 0.9571,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.9048,
+              "recall" : 1.0,
+              "f1" : 0.95,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.7111,
+              "recall" : 1.0,
+              "f1" : 0.8312,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.4643,
+              "recall" : 0.1688,
+              "f1" : 0.2476,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.4691,
+              "recall" : 0.5938,
+              "f1" : 0.5241,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.9283,
+          "accuracyCi" : [ 0.9005, 0.9487 ],
+          "macroF1" : 0.9428,
+          "macroF1Ci" : [ 0.9215, 0.9617 ],
+          "macroPrecision" : 0.9511,
+          "macroRecall" : 0.937,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.9121,
+              "recall" : 0.9689,
+              "f1" : 0.9396,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.9412,
+              "recall" : 0.8421,
+              "f1" : 0.8889,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.6547,
+          "accuracyCi" : [ 0.6094, 0.6973 ],
+          "macroF1" : 0.707,
+          "macroF1Ci" : [ 0.6638, 0.7455 ],
+          "macroPrecision" : 0.7442,
+          "macroRecall" : 0.8153,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.452,
+              "recall" : 0.9302,
+              "f1" : 0.6084,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.7342,
+              "recall" : 0.9915,
+              "f1" : 0.8436,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.8205,
+              "recall" : 0.9697,
+              "f1" : 0.8889,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.7143,
+              "recall" : 0.9524,
+              "f1" : 0.8163,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.2328,
+              "f1" : 0.3777,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.8341,
+          "accuracyCi" : [ 0.7967, 0.8657 ],
+          "macroF1" : 0.8731,
+          "macroF1Ci" : [ 0.8443, 0.8993 ],
+          "macroPrecision" : 0.8637,
+          "macroRecall" : 0.9222,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.75,
+              "f1" : 0.8571,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.5455,
+              "recall" : 1.0,
+              "f1" : 0.7059,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.8919,
+              "recall" : 1.0,
+              "f1" : 0.9429,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.9697,
+              "recall" : 1.0,
+              "f1" : 0.9846,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.6375,
+              "recall" : 0.9808,
+              "f1" : 0.7727,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.8649,
+              "recall" : 0.9697,
+              "f1" : 0.9143,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.6772,
+              "f1" : 0.8076,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.9953,
+      "exactMatchCi" : [ 0.983, 0.9987 ],
+      "entityPrecision" : 0.9995,
+      "entityRecall" : 0.9989,
+      "entityF1" : 0.9992,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 5.0E-4,
+      "fieldAccuracy" : {
+        "orderId" : 0.9976,
+        "items" : 0.9976,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.9322,
+      "accuracyCi" : [ 0.8852, 0.9608 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.5938,
+      "falsePositiveRate" : 0.4063,
+      "coverage" : 0.8184
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 692,
+      "p50" : 1467.65,
+      "p90" : 1826.38,
+      "p95" : 1946.61,
+      "p99" : 6111.35,
+      "mean" : 1580.32,
+      "min" : 917.67,
+      "max" : 6317.75,
+      "p50Ci" : [ 1425.22, 1490.53 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 1254.09,
+      "p90" : 1358.0,
+      "p95" : 1435.39,
+      "p99" : 1473.51,
+      "mean" : 1224.36,
+      "min" : 1097.81,
+      "max" : 1480.75,
+      "p50Ci" : [ 1159.6, 1268.02 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 1,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 692,
+      "p50" : 1464.8,
+      "p90" : 1824.96,
+      "p95" : 1945.5,
+      "p99" : 6110.3,
+      "mean" : 1579.04,
+      "min" : 916.87,
+      "max" : 6316.86,
+      "p50Ci" : [ 1424.03, 1489.28 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 268,
+        "p50" : 1277.75,
+        "p90" : 1511.21,
+        "p95" : 1657.35,
+        "p99" : 1800.63,
+        "mean" : 1295.98,
+        "min" : 1082.1,
+        "max" : 1965.99,
+        "p50Ci" : [ 1229.5, 1303.47 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 1691.26,
+        "p90" : 1830.24,
+        "p95" : 1851.44,
+        "p99" : 1889.69,
+        "mean" : 1671.81,
+        "min" : 1301.96,
+        "max" : 1920.68,
+        "p50Ci" : [ 1618.76, 1718.88 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 1492.95,
+        "p90" : 3126.76,
+        "p95" : 5987.76,
+        "p99" : 6263.5,
+        "mean" : 1823.27,
+        "min" : 917.67,
+        "max" : 6317.75,
+        "p50Ci" : [ 1424.49, 1548.44 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 6053.105542,
+      "loadMs" : 4592.369375,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 49.196,
+      "rps" : 0.81,
+      "p50" : 1253.6,
+      "p95" : 1475.94,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 49.137,
+      "rps" : 0.81,
+      "p50" : 4891.91,
+      "p95" : 5439.47,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 49.128,
+      "rps" : 0.81,
+      "p50" : 9698.42,
+      "p95" : 10241.3,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 495.08,
+      "meanOutput" : 64.98,
+      "outputTokensPerSecond" : 68.66,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 2815,
+      "rssMeanMb" : 6620.3,
+      "rssPeakMb" : 12814.4,
+      "cpuMeanPct" : 275.6,
+      "cpuPeakPct" : 468.5,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ {
+        "name" : "numind/nuextract3:q4_k_m",
+        "sizeVramBytes" : 3749424659,
+        "contextLength" : 16384,
+        "sizeBytes" : 3749424659
+      } ],
+      "modelStorageBytes" : 3384386487,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.7816,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.7917,
+        "extractionExactMatch" : 0.9855,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.8202,
+        "extractionExactMatch" : 0.9839,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.5938,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.7317,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.9429,
+        "extractionExactMatch" : 0.9905,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.9167,
+        "extractionExactMatch" : 0.9861,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1225.75,
+      "meanInputTokens" : 398.2857142857143
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1196.62,
+      "meanInputTokens" : 397.0
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1387.25,
+      "meanInputTokens" : 398.57142857142856
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1614.04,
+      "meanInputTokens" : 729.8
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1724.59,
+      "meanInputTokens" : 732.5714285714286
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1749.68,
+      "meanInputTokens" : 730.5714285714286
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3230.77,
+      "meanInputTokens" : 1981.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3222.63,
+      "meanInputTokens" : 1975.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3163.55,
+      "meanInputTokens" : 1974.4285714285713
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 6074.04,
+      "meanInputTokens" : 4453.833333333333
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 6231.58,
+      "meanInputTokens" : 4460.5
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 6177.12,
+      "meanInputTokens" : 4465.75
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "gliner2.5-base",
+    "displayName" : "GLiNER2.5 base (194M)",
+    "kind" : "model",
+    "runtime" : "gliner2 python service (FastAPI)",
+    "modelRef" : "fastino/gliner2.5-base-v1",
+    "quantization" : null,
+    "family" : "schema-driven span extractor + classifier (encoder)",
+    "notes" : "service http://localhost:8090; threshold=0.5; label confidence is a model score, not a calibrated probability",
+    "health" : {
+      "state" : "UP",
+      "detail" : "loaded on cpu"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6278,
+      "accuracyCi" : [ 0.582, 0.6714 ],
+      "macroF1" : 0.6837,
+      "macroF1Ci" : [ 0.6451, 0.7183 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.6659,
+      "meanFieldMacroF1" : 0.6934,
+      "allFieldsCorrect" : 0.2735,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6278,
+          "accuracyCi" : [ 0.582, 0.6714 ],
+          "macroF1" : 0.6837,
+          "macroF1Ci" : [ 0.6451, 0.7183 ],
+          "macroPrecision" : 0.7211,
+          "macroRecall" : 0.6949,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.9024,
+              "recall" : 0.6066,
+              "f1" : 0.7255,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9574,
+              "recall" : 0.6923,
+              "f1" : 0.8036,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.8644,
+              "recall" : 0.7612,
+              "f1" : 0.8095,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.8261,
+              "recall" : 1.0,
+              "f1" : 0.9048,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.871,
+              "recall" : 0.8438,
+              "f1" : 0.8571,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.3125,
+              "recall" : 0.1948,
+              "f1" : 0.24,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.3141,
+              "recall" : 0.7656,
+              "f1" : 0.4455,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.6076,
+          "accuracyCi" : [ 0.5616, 0.6518 ],
+          "macroF1" : 0.604,
+          "macroF1Ci" : [ 0.5501, 0.6581 ],
+          "macroPrecision" : 0.5963,
+          "macroRecall" : 0.6983,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.4521,
+              "recall" : 0.8919,
+              "f1" : 0.6,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.8599,
+              "recall" : 0.5253,
+              "f1" : 0.6522,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.4769,
+              "recall" : 0.6776,
+              "f1" : 0.5598,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.7175,
+          "accuracyCi" : [ 0.674, 0.7573 ],
+          "macroF1" : 0.7361,
+          "macroF1Ci" : [ 0.6856, 0.778 ],
+          "macroPrecision" : 0.7543,
+          "macroRecall" : 0.7241,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.6296,
+              "recall" : 0.593,
+              "f1" : 0.6108,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.7826,
+              "recall" : 0.6154,
+              "f1" : 0.689,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.8125,
+              "recall" : 0.7879,
+              "f1" : 0.8,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.85,
+              "recall" : 0.8095,
+              "f1" : 0.8293,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.6968,
+              "recall" : 0.8148,
+              "f1" : 0.7512,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.7108,
+          "accuracyCi" : [ 0.667, 0.7509 ],
+          "macroF1" : 0.7499,
+          "macroF1Ci" : [ 0.7065, 0.7898 ],
+          "macroPrecision" : 0.7455,
+          "macroRecall" : 0.7932,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 0.8,
+              "recall" : 0.6364,
+              "f1" : 0.7089,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.3505,
+              "recall" : 0.8095,
+              "f1" : 0.4892,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.7021,
+              "recall" : 1.0,
+              "f1" : 0.825,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.6286,
+              "recall" : 0.6875,
+              "f1" : 0.6567,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.86,
+              "recall" : 0.8269,
+              "f1" : 0.8431,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.9091,
+              "recall" : 0.9091,
+              "f1" : 0.9091,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 0.8636,
+              "recall" : 0.9048,
+              "f1" : 0.8837,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.8504,
+              "recall" : 0.5714,
+              "f1" : 0.6835,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.7665,
+      "exactMatchCi" : [ 0.724, 0.8043 ],
+      "entityPrecision" : 0.9404,
+      "entityRecall" : 0.9479,
+      "entityF1" : 0.9441,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0436,
+      "fieldAccuracy" : {
+        "orderId" : 0.9906,
+        "items" : 0.7759,
+        "total" : 0.9976,
+        "currency" : 0.9976
+      },
+      "offsetAccuracy" : 0.9922,
+      "offsetN" : 387
+    },
+    "decision" : {
+      "falseAutoRefunds" : 3,
+      "accuracy" : 0.7119,
+      "accuracyCi" : [ 0.6412, 0.7735 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.7656,
+      "falsePositiveRate" : 0.2344,
+      "coverage" : 0.6502
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.2335,
+      "ece" : 0.1899,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 3,
+        "meanConfidence" : 0.2902,
+        "accuracy" : 0.6667
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 13,
+        "meanConfidence" : 0.355,
+        "accuracy" : 0.2308
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 81,
+        "meanConfidence" : 0.4588,
+        "accuracy" : 0.284
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 142,
+        "meanConfidence" : 0.5453,
+        "accuracy" : 0.4225
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 137,
+        "meanConfidence" : 0.6452,
+        "accuracy" : 0.5401
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 165,
+        "meanConfidence" : 0.7483,
+        "accuracy" : 0.503
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 206,
+        "meanConfidence" : 0.8593,
+        "accuracy" : 0.6019
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 1037,
+        "meanConfidence" : 0.9793,
+        "accuracy" : 0.7898
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.9045,
+        "threshold" : 0.9999
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.8487,
+        "threshold" : 0.9982
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.8467,
+        "threshold" : 0.9925
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.8361,
+        "threshold" : 0.976
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.7937,
+        "threshold" : 0.9425
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.7869,
+        "threshold" : 0.8904
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.7566,
+        "threshold" : 0.7928
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.7253,
+        "threshold" : 0.6845
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.698,
+        "threshold" : 0.5507
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.6659,
+        "threshold" : 0.2838
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.6967,
+        "risk" : 0.2414
+      }
+    },
+    "latency" : {
+      "n" : 693,
+      "p50" : 158.91,
+      "p90" : 202.89,
+      "p95" : 223.59,
+      "p99" : 4732.21,
+      "mean" : 239.26,
+      "min" : 67.13,
+      "max" : 4949.0,
+      "p50Ci" : [ 157.81, 160.25 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 157.15,
+      "p90" : 168.04,
+      "p95" : 172.02,
+      "p99" : 176.04,
+      "mean" : 158.81,
+      "min" : 148.3,
+      "max" : 219.78,
+      "p50Ci" : [ 156.21, 158.49 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 693,
+      "p50" : 157.68,
+      "p90" : 201.6,
+      "p95" : 222.23,
+      "p99" : 4726.98,
+      "mean" : 237.87,
+      "min" : 65.82,
+      "max" : 4943.58,
+      "p50Ci" : [ 156.47, 158.92 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 269,
+        "p50" : 158.25,
+        "p90" : 171.65,
+        "p95" : 175.38,
+        "p99" : 201.74,
+        "mean" : 160.78,
+        "min" : 145.22,
+        "max" : 270.04,
+        "p50Ci" : [ 157.41, 158.91 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 195.18,
+        "p90" : 207.02,
+        "p95" : 210.48,
+        "p99" : 222.6,
+        "mean" : 196.35,
+        "min" : 179.34,
+        "max" : 242.9,
+        "p50Ci" : [ 194.45, 196.82 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 73.47,
+        "p90" : 906.63,
+        "p95" : 1653.5,
+        "p99" : 4843.63,
+        "mean" : 355.49,
+        "min" : 67.13,
+        "max" : 4949.0,
+        "p50Ci" : [ 73.18, 74.02 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 177.951542,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 6.403,
+      "rps" : 6.25,
+      "p50" : 157.93,
+      "p95" : 169.3,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 6.33,
+      "rps" : 6.32,
+      "p50" : 628.65,
+      "p95" : 655.25,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.45,
+      "rps" : 6.2,
+      "p50" : 1269.53,
+      "p95" : 1365.19,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 168.59,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "--port 8090",
+      "samples" : 413,
+      "rssMeanMb" : 3906.3,
+      "rssPeakMb" : 10468.3,
+      "cpuMeanPct" : 353.3,
+      "cpuPeakPct" : 690.4,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : 782713882,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.682,
+        "extractionExactMatch" : 0.7782,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.6354,
+        "extractionExactMatch" : 0.7536,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.4607,
+        "extractionExactMatch" : 0.7258,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.7656,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.561,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.6476,
+        "extractionExactMatch" : 0.8381,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.8418,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.4857,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : 0.75,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.7143,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 83.76,
+      "meanInputTokens" : 98.85714285714286
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.3333,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 83.41,
+      "meanInputTokens" : 97.0
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 84.21,
+      "meanInputTokens" : 99.57142857142857
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 182.36,
+      "meanInputTokens" : 424.8
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 185.38,
+      "meanInputTokens" : 427.2857142857143
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.4286,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 184.9,
+      "meanInputTokens" : 425.42857142857144
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 929.29,
+      "meanInputTokens" : 1654.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 921.49,
+      "meanInputTokens" : 1647.2
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.5714,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 912.67,
+      "meanInputTokens" : 1646.4285714285713
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.6667,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4787.32,
+      "meanInputTokens" : 4094.0
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.25,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4647.7,
+      "meanInputTokens" : 4090.75
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3221.81,
+      "meanInputTokens" : 4095.0
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "hybrid-gliner-qwen",
+    "displayName" : "Hybrid GLiNER+LLM",
+    "kind" : "pipeline",
+    "runtime" : "pipeline",
+    "modelRef" : "gliner2.5-base (combined) → decision → qwen3.5-4b fallback",
+    "quantization" : null,
+    "family" : "hybrid pipeline",
+    "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)",
+    "health" : {
+      "state" : "UP",
+      "detail" : "all stages up"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.8117,
+      "accuracyCi" : [ 0.7728, 0.8452 ],
+      "macroF1" : 0.8127,
+      "macroF1Ci" : [ 0.7817, 0.8415 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8633,
+      "meanFieldMacroF1" : 0.8716,
+      "allFieldsCorrect" : 0.5852,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.8117,
+          "accuracyCi" : [ 0.7728, 0.8452 ],
+          "macroF1" : 0.8127,
+          "macroF1Ci" : [ 0.7817, 0.8415 ],
+          "macroPrecision" : 0.829,
+          "macroRecall" : 0.8313,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.9194,
+              "recall" : 0.9344,
+              "f1" : 0.9268,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.8667,
+              "recall" : 1.0,
+              "f1" : 0.9286,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9167,
+              "recall" : 0.9851,
+              "f1" : 0.9496,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.8889,
+              "recall" : 1.0,
+              "f1" : 0.9412,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.5155,
+              "recall" : 0.6494,
+              "f1" : 0.5747,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.6957,
+              "recall" : 0.25,
+              "f1" : 0.3678,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.8767,
+          "accuracyCi" : [ 0.8429, 0.904 ],
+          "macroF1" : 0.8817,
+          "macroF1Ci" : [ 0.8452, 0.913 ],
+          "macroPrecision" : 0.859,
+          "macroRecall" : 0.9116,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.8409,
+              "recall" : 1.0,
+              "f1" : 0.9136,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.9444,
+              "recall" : 0.8599,
+              "f1" : 0.9002,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.7917,
+              "recall" : 0.875,
+              "f1" : 0.8313,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.8229,
+          "accuracyCi" : [ 0.7847, 0.8555 ],
+          "macroF1" : 0.8566,
+          "macroF1Ci" : [ 0.8187, 0.8861 ],
+          "macroPrecision" : 0.8409,
+          "macroRecall" : 0.896,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.6077,
+              "recall" : 0.9186,
+              "f1" : 0.7315,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.8917,
+              "recall" : 0.9145,
+              "f1" : 0.903,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.8889,
+              "recall" : 0.9697,
+              "f1" : 0.9275,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.875,
+              "recall" : 1.0,
+              "f1" : 0.9333,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.9412,
+              "recall" : 0.6772,
+              "f1" : 0.7877,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.9417,
+          "accuracyCi" : [ 0.916, 0.9599 ],
+          "macroF1" : 0.9352,
+          "macroF1Ci" : [ 0.908, 0.958 ],
+          "macroPrecision" : 0.9335,
+          "macroRecall" : 0.9477,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7045,
+              "f1" : 0.8267,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.8077,
+              "recall" : 1.0,
+              "f1" : 0.8936,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.9706,
+              "recall" : 1.0,
+              "f1" : 0.9851,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.9394,
+              "recall" : 0.9688,
+              "f1" : 0.9538,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.8333,
+              "recall" : 0.9615,
+              "f1" : 0.8929,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.9167,
+              "recall" : 1.0,
+              "f1" : 0.9565,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9471,
+              "f1" : 0.9728,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.809,
+      "exactMatchCi" : [ 0.7688, 0.8435 ],
+      "entityPrecision" : 0.9507,
+      "entityRecall" : 0.9543,
+      "entityF1" : 0.9525,
+      "hallucinationRate" : 5.0E-4,
+      "hallucinatedValues" : 1,
+      "missingRate" : 0.042,
+      "fieldAccuracy" : {
+        "orderId" : 0.9929,
+        "items" : 0.8113,
+        "total" : 0.9976,
+        "currency" : 0.9976
+      },
+      "offsetAccuracy" : 1.0,
+      "offsetN" : 272
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.9661,
+      "accuracyCi" : [ 0.928, 0.9844 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.25,
+      "falsePositiveRate" : 0.75,
+      "coverage" : 0.9484
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 1436,
+      "n" : 348,
+      "brier" : 0.1147,
+      "ece" : 0.0774,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 2,
+        "meanConfidence" : 0.4552,
+        "accuracy" : 0.5
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 14,
+        "meanConfidence" : 0.5415,
+        "accuracy" : 0.6429
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 13,
+        "meanConfidence" : 0.6387,
+        "accuracy" : 0.6154
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 15,
+        "meanConfidence" : 0.7529,
+        "accuracy" : 0.6667
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 32,
+        "meanConfidence" : 0.8565,
+        "accuracy" : 0.7813
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 272,
+        "meanConfidence" : 0.9868,
+        "accuracy" : 0.9081
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.1006,
+        "accuracy" : 1.0,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.2011,
+        "accuracy" : 0.9857,
+        "threshold" : 0.9996
+      }, {
+        "coverage" : 0.2989,
+        "accuracy" : 0.9615,
+        "threshold" : 0.9989
+      }, {
+        "coverage" : 0.3994,
+        "accuracy" : 0.9353,
+        "threshold" : 0.9966
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.9368,
+        "threshold" : 0.9918
+      }, {
+        "coverage" : 0.6006,
+        "accuracy" : 0.9139,
+        "threshold" : 0.9801
+      }, {
+        "coverage" : 0.7011,
+        "accuracy" : 0.9057,
+        "threshold" : 0.9594
+      }, {
+        "coverage" : 0.7989,
+        "accuracy" : 0.9065,
+        "threshold" : 0.8878
+      }, {
+        "coverage" : 0.8994,
+        "accuracy" : 0.8914,
+        "threshold" : 0.7525
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.8621,
+        "threshold" : 0.4187
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.8736,
+        "risk" : 0.1053
+      }
+    },
+    "latency" : {
+      "n" : 661,
+      "p50" : 785.38,
+      "p90" : 2182.87,
+      "p95" : 2298.13,
+      "p99" : 4661.28,
+      "mean" : 805.96,
+      "min" : 64.44,
+      "max" : 5058.26,
+      "p50Ci" : [ 763.36, 791.72 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 755.59,
+      "p90" : 804.27,
+      "p95" : 847.46,
+      "p99" : 870.07,
+      "mean" : 611.91,
+      "min" : 145.13,
+      "max" : 871.76,
+      "p50Ci" : [ 745.97, 763.49 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 32,
+      "repeatFullHits" : 66,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 237,
+        "p50" : 802.13,
+        "p90" : 852.38,
+        "p95" : 866.85,
+        "p99" : 884.08,
+        "mean" : 721.75,
+        "min" : 149.97,
+        "max" : 943.61,
+        "p50Ci" : [ 797.62, 804.57 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 1951.84,
+        "p90" : 2335.59,
+        "p95" : 2404.49,
+        "p99" : 2471.78,
+        "mean" : 1545.82,
+        "min" : 183.71,
+        "max" : 2568.08,
+        "p50Ci" : [ 1883.72, 2032.17 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 71.75,
+        "p90" : 914.82,
+        "p95" : 1611.84,
+        "p99" : 4871.15,
+        "mean" : 356.57,
+        "min" : 64.44,
+        "max" : 5058.26,
+        "p50Ci" : [ 71.18, 72.39 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 2511.76575,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 23.669,
+      "rps" : 1.69,
+      "p50" : 747.77,
+      "p95" : 811.34,
+      "errors" : 0,
+      "cacheFullHits" : 22
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 17.019,
+      "rps" : 2.35,
+      "p50" : 2202.38,
+      "p95" : 2429.69,
+      "errors" : 0,
+      "cacheFullHits" : 28
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 16.979,
+      "rps" : 2.36,
+      "p50" : 3876.54,
+      "p95" : 4814.49,
+      "errors" : 0,
+      "cacheFullHits" : 28
+    } ],
+    "tokens" : {
+      "meanInput" : null,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ {
+        "name" : "qwen3.5:4b",
+        "sizeVramBytes" : 12603037200,
+        "contextLength" : 16384,
+        "sizeBytes" : 12603037200
+      } ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.8238,
+        "extractionExactMatch" : 0.7884,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.7708,
+        "extractionExactMatch" : 0.8551,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.8202,
+        "extractionExactMatch" : 0.8548,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.25,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8634,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.9429,
+        "extractionExactMatch" : 0.8857,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.8418,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.4857,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.9722,
+        "extractionExactMatch" : 0.9306,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.7143,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 91.27,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.3333,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 91.2,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 91.46,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 190.8,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 192.28,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.4286,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 192.4,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1028.68,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 915.97,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.5714,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 914.06,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.6667,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4661.66,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.25,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4746.78,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3184.47,
+      "meanInputTokens" : null
+    } ],
+    "fallbackRate" : 0.518,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "kev-0.8b-candsel",
+    "displayName" : "Kev 0.8b (candidate selection)",
+    "kind" : "model",
+    "runtime" : "ollama /v1/systemone",
+    "modelRef" : "kev:0.8b-mlx-bf16",
+    "quantization" : "BF16",
+    "family" : "decision model (typed choice questions)",
+    "notes" : "Regex candidate stage + Kev selection. Kev never generates strings; it only selects candidates or closed-set quantities.",
+    "health" : {
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6996,
+      "accuracyCi" : [ 0.6554, 0.7402 ],
+      "macroF1" : 0.7527,
+      "macroF1Ci" : [ 0.7223, 0.7806 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.7943,
+      "meanFieldMacroF1" : 0.8213,
+      "allFieldsCorrect" : 0.3834,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6996,
+          "accuracyCi" : [ 0.6554, 0.7402 ],
+          "macroF1" : 0.7527,
+          "macroF1Ci" : [ 0.7223, 0.7806 ],
+          "macroPrecision" : 0.7779,
+          "macroRecall" : 0.7437,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.956,
+              "recall" : 0.7131,
+              "f1" : 0.8169,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9608,
+              "recall" : 0.7538,
+              "f1" : 0.8448,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9531,
+              "recall" : 0.9104,
+              "f1" : 0.9313,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.9474,
+              "recall" : 0.9474,
+              "f1" : 0.9474,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.425,
+              "recall" : 0.6623,
+              "f1" : 0.5178,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.2029,
+              "recall" : 0.2188,
+              "f1" : 0.2105,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.8632,
+          "accuracyCi" : [ 0.8282, 0.892 ],
+          "macroF1" : 0.873,
+          "macroF1Ci" : [ 0.8349, 0.903 ],
+          "macroPrecision" : 0.8699,
+          "macroRecall" : 0.878,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.9189,
+              "recall" : 0.9189,
+              "f1" : 0.9189,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.917,
+              "recall" : 0.8599,
+              "f1" : 0.8876,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.7738,
+              "recall" : 0.8553,
+              "f1" : 0.8125,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.7422,
+          "accuracyCi" : [ 0.6996, 0.7806 ],
+          "macroF1" : 0.7701,
+          "macroF1Ci" : [ 0.7259, 0.8084 ],
+          "macroPrecision" : 0.7549,
+          "macroRecall" : 0.8144,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.5818,
+              "recall" : 0.7442,
+              "f1" : 0.6531,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.9747,
+              "recall" : 0.6581,
+              "f1" : 0.7857,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.7561,
+              "recall" : 0.9394,
+              "f1" : 0.8378,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.7241,
+              "recall" : 1.0,
+              "f1" : 0.84,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.738,
+              "recall" : 0.7302,
+              "f1" : 0.734,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.8722,
+          "accuracyCi" : [ 0.838, 0.9 ],
+          "macroF1" : 0.8892,
+          "macroF1Ci" : [ 0.8568, 0.918 ],
+          "macroPrecision" : 0.8977,
+          "macroRecall" : 0.8983,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7273,
+              "f1" : 0.8421,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.9714,
+              "recall" : 0.8095,
+              "f1" : 0.8831,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.825,
+              "recall" : 1.0,
+              "f1" : 0.9041,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.871,
+              "recall" : 0.8438,
+              "f1" : 0.8571,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.6753,
+              "recall" : 1.0,
+              "f1" : 0.8062,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.9412,
+              "recall" : 0.9697,
+              "f1" : 0.9552,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.8977,
+              "recall" : 0.836,
+              "f1" : 0.8658,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.1958,
+      "exactMatchCi" : [ 0.1608, 0.2362 ],
+      "entityPrecision" : 0.6495,
+      "entityRecall" : 0.8447,
+      "entityF1" : 0.7343,
+      "hallucinationRate" : 0.2429,
+      "hallucinatedValues" : 594,
+      "missingRate" : 0.0819,
+      "fieldAccuracy" : {
+        "orderId" : 0.9953,
+        "items" : 0.2193,
+        "total" : 0.8491,
+        "currency" : 0.8844
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.7797,
+      "accuracyCi" : [ 0.713, 0.8344 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.2188,
+      "falsePositiveRate" : 0.7813,
+      "coverage" : 0.8453
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.1749,
+      "ece" : 0.1998,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 80,
+        "meanConfidence" : 0.2675,
+        "accuracy" : 0.3125
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 249,
+        "meanConfidence" : 0.3517,
+        "accuracy" : 0.5823
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 253,
+        "meanConfidence" : 0.4538,
+        "accuracy" : 0.6245
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 330,
+        "meanConfidence" : 0.55,
+        "accuracy" : 0.7909
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 287,
+        "meanConfidence" : 0.6482,
+        "accuracy" : 0.9268
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 300,
+        "meanConfidence" : 0.7476,
+        "accuracy" : 0.9533
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 234,
+        "meanConfidence" : 0.8466,
+        "accuracy" : 0.9615
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 51,
+        "meanConfidence" : 0.9176,
+        "accuracy" : 1.0
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.9888,
+        "threshold" : 0.8411
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.972,
+        "threshold" : 0.7744
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.9645,
+        "threshold" : 0.7154
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.9594,
+        "threshold" : 0.6513
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.9451,
+        "threshold" : 0.5939
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.9224,
+        "threshold" : 0.5396
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.8911,
+        "threshold" : 0.4874
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.8612,
+        "threshold" : 0.4137
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.83,
+        "threshold" : 0.3421
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.7943,
+        "threshold" : 0.2137
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.1598,
+        "risk" : 0.0316
+      }
+    },
+    "latency" : {
+      "n" : 659,
+      "p50" : 542.42,
+      "p90" : 703.63,
+      "p95" : 718.5,
+      "p99" : 1442.26,
+      "mean" : 480.22,
+      "min" : 156.24,
+      "max" : 1528.46,
+      "p50Ci" : [ 536.25, 544.63 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 4.2,
+      "p90" : 176.48,
+      "p95" : 179.26,
+      "p99" : 183.46,
+      "mean" : 47.16,
+      "min" : 3.49,
+      "max" : 189.24,
+      "p50Ci" : [ 4.08, 4.36 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 34,
+      "repeatFullHits" : 90,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 235,
+        "p50" : 180.13,
+        "p90" : 183.86,
+        "p95" : 186.12,
+        "p99" : 188.48,
+        "mean" : 177.47,
+        "min" : 156.24,
+        "max" : 191.4,
+        "p50Ci" : [ 179.62, 180.63 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 692.59,
+        "p90" : 708.14,
+        "p95" : 711.47,
+        "p99" : 718.58,
+        "mean" : 687.79,
+        "min" : 637.78,
+        "max" : 720.83,
+        "p50Ci" : [ 686.18, 696.5 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 545.02,
+        "p90" : 880.34,
+        "p95" : 1429.77,
+        "p99" : 1447.19,
+        "mean" : 619.52,
+        "min" : 486.8,
+        "max" : 1528.46,
+        "p50Ci" : [ 543.73, 547.35 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 711.367917,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 1.895,
+      "rps" : 21.11,
+      "p50" : 3.88,
+      "p95" : 178.54,
+      "errors" : 0,
+      "cacheFullHits" : 30
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 0.128,
+      "rps" : 312.5,
+      "p50" : 11.68,
+      "p95" : 14.44,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 0.115,
+      "rps" : 347.83,
+      "p50" : 21.86,
+      "p95" : 26.34,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    } ],
+    "tokens" : {
+      "meanInput" : 3680.24,
+      "meanOutput" : 0.0,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 657,
+      "rssMeanMb" : 1411.2,
+      "rssPeakMb" : 1419.7,
+      "cpuMeanPct" : 45.7,
+      "cpuPeakPct" : 109.2,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ {
+        "name" : "kev:0.8b-mlx-bf16",
+        "sizeVramBytes" : 10151426412,
+        "contextLength" : 73728,
+        "sizeBytes" : 10151426412
+      } ],
+      "modelStorageBytes" : 1519780825,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.7395,
+        "extractionExactMatch" : 0.2457,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.6563,
+        "extractionExactMatch" : 0.058,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.6292,
+        "extractionExactMatch" : 0.1129,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.2188,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.7524,
+        "extractionExactMatch" : 0.1524,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.3107,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.1286,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.7639,
+        "extractionExactMatch" : 0.0417,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 555.36,
+      "meanInputTokens" : 2803.1428571428573
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 554.14,
+      "meanInputTokens" : 2784.8333333333335
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.1429,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 554.6,
+      "meanInputTokens" : 2808.0
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 627.4,
+      "meanInputTokens" : 7775.8
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.2857,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 622.51,
+      "meanInputTokens" : 7817.857142857143
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.1429,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 625.03,
+      "meanInputTokens" : 7788.571428571428
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 880.75,
+      "meanInputTokens" : 26557.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 880.07,
+      "meanInputTokens" : 26467.2
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 883.05,
+      "meanInputTokens" : 26445.571428571428
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1436.24,
+      "meanInputTokens" : 63637.0
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1444.01,
+      "meanInputTokens" : 63735.75
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.25,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1444.84,
+      "meanInputTokens" : 63816.5
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "gliner2.5-decide",
+    "displayName" : "GLiNER2.5-Decide (340M)",
+    "kind" : "model",
+    "runtime" : "gliner2 python service (FastAPI)",
+    "modelRef" : "fastino/GLiNER2.5-Decide",
+    "quantization" : null,
+    "family" : "encoder decision/classification model",
+    "notes" : "service http://localhost:8092; threshold=0.5; label confidence is a model score, not a calibrated probability",
+    "health" : {
+      "state" : "UP",
+      "detail" : "loaded on cpu"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "counts" : {
+      "total" : 446,
+      "success" : 446,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.7578,
+      "accuracyCi" : [ 0.716, 0.7953 ],
+      "macroF1" : 0.7469,
+      "macroF1Ci" : [ 0.7232, 0.7677 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.6659,
+      "meanFieldMacroF1" : 0.6973,
+      "allFieldsCorrect" : 0.1659,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.7578,
+          "accuracyCi" : [ 0.716, 0.7953 ],
+          "macroF1" : 0.7469,
+          "macroF1Ci" : [ 0.7232, 0.7677 ],
+          "macroPrecision" : 0.7301,
+          "macroRecall" : 0.7941,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.957,
+              "recall" : 0.7295,
+              "f1" : 0.8279,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 1.0,
+              "recall" : 0.9385,
+              "f1" : 0.9683,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.8933,
+              "recall" : 1.0,
+              "f1" : 0.9437,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.9048,
+              "recall" : 1.0,
+              "f1" : 0.95,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.9118,
+              "recall" : 0.9688,
+              "f1" : 0.9394,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.4438,
+              "recall" : 0.9221,
+              "f1" : 0.5992,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.6614,
+          "accuracyCi" : [ 0.6163, 0.7038 ],
+          "macroF1" : 0.726,
+          "macroF1Ci" : [ 0.6802, 0.7635 ],
+          "macroPrecision" : 0.7837,
+          "macroRecall" : 0.8023,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.8409,
+              "recall" : 1.0,
+              "f1" : 0.9136,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 1.0,
+              "recall" : 0.4202,
+              "f1" : 0.5918,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.5102,
+              "recall" : 0.9868,
+              "f1" : 0.6726,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.565,
+          "accuracyCi" : [ 0.5187, 0.6103 ],
+          "macroF1" : 0.5599,
+          "macroF1Ci" : [ 0.5028, 0.611 ],
+          "macroPrecision" : 0.5983,
+          "macroRecall" : 0.6324,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.443,
+              "recall" : 0.407,
+              "f1" : 0.4242,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.8036,
+              "recall" : 0.3846,
+              "f1" : 0.5202,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.2821,
+              "recall" : 1.0,
+              "f1" : 0.44,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.75,
+              "recall" : 0.7143,
+              "f1" : 0.7317,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.7126,
+              "recall" : 0.6561,
+              "f1" : 0.6832,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.6794,
+          "accuracyCi" : [ 0.6347, 0.721 ],
+          "macroF1" : 0.7565,
+          "macroF1Ci" : [ 0.7207, 0.7875 ],
+          "macroPrecision" : 0.731,
+          "macroRecall" : 0.8547,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 0.7119,
+              "recall" : 0.9545,
+              "f1" : 0.8155,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.3068,
+              "recall" : 0.6429,
+              "f1" : 0.4154,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.7333,
+              "recall" : 1.0,
+              "f1" : 0.8462,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.9118,
+              "recall" : 0.9688,
+              "f1" : 0.9394,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.6753,
+              "recall" : 1.0,
+              "f1" : 0.8062,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.64,
+              "recall" : 0.9697,
+              "f1" : 0.7711,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 0.9524,
+              "recall" : 0.9524,
+              "f1" : 0.9524,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.9167,
+              "recall" : 0.3492,
+              "f1" : 0.5057,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : null,
+    "decision" : null,
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.0,
+      "falsePositiveRate" : 1.0,
+      "coverage" : 0.9955
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.2107,
+      "ece" : 0.1907,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 32,
+        "meanConfidence" : 0.185,
+        "accuracy" : 0.3438
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 323,
+        "meanConfidence" : 0.2541,
+        "accuracy" : 0.3808
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 416,
+        "meanConfidence" : 0.3553,
+        "accuracy" : 0.5649
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 365,
+        "meanConfidence" : 0.4403,
+        "accuracy" : 0.5534
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 196,
+        "meanConfidence" : 0.5425,
+        "accuracy" : 0.8673
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 128,
+        "meanConfidence" : 0.6563,
+        "accuracy" : 0.9609
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 166,
+        "meanConfidence" : 0.7511,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 126,
+        "meanConfidence" : 0.8473,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 32,
+        "meanConfidence" : 0.922,
+        "accuracy" : 1.0
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 1.0,
+        "threshold" : 0.7882
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 1.0,
+        "threshold" : 0.6856
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.9813,
+        "threshold" : 0.5443
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.9384,
+        "threshold" : 0.4701
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.8509,
+        "threshold" : 0.4222
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.7963,
+        "threshold" : 0.3883
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.7614,
+        "threshold" : 0.3518
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.7386,
+        "threshold" : 0.3016
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.6974,
+        "threshold" : 0.251
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.6659,
+        "threshold" : 0.1584
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.0886,
+        "risk" : 0.0
+      }
+    },
+    "latency" : {
+      "n" : 446,
+      "p50" : 464.11,
+      "p90" : 499.19,
+      "p95" : 510.37,
+      "p99" : 523.35,
+      "mean" : 469.86,
+      "min" : 430.22,
+      "max" : 548.97,
+      "p50Ci" : [ 460.94, 466.38 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 457.6,
+      "p90" : 491.32,
+      "p95" : 498.65,
+      "p99" : 501.85,
+      "mean" : 459.87,
+      "min" : 434.26,
+      "max" : 520.8,
+      "p50Ci" : [ 455.82, 459.12 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 446,
+      "p50" : 462.98,
+      "p90" : 497.87,
+      "p95" : 509.15,
+      "p99" : 522.13,
+      "mean" : 468.67,
+      "min" : 429.15,
+      "max" : 547.76,
+      "p50Ci" : [ 459.74, 465.22 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 446,
+        "p50" : 464.11,
+        "p90" : 499.19,
+        "p95" : 510.37,
+        "p99" : 523.35,
+        "mean" : 469.86,
+        "min" : 430.22,
+        "max" : 548.97,
+        "p50Ci" : [ 460.94, 466.38 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 859.085416,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 18.358,
+      "rps" : 2.18,
+      "p50" : 457.32,
+      "p95" : 490.55,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 18.502,
+      "rps" : 2.16,
+      "p50" : 1829.73,
+      "p95" : 1931.32,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 18.454,
+      "rps" : 2.17,
+      "p50" : 3668.43,
+      "p95" : 3719.18,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 35.24,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "--port 8092",
+      "samples" : 652,
+      "rssMeanMb" : 1723.1,
+      "rssPeakMb" : 1773.3,
+      "cpuMeanPct" : 255.5,
+      "cpuPeakPct" : 270.7,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : 1954170394,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 261,
+        "classificationAccuracy" : 0.7854,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 96,
+        "classificationAccuracy" : 0.7396,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 89,
+        "classificationAccuracy" : 0.6966,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8683,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.8381,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "hybrid-gliner-kev",
+    "displayName" : "Hybrid GLiNER+Kev",
+    "kind" : "pipeline",
+    "runtime" : "pipeline",
+    "modelRef" : "gliner2.5-base (extract) → kev-0.8b (classify) → decision",
+    "quantization" : null,
+    "family" : "hybrid pipeline",
+    "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)",
+    "health" : {
+      "state" : "UP",
+      "detail" : "all stages up"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6996,
+      "accuracyCi" : [ 0.6554, 0.7402 ],
+      "macroF1" : 0.7527,
+      "macroF1Ci" : [ 0.7223, 0.7806 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.7943,
+      "meanFieldMacroF1" : 0.8213,
+      "allFieldsCorrect" : 0.3834,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6996,
+          "accuracyCi" : [ 0.6554, 0.7402 ],
+          "macroF1" : 0.7527,
+          "macroF1Ci" : [ 0.7223, 0.7806 ],
+          "macroPrecision" : 0.7779,
+          "macroRecall" : 0.7437,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.956,
+              "recall" : 0.7131,
+              "f1" : 0.8169,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9608,
+              "recall" : 0.7538,
+              "f1" : 0.8448,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9531,
+              "recall" : 0.9104,
+              "f1" : 0.9313,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.9474,
+              "recall" : 0.9474,
+              "f1" : 0.9474,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.425,
+              "recall" : 0.6623,
+              "f1" : 0.5178,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.2029,
+              "recall" : 0.2188,
+              "f1" : 0.2105,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.8632,
+          "accuracyCi" : [ 0.8282, 0.892 ],
+          "macroF1" : 0.873,
+          "macroF1Ci" : [ 0.8349, 0.903 ],
+          "macroPrecision" : 0.8699,
+          "macroRecall" : 0.878,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.9189,
+              "recall" : 0.9189,
+              "f1" : 0.9189,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.917,
+              "recall" : 0.8599,
+              "f1" : 0.8876,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.7738,
+              "recall" : 0.8553,
+              "f1" : 0.8125,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.7422,
+          "accuracyCi" : [ 0.6996, 0.7806 ],
+          "macroF1" : 0.7701,
+          "macroF1Ci" : [ 0.7259, 0.8084 ],
+          "macroPrecision" : 0.7549,
+          "macroRecall" : 0.8144,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.5818,
+              "recall" : 0.7442,
+              "f1" : 0.6531,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.9747,
+              "recall" : 0.6581,
+              "f1" : 0.7857,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.7561,
+              "recall" : 0.9394,
+              "f1" : 0.8378,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.7241,
+              "recall" : 1.0,
+              "f1" : 0.84,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.738,
+              "recall" : 0.7302,
+              "f1" : 0.734,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.8722,
+          "accuracyCi" : [ 0.838, 0.9 ],
+          "macroF1" : 0.8892,
+          "macroF1Ci" : [ 0.8568, 0.918 ],
+          "macroPrecision" : 0.8977,
+          "macroRecall" : 0.8983,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7273,
+              "f1" : 0.8421,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.9714,
+              "recall" : 0.8095,
+              "f1" : 0.8831,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.825,
+              "recall" : 1.0,
+              "f1" : 0.9041,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.871,
+              "recall" : 0.8438,
+              "f1" : 0.8571,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.6753,
+              "recall" : 1.0,
+              "f1" : 0.8062,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.9412,
+              "recall" : 0.9697,
+              "f1" : 0.9552,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.8977,
+              "recall" : 0.836,
+              "f1" : 0.8658,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.7807,
+      "exactMatchCi" : [ 0.7388, 0.8174 ],
+      "entityPrecision" : 0.9416,
+      "entityRecall" : 0.9516,
+      "entityF1" : 0.9466,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0426,
+      "fieldAccuracy" : {
+        "orderId" : 0.9976,
+        "items" : 0.783,
+        "total" : 0.9976,
+        "currency" : 0.9976
+      },
+      "offsetAccuracy" : 1.0,
+      "offsetN" : 387
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.8079,
+      "accuracyCi" : [ 0.7436, 0.8592 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.2188,
+      "falsePositiveRate" : 0.7813,
+      "coverage" : 0.8453
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.1749,
+      "ece" : 0.1998,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 80,
+        "meanConfidence" : 0.2675,
+        "accuracy" : 0.3125
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 249,
+        "meanConfidence" : 0.3517,
+        "accuracy" : 0.5823
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 253,
+        "meanConfidence" : 0.4538,
+        "accuracy" : 0.6245
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 330,
+        "meanConfidence" : 0.55,
+        "accuracy" : 0.7909
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 287,
+        "meanConfidence" : 0.6482,
+        "accuracy" : 0.9268
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 300,
+        "meanConfidence" : 0.7476,
+        "accuracy" : 0.9533
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 234,
+        "meanConfidence" : 0.8466,
+        "accuracy" : 0.9615
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 51,
+        "meanConfidence" : 0.9176,
+        "accuracy" : 1.0
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.9888,
+        "threshold" : 0.8411
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.972,
+        "threshold" : 0.7744
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.9645,
+        "threshold" : 0.7154
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.9594,
+        "threshold" : 0.6513
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.9451,
+        "threshold" : 0.5939
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.9224,
+        "threshold" : 0.5396
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.8911,
+        "threshold" : 0.4874
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.8612,
+        "threshold" : 0.4137
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.83,
+        "threshold" : 0.3421
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.7943,
+        "threshold" : 0.2137
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.1598,
+        "risk" : 0.0316
+      }
+    },
+    "latency" : {
+      "n" : 659,
+      "p50" : 180.0,
+      "p90" : 302.66,
+      "p95" : 313.02,
+      "p99" : 4621.45,
+      "mean" : 274.06,
+      "min" : 67.82,
+      "max" : 4984.04,
+      "p50Ci" : [ 179.25, 180.91 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 4.26,
+      "p90" : 180.62,
+      "p95" : 182.18,
+      "p99" : 187.22,
+      "mean" : 48.85,
+      "min" : 3.96,
+      "max" : 241.98,
+      "p50Ci" : [ 4.23, 4.39 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 34,
+      "repeatFullHits" : 90,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 235,
+        "p50" : 179.68,
+        "p90" : 183.34,
+        "p95" : 185.93,
+        "p99" : 192.77,
+        "mean" : 177.03,
+        "min" : 156.26,
+        "max" : 197.62,
+        "p50Ci" : [ 179.07, 180.0 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 293.22,
+        "p90" : 307.63,
+        "p95" : 310.38,
+        "p99" : 313.2,
+        "mean" : 294.77,
+        "min" : 276.76,
+        "max" : 314.51,
+        "p50Ci" : [ 291.45, 294.41 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 74.77,
+        "p90" : 891.58,
+        "p95" : 1623.11,
+        "p99" : 4746.52,
+        "mean" : 351.54,
+        "min" : 67.82,
+        "max" : 4984.04,
+        "p50Ci" : [ 74.25, 75.23 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 703.521333,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 1.979,
+      "rps" : 20.21,
+      "p50" : 4.25,
+      "p95" : 184.33,
+      "errors" : 0,
+      "cacheFullHits" : 30
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 0.122,
+      "rps" : 327.87,
+      "p50" : 10.87,
+      "p95" : 13.98,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 0.118,
+      "rps" : 338.98,
+      "p50" : 23.05,
+      "p95" : 23.75,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    } ],
+    "tokens" : {
+      "meanInput" : null,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ {
+        "name" : "kev:0.8b-mlx-bf16",
+        "sizeVramBytes" : 10170786956,
+        "contextLength" : 73728,
+        "sizeBytes" : 10170786956
+      } ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.7395,
+        "extractionExactMatch" : 0.7816,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.6563,
+        "extractionExactMatch" : 0.7826,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.6292,
+        "extractionExactMatch" : 0.7742,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.2188,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.7524,
+        "extractionExactMatch" : 0.8476,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.8418,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.4857,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.7639,
+        "extractionExactMatch" : 0.8194,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.7143,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 87.2,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.3333,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 86.23,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 86.92,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 188.79,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 189.62,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.4286,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 188.6,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 914.12,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.6,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 910.66,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.5714,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 914.0,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.6667,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4628.04,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.25,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 4528.0,
+      "meanInputTokens" : null
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3203.66,
+      "meanInputTokens" : null
+    } ],
+    "fallbackRate" : 0.0,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "kev-0.8b",
+    "displayName" : "Kev 0.8b",
+    "kind" : "model",
+    "runtime" : "ollama /v1/systemone",
+    "modelRef" : "kev:0.8b-mlx-bf16",
+    "quantization" : "BF16",
+    "family" : "decision model (typed choice questions)",
+    "notes" : "Native probability distributions. 'confidence' = 1 - H(p)/ln N (concentration, not calibrated correctness).",
+    "health" : {
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "counts" : {
+      "total" : 446,
+      "success" : 446,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6996,
+      "accuracyCi" : [ 0.6554, 0.7402 ],
+      "macroF1" : 0.7527,
+      "macroF1Ci" : [ 0.7223, 0.7806 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.7943,
+      "meanFieldMacroF1" : 0.8213,
+      "allFieldsCorrect" : 0.3834,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6996,
+          "accuracyCi" : [ 0.6554, 0.7402 ],
+          "macroF1" : 0.7527,
+          "macroF1Ci" : [ 0.7223, 0.7806 ],
+          "macroPrecision" : 0.7779,
+          "macroRecall" : 0.7437,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.956,
+              "recall" : 0.7131,
+              "f1" : 0.8169,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.9608,
+              "recall" : 0.7538,
+              "f1" : 0.8448,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9531,
+              "recall" : 0.9104,
+              "f1" : 0.9313,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 0.9474,
+              "recall" : 0.9474,
+              "f1" : 0.9474,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.425,
+              "recall" : 0.6623,
+              "f1" : 0.5178,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.2029,
+              "recall" : 0.2188,
+              "f1" : 0.2105,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.8632,
+          "accuracyCi" : [ 0.8282, 0.892 ],
+          "macroF1" : 0.873,
+          "macroF1Ci" : [ 0.8349, 0.903 ],
+          "macroPrecision" : 0.8699,
+          "macroRecall" : 0.878,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.9189,
+              "recall" : 0.9189,
+              "f1" : 0.9189,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.917,
+              "recall" : 0.8599,
+              "f1" : 0.8876,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.7738,
+              "recall" : 0.8553,
+              "f1" : 0.8125,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.7422,
+          "accuracyCi" : [ 0.6996, 0.7806 ],
+          "macroF1" : 0.7701,
+          "macroF1Ci" : [ 0.7259, 0.8084 ],
+          "macroPrecision" : 0.7549,
+          "macroRecall" : 0.8144,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.5818,
+              "recall" : 0.7442,
+              "f1" : 0.6531,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.9747,
+              "recall" : 0.6581,
+              "f1" : 0.7857,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.7561,
+              "recall" : 0.9394,
+              "f1" : 0.8378,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.7241,
+              "recall" : 1.0,
+              "f1" : 0.84,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 0.738,
+              "recall" : 0.7302,
+              "f1" : 0.734,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.8722,
+          "accuracyCi" : [ 0.838, 0.9 ],
+          "macroF1" : 0.8892,
+          "macroF1Ci" : [ 0.8568, 0.918 ],
+          "macroPrecision" : 0.8977,
+          "macroRecall" : 0.8983,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7273,
+              "f1" : 0.8421,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.9714,
+              "recall" : 0.8095,
+              "f1" : 0.8831,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.825,
+              "recall" : 1.0,
+              "f1" : 0.9041,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.871,
+              "recall" : 0.8438,
+              "f1" : 0.8571,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.6753,
+              "recall" : 1.0,
+              "f1" : 0.8062,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.9412,
+              "recall" : 0.9697,
+              "f1" : 0.9552,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.8977,
+              "recall" : 0.836,
+              "f1" : 0.8658,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : null,
+    "decision" : null,
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.2188,
+      "falsePositiveRate" : 0.7813,
+      "coverage" : 0.8453
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.1749,
+      "ece" : 0.1998,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 80,
+        "meanConfidence" : 0.2675,
+        "accuracy" : 0.3125
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 249,
+        "meanConfidence" : 0.3517,
+        "accuracy" : 0.5823
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 253,
+        "meanConfidence" : 0.4538,
+        "accuracy" : 0.6245
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 330,
+        "meanConfidence" : 0.55,
+        "accuracy" : 0.7909
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 287,
+        "meanConfidence" : 0.6482,
+        "accuracy" : 0.9268
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 300,
+        "meanConfidence" : 0.7476,
+        "accuracy" : 0.9533
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 234,
+        "meanConfidence" : 0.8466,
+        "accuracy" : 0.9615
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 51,
+        "meanConfidence" : 0.9176,
+        "accuracy" : 1.0
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.9888,
+        "threshold" : 0.8411
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.972,
+        "threshold" : 0.7744
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.9645,
+        "threshold" : 0.7154
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.9594,
+        "threshold" : 0.6513
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.9451,
+        "threshold" : 0.5939
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.9224,
+        "threshold" : 0.5396
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.8911,
+        "threshold" : 0.4874
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.8612,
+        "threshold" : 0.4137
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.83,
+        "threshold" : 0.3421
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.7943,
+        "threshold" : 0.2137
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.1598,
+        "risk" : 0.0316
+      }
+    },
+    "latency" : {
+      "n" : 412,
+      "p50" : 181.19,
+      "p90" : 189.44,
+      "p95" : 190.57,
+      "p99" : 194.43,
+      "mean" : 180.82,
+      "min" : 156.04,
+      "max" : 213.49,
+      "p50Ci" : [ 180.86, 181.72 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 4.38,
+      "p90" : 180.39,
+      "p95" : 182.71,
+      "p99" : 184.83,
+      "mean" : 48.41,
+      "min" : 3.46,
+      "max" : 189.23,
+      "p50Ci" : [ 4.33, 4.44 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 34,
+      "repeatFullHits" : 90,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 412,
+        "p50" : 181.19,
+        "p90" : 189.44,
+        "p95" : 190.57,
+        "p99" : 194.43,
+        "mean" : 180.82,
+        "min" : 156.04,
+        "max" : 213.49,
+        "p50Ci" : [ 180.86, 181.72 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 727.031125,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 1.955,
+      "rps" : 20.46,
+      "p50" : 4.16,
+      "p95" : 184.39,
+      "errors" : 0,
+      "cacheFullHits" : 30
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 0.123,
+      "rps" : 325.2,
+      "p50" : 11.19,
+      "p95" : 13.66,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 0.11,
+      "rps" : 363.64,
+      "p50" : 21.05,
+      "p95" : 23.32,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    } ],
+    "tokens" : {
+      "meanInput" : 553.97,
+      "meanOutput" : 0.0,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 171,
+      "rssMeanMb" : 1407.7,
+      "rssPeakMb" : 1646.0,
+      "cpuMeanPct" : 60.9,
+      "cpuPeakPct" : 138.9,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ {
+        "name" : "kev:0.8b-mlx-bf16",
+        "sizeVramBytes" : 10170722444,
+        "contextLength" : 73728,
+        "sizeBytes" : 10170722444
+      } ],
+      "modelStorageBytes" : 1519780825,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 261,
+        "classificationAccuracy" : 0.7395,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 96,
+        "classificationAccuracy" : 0.6563,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 89,
+        "classificationAccuracy" : 0.6292,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.2188,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.7524,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.7639,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "gliner2.5-small",
+    "displayName" : "GLiNER2.5 small (74M)",
+    "kind" : "model",
+    "runtime" : "gliner2 python service (FastAPI)",
+    "modelRef" : "fastino/gliner2.5-small-v1",
+    "quantization" : null,
+    "family" : "schema-driven span extractor + classifier (encoder)",
+    "notes" : "service http://localhost:8093; threshold=0.5; label confidence is a model score, not a calibrated probability",
+    "health" : {
+      "state" : "UP",
+      "detail" : "loaded on cpu"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.6076,
+      "accuracyCi" : [ 0.5616, 0.6518 ],
+      "macroF1" : 0.5924,
+      "macroF1Ci" : [ 0.5508, 0.6291 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.4339,
+      "meanFieldMacroF1" : 0.4537,
+      "allFieldsCorrect" : 0.0359,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.6076,
+          "accuracyCi" : [ 0.5616, 0.6518 ],
+          "macroF1" : 0.5924,
+          "macroF1Ci" : [ 0.5508, 0.6291 ],
+          "macroPrecision" : 0.6293,
+          "macroRecall" : 0.6229,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.5825,
+              "recall" : 0.9262,
+              "f1" : 0.7152,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.8333,
+              "recall" : 0.4615,
+              "f1" : 0.5941,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.6575,
+              "recall" : 0.7164,
+              "f1" : 0.6857,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 0.9474,
+              "f1" : 0.973,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.4576,
+              "recall" : 0.8438,
+              "f1" : 0.5934,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.6078,
+              "recall" : 0.4026,
+              "f1" : 0.4844,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.2667,
+              "recall" : 0.0625,
+              "f1" : 0.1013,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.3946,
+          "accuracyCi" : [ 0.3503, 0.4407 ],
+          "macroF1" : 0.4102,
+          "macroF1Ci" : [ 0.3575, 0.4585 ],
+          "macroPrecision" : 0.4761,
+          "macroRecall" : 0.5469,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.3816,
+              "recall" : 0.7838,
+              "f1" : 0.5133,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.7069,
+              "recall" : 0.1595,
+              "f1" : 0.2603,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.3397,
+              "recall" : 0.6974,
+              "f1" : 0.4569,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.2803,
+          "accuracyCi" : [ 0.2406, 0.3237 ],
+          "macroF1" : 0.2587,
+          "macroF1Ci" : [ 0.2137, 0.3055 ],
+          "macroPrecision" : 0.5701,
+          "macroRecall" : 0.3689,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.2172,
+              "recall" : 0.9419,
+              "f1" : 0.3529,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.8,
+              "recall" : 0.1368,
+              "f1" : 0.2336,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.5,
+              "recall" : 0.697,
+              "f1" : 0.5823,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.3333,
+              "recall" : 0.0476,
+              "f1" : 0.0833,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.0212,
+              "f1" : 0.0415,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.4529,
+          "accuracyCi" : [ 0.4073, 0.4993 ],
+          "macroF1" : 0.5533,
+          "macroF1Ci" : [ 0.5025, 0.5959 ],
+          "macroPrecision" : 0.6554,
+          "macroRecall" : 0.6354,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 0.1954,
+              "recall" : 0.7727,
+              "f1" : 0.3119,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.5079,
+              "recall" : 0.7619,
+              "f1" : 0.6095,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.7045,
+              "recall" : 0.9394,
+              "f1" : 0.8052,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 0.8571,
+              "recall" : 0.375,
+              "f1" : 0.5217,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.5397,
+              "recall" : 0.6538,
+              "f1" : 0.5913,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.4909,
+              "recall" : 0.8182,
+              "f1" : 0.6136,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 0.6667,
+              "f1" : 0.8,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 0.9474,
+              "recall" : 0.0952,
+              "f1" : 0.1731,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.6226,
+      "exactMatchCi" : [ 0.5756, 0.6675 ],
+      "entityPrecision" : 0.8448,
+      "entityRecall" : 0.9441,
+      "entityF1" : 0.8917,
+      "hallucinationRate" : 0.0057,
+      "hallucinatedValues" : 12,
+      "missingRate" : 0.0293,
+      "fieldAccuracy" : {
+        "orderId" : 0.9528,
+        "items" : 0.6627,
+        "total" : 0.9646,
+        "currency" : 0.9788
+      },
+      "offsetAccuracy" : 0.9688,
+      "offsetN" : 384
+    },
+    "decision" : {
+      "falseAutoRefunds" : 36,
+      "accuracy" : 0.6723,
+      "accuracyCi" : [ 0.6001, 0.7372 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.0625,
+      "falsePositiveRate" : 0.9375,
+      "coverage" : 0.9664
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 1784,
+      "brier" : 0.2717,
+      "ece" : 0.1786,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 6,
+        "meanConfidence" : 0.1895,
+        "accuracy" : 0.0
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 141,
+        "meanConfidence" : 0.2623,
+        "accuracy" : 0.2553
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 254,
+        "meanConfidence" : 0.3475,
+        "accuracy" : 0.2874
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 254,
+        "meanConfidence" : 0.4503,
+        "accuracy" : 0.3268
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 232,
+        "meanConfidence" : 0.5494,
+        "accuracy" : 0.4224
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 214,
+        "meanConfidence" : 0.65,
+        "accuracy" : 0.5093
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 216,
+        "meanConfidence" : 0.7535,
+        "accuracy" : 0.4259
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 225,
+        "meanConfidence" : 0.8527,
+        "accuracy" : 0.5422
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 242,
+        "meanConfidence" : 0.953,
+        "accuracy" : 0.6653
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.0998,
+        "accuracy" : 0.7022,
+        "threshold" : 0.9304
+      }, {
+        "coverage" : 0.2001,
+        "accuracy" : 0.6275,
+        "threshold" : 0.8524
+      }, {
+        "coverage" : 0.2999,
+        "accuracy" : 0.5907,
+        "threshold" : 0.7729
+      }, {
+        "coverage" : 0.4002,
+        "accuracy" : 0.5434,
+        "threshold" : 0.6855
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.5415,
+        "threshold" : 0.6024
+      }, {
+        "coverage" : 0.5998,
+        "accuracy" : 0.5243,
+        "threshold" : 0.526
+      }, {
+        "coverage" : 0.7001,
+        "accuracy" : 0.4956,
+        "threshold" : 0.4588
+      }, {
+        "coverage" : 0.7999,
+        "accuracy" : 0.4779,
+        "threshold" : 0.3782
+      }, {
+        "coverage" : 0.9002,
+        "accuracy" : 0.4552,
+        "threshold" : 0.3118
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.4339,
+        "threshold" : 0.1845
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.2618,
+        "risk" : 0.394
+      }
+    },
+    "latency" : {
+      "n" : 693,
+      "p50" : 83.79,
+      "p90" : 107.17,
+      "p95" : 116.35,
+      "p99" : 2457.61,
+      "mean" : 126.51,
+      "min" : 33.92,
+      "max" : 2605.25,
+      "p50Ci" : [ 83.22, 84.4 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 83.49,
+      "p90" : 88.45,
+      "p95" : 89.25,
+      "p99" : 94.38,
+      "mean" : 84.22,
+      "min" : 79.25,
+      "max" : 101.35,
+      "p50Ci" : [ 83.14, 83.74 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 693,
+      "p50" : 82.66,
+      "p90" : 105.98,
+      "p95" : 115.14,
+      "p99" : 2452.39,
+      "mean" : 125.25,
+      "min" : 32.96,
+      "max" : 2599.32,
+      "p50Ci" : [ 82.18, 83.32 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 269,
+        "p50" : 83.37,
+        "p90" : 87.68,
+        "p95" : 88.72,
+        "p99" : 92.67,
+        "mean" : 84.06,
+        "min" : 78.45,
+        "max" : 128.25,
+        "p50Ci" : [ 83.08, 83.79 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 103.51,
+        "p90" : 110.26,
+        "p95" : 113.47,
+        "p99" : 119.63,
+        "mean" : 104.72,
+        "min" : 97.39,
+        "max" : 144.66,
+        "p50Ci" : [ 103.1, 104.04 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 43.32,
+        "p90" : 470.07,
+        "p95" : 745.05,
+        "p99" : 2524.33,
+        "mean" : 188.36,
+        "min" : 33.92,
+        "max" : 2605.25,
+        "p50Ci" : [ 42.98, 43.67 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 174.581334,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 3.389,
+      "rps" : 11.8,
+      "p50" : 83.7,
+      "p95" : 90.87,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 3.344,
+      "rps" : 11.96,
+      "p50" : 333.57,
+      "p95" : 342.68,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 3.479,
+      "rps" : 11.5,
+      "p50" : 678.69,
+      "p95" : 739.79,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 168.59,
+      "meanOutput" : null,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "--port 8093",
+      "samples" : 219,
+      "rssMeanMb" : 2526.8,
+      "rssPeakMb" : 8062.7,
+      "cpuMeanPct" : 337.8,
+      "cpuPeakPct" : 666.5,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : 303915018,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.7165,
+        "extractionExactMatch" : 0.6689,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.5313,
+        "extractionExactMatch" : 0.5797,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.3708,
+        "extractionExactMatch" : 0.4516,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.0625,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.7024,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.7619,
+        "extractionExactMatch" : 0.6952,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.6893,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.2714,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.5972,
+        "extractionExactMatch" : 0.6944,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 48.98,
+      "meanInputTokens" : 98.85714285714286
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 48.27,
+      "meanInputTokens" : 97.0
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.2857,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 49.22,
+      "meanInputTokens" : 99.57142857142857
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 101.36,
+      "meanInputTokens" : 424.8
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 102.75,
+      "meanInputTokens" : 427.2857142857143
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 102.05,
+      "meanInputTokens" : 425.42857142857144
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.2,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 479.89,
+      "meanInputTokens" : 1654.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 477.93,
+      "meanInputTokens" : 1647.2
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 482.91,
+      "meanInputTokens" : 1646.4285714285713
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 0.6667,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2481.83,
+      "meanInputTokens" : 4094.0
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 0.5,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2464.91,
+      "meanInputTokens" : 4090.75
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1621.95,
+      "meanInputTokens" : 4095.0
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "qwen3.5-4b",
+    "displayName" : "Qwen3.5 4B",
+    "kind" : "model",
+    "runtime" : "ollama /api/chat via LangChain4j ChatModel",
+    "modelRef" : "qwen3.5:4b",
+    "quantization" : "Q4_K_M",
+    "family" : "general-purpose LLM",
+    "notes" : "think=false, temperature=0, seed=42, num_ctx=16384, JSON-Schema constrained output, prompt qwen-system-v1.txt#3a3718d378673b40",
+    "health" : {
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 693,
+      "success" : 693,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 446,
+      "accuracy" : 0.8184,
+      "accuracyCi" : [ 0.7799, 0.8514 ],
+      "macroF1" : 0.8171,
+      "macroF1Ci" : [ 0.7851, 0.8472 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8873,
+      "meanFieldMacroF1" : 0.8897,
+      "allFieldsCorrect" : 0.6547,
+      "fields" : {
+        "intent" : {
+          "n" : 446,
+          "accuracy" : 0.8184,
+          "accuracyCi" : [ 0.7799, 0.8514 ],
+          "macroF1" : 0.8171,
+          "macroF1Ci" : [ 0.7851, 0.8472 ],
+          "macroPrecision" : 0.8492,
+          "macroRecall" : 0.8364,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 0.92,
+              "recall" : 0.9426,
+              "f1" : 0.9312,
+              "support" : 122
+            },
+            "replacement" : {
+              "precision" : 0.8553,
+              "recall" : 1.0,
+              "f1" : 0.922,
+              "support" : 65
+            },
+            "order_status" : {
+              "precision" : 0.9178,
+              "recall" : 1.0,
+              "f1" : 0.9571,
+              "support" : 67
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 19
+            },
+            "product_question" : {
+              "precision" : 0.8889,
+              "recall" : 1.0,
+              "f1" : 0.9412,
+              "support" : 32
+            },
+            "feedback" : {
+              "precision" : 0.5204,
+              "recall" : 0.6623,
+              "f1" : 0.5829,
+              "support" : 77
+            },
+            "none" : {
+              "precision" : 0.8421,
+              "recall" : 0.25,
+              "f1" : 0.3855,
+              "support" : 64
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 446,
+          "accuracy" : 0.9439,
+          "accuracyCi" : [ 0.9186, 0.9617 ],
+          "macroF1" : 0.9342,
+          "macroF1Ci" : [ 0.9022, 0.9625 ],
+          "macroPrecision" : 0.9227,
+          "macroRecall" : 0.9506,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 0.8605,
+              "recall" : 1.0,
+              "f1" : 0.925,
+              "support" : 37
+            },
+            "negative" : {
+              "precision" : 0.9508,
+              "recall" : 0.9767,
+              "f1" : 0.9635,
+              "support" : 257
+            },
+            "neutral" : {
+              "precision" : 0.9568,
+              "recall" : 0.875,
+              "f1" : 0.9141,
+              "support" : 152
+            }
+          }
+        },
+        "category" : {
+          "n" : 446,
+          "accuracy" : 0.8453,
+          "accuracyCi" : [ 0.8088, 0.8759 ],
+          "macroF1" : 0.8713,
+          "macroF1Ci" : [ 0.8372, 0.8994 ],
+          "macroPrecision" : 0.8537,
+          "macroRecall" : 0.9174,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.6202,
+              "recall" : 0.9302,
+              "f1" : 0.7442,
+              "support" : 86
+            },
+            "delivery" : {
+              "precision" : 0.9048,
+              "recall" : 0.9744,
+              "f1" : 0.9383,
+              "support" : 117
+            },
+            "billing" : {
+              "precision" : 0.8684,
+              "recall" : 1.0,
+              "f1" : 0.9296,
+              "support" : 33
+            },
+            "service" : {
+              "precision" : 0.875,
+              "recall" : 1.0,
+              "f1" : 0.9333,
+              "support" : 21
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.6825,
+              "f1" : 0.8113,
+              "support" : 189
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 446,
+          "accuracy" : 0.9417,
+          "accuracyCi" : [ 0.916, 0.9599 ],
+          "macroF1" : 0.9361,
+          "macroF1Ci" : [ 0.9102, 0.9582 ],
+          "macroPrecision" : 0.936,
+          "macroRecall" : 0.9477,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 0.7045,
+              "f1" : 0.8267,
+              "support" : 44
+            },
+            "taste" : {
+              "precision" : 0.7925,
+              "recall" : 1.0,
+              "f1" : 0.8842,
+              "support" : 42
+            },
+            "wrong_item" : {
+              "precision" : 0.9706,
+              "recall" : 1.0,
+              "f1" : 0.9851,
+              "support" : 33
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 0.9688,
+              "f1" : 0.9841,
+              "support" : 32
+            },
+            "late_delivery" : {
+              "precision" : 0.8333,
+              "recall" : 0.9615,
+              "f1" : 0.8929,
+              "support" : 52
+            },
+            "overcharged" : {
+              "precision" : 0.8919,
+              "recall" : 1.0,
+              "f1" : 0.9429,
+              "support" : 33
+            },
+            "rude_staff" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 21
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9471,
+              "f1" : 0.9728,
+              "support" : 189
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 424,
+      "exactMatch" : 0.9127,
+      "exactMatchCi" : [ 0.882, 0.936 ],
+      "entityPrecision" : 0.9949,
+      "entityRecall" : 0.9314,
+      "entityF1" : 0.9621,
+      "hallucinationRate" : 0.0017,
+      "hallucinatedValues" : 3,
+      "missingRate" : 0.066,
+      "fieldAccuracy" : {
+        "orderId" : 0.9387,
+        "items" : 0.9127,
+        "total" : 0.9434,
+        "currency" : 0.9434
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "falseAutoRefunds" : 1,
+      "accuracy" : 0.9661,
+      "accuracyCi" : [ 0.928, 0.9844 ],
+      "n" : 177
+    },
+    "abstention" : {
+      "ambiguousN" : 64,
+      "abstentionRate" : 0.25,
+      "falsePositiveRate" : 0.75,
+      "coverage" : 0.9574
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 658,
+      "p50" : 1418.92,
+      "p90" : 2036.91,
+      "p95" : 2112.58,
+      "p99" : 5586.1,
+      "mean" : 1395.45,
+      "min" : 590.52,
+      "max" : 5946.02,
+      "p50Ci" : [ 1238.62, 1525.12 ]
+    },
+    "repeatLatency" : {
+      "n" : 120,
+      "p50" : 605.7,
+      "p90" : 678.33,
+      "p95" : 688.27,
+      "p99" : 701.15,
+      "mean" : 617.93,
+      "min" : 578.1,
+      "max" : 719.17,
+      "p50Ci" : [ 595.83, 609.29 ]
+    },
+    "promptCache" : {
+      "qualityFullHits" : 35,
+      "repeatFullHits" : 90,
+      "repeatRequests" : 120,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 658,
+      "p50" : 1418.16,
+      "p90" : 2033.73,
+      "p95" : 2111.7,
+      "p99" : 5584.84,
+      "mean" : 1394.17,
+      "min" : 589.43,
+      "max" : 5943.96,
+      "p50Ci" : [ 1237.24, 1523.98 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 234,
+        "p50" : 639.86,
+        "p90" : 682.51,
+        "p95" : 691.38,
+        "p99" : 699.49,
+        "mean" : 645.63,
+        "min" : 590.52,
+        "max" : 705.86,
+        "p50Ci" : [ 637.41, 643.4 ]
+      },
+      "COMBINED" : {
+        "n" : 177,
+        "p50" : 1855.77,
+        "p90" : 2059.42,
+        "p95" : 2081.2,
+        "p99" : 2116.89,
+        "mean" : 1831.81,
+        "min" : 1039.18,
+        "max" : 2154.68,
+        "p50Ci" : [ 1728.33, 1935.96 ]
+      },
+      "EXTRACTION" : {
+        "n" : 247,
+        "p50" : 1565.92,
+        "p90" : 2304.24,
+        "p95" : 5002.35,
+        "p99" : 5901.55,
+        "mean" : 1793.11,
+        "min" : 650.33,
+        "max" : 5946.02,
+        "p50Ci" : [ 1508.88, 1611.12 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 1845.16,
+      "loadMs" : 810.533084,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 24.43,
+      "rps" : 1.64,
+      "p50" : 597.06,
+      "p95" : 674.35,
+      "errors" : 0,
+      "cacheFullHits" : 30
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 23.838,
+      "rps" : 1.68,
+      "p50" : 2385.43,
+      "p95" : 2413.47,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 23.814,
+      "rps" : 1.68,
+      "p50" : 4752.37,
+      "p95" : 4799.53,
+      "errors" : 0,
+      "cacheFullHits" : 40
+    } ],
+    "tokens" : {
+      "meanInput" : 542.7,
+      "meanOutput" : 78.01,
+      "outputTokensPerSecond" : 69.71,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 2189,
+      "rssMeanMb" : 3612.5,
+      "rssPeakMb" : 3618.8,
+      "cpuMeanPct" : 53.3,
+      "cpuPeakPct" : 119.6,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ {
+        "name" : "qwen3.5:4b",
+        "sizeVramBytes" : 12647966224,
+        "contextLength" : 16384,
+        "sizeBytes" : 12647966224
+      } ],
+      "modelStorageBytes" : 3973305013,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 466,
+        "classificationAccuracy" : 0.8276,
+        "extractionExactMatch" : 0.9044,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 116,
+        "classificationAccuracy" : 0.7813,
+        "extractionExactMatch" : 0.942,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 111,
+        "classificationAccuracy" : 0.8315,
+        "extractionExactMatch" : 0.9194,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 64,
+        "classificationAccuracy" : 0.25,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 205,
+        "classificationAccuracy" : 0.8683,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 105,
+        "classificationAccuracy" : 0.9524,
+        "extractionExactMatch" : 0.9333,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 177,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.9887,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 70,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 0.6571,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 72,
+        "classificationAccuracy" : 0.9861,
+        "extractionExactMatch" : 0.9444,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "end",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1263.12,
+      "meanInputTokens" : 469.2857142857143
+    }, {
+      "targetTokens" : 100,
+      "position" : "middle",
+      "n" : 6,
+      "exactMatch" : 0.8333,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1239.64,
+      "meanInputTokens" : 468.0
+    }, {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.8571,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1570.18,
+      "meanInputTokens" : 469.57142857142856
+    }, {
+      "targetTokens" : 500,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 0.8,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1592.38,
+      "meanInputTokens" : 800.8
+    }, {
+      "targetTokens" : 500,
+      "position" : "middle",
+      "n" : 7,
+      "exactMatch" : 0.5714,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1579.13,
+      "meanInputTokens" : 803.5714285714286
+    }, {
+      "targetTokens" : 500,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.1429,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 974.44,
+      "meanInputTokens" : 801.5714285714286
+    }, {
+      "targetTokens" : 2000,
+      "position" : "end",
+      "n" : 5,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3286.58,
+      "meanInputTokens" : 2052.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "middle",
+      "n" : 5,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 3353.56,
+      "meanInputTokens" : 2046.8
+    }, {
+      "targetTokens" : 2000,
+      "position" : "start",
+      "n" : 7,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 2272.84,
+      "meanInputTokens" : 2045.4285714285713
+    }, {
+      "targetTokens" : 5000,
+      "position" : "end",
+      "n" : 6,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 5586.81,
+      "meanInputTokens" : 4524.833333333333
+    }, {
+      "targetTokens" : 5000,
+      "position" : "middle",
+      "n" : 4,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 5912.12,
+      "meanInputTokens" : 4531.5
+    }, {
+      "targetTokens" : 5000,
+      "position" : "start",
+      "n" : 4,
+      "exactMatch" : 0.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 5007.09,
+      "meanInputTokens" : 4536.75
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  } ]
+}

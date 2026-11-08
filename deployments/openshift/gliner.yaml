@@ -1,0 +1,57 @@
+# GLiNER2.5-base as a custom CPU workload (FastAPI). Weights are cached on a PVC so restarts do not re-download.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: {name: beyond-llm-gliner-models}
+spec:
+  accessModes: [ReadWriteOnce]
+  resources: {requests: {storage: 3Gi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: beyond-llm-gliner, labels: {app: beyond-llm-gliner}}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  selector: {matchLabels: {app: beyond-llm-gliner}}
+  template:
+    metadata: {labels: {app: beyond-llm-gliner}}
+    spec:
+      containers:
+        - name: gliner
+          image: image-registry.openshift-image-registry.svc:5000/REPLACE_NAMESPACE/beyond-llm-gliner:latest
+          ports: [{containerPort: 8090, name: http}]
+          env:
+            - {name: GLINER_MODELS, value: fastino/gliner2.5-base-v1}
+            - {name: GLINER_DEVICE, value: cpu}
+            - {name: GLINER_THREADS, value: "2"}
+            - {name: HF_HOME, value: /models}
+          resources:
+            requests: {cpu: "1", memory: 4Gi}
+            limits: {cpu: "2", memory: 12Gi}   # 3Gi was OOMKilled on 2000–5000-token inputs (run 20261107-203609-bdb2)
+          volumeMounts: [{name: models, mountPath: /models}]
+          startupProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 10
+            failureThreshold: 60      # first start downloads the checkpoint
+          readinessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 30
+            timeoutSeconds: 5
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities: {drop: [ALL]}
+            seccompProfile: {type: RuntimeDefault}
+      volumes:
+        - name: models
+          persistentVolumeClaim: {claimName: beyond-llm-gliner-models}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: beyond-llm-gliner}
+spec:
+  selector: {app: beyond-llm-gliner}
+  ports: [{name: http, port: 8090, targetPort: http}]

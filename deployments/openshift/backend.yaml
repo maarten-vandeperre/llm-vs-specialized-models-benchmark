@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: {name: beyond-llm-results}
+spec:
+  accessModes: [ReadWriteOnce]
+  resources: {requests: {storage: 1Gi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: beyond-llm-backend, labels: {app: beyond-llm-backend}}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  selector: {matchLabels: {app: beyond-llm-backend}}
+  template:
+    metadata: {labels: {app: beyond-llm-backend}}
+    spec:
+      containers:
+        - name: backend
+          image: image-registry.openshift-image-registry.svc:5000/REPLACE_NAMESPACE/beyond-llm-backend:latest
+          ports: [{containerPort: 8080, name: http}]
+          envFrom: [{configMapRef: {name: beyond-llm-config}}]
+          env:
+            - {name: JAVA_MAX_MEM_RATIO, value: "60"}
+          resources:
+            requests: {cpu: 250m, memory: 512Mi}
+            limits: {cpu: "1", memory: 1Gi}
+          volumeMounts: [{name: results, mountPath: /deployments/results}]
+          readinessProbe:
+            httpGet: {path: /q/health/ready, port: http}
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: {path: /q/health/live, port: http}
+            periodSeconds: 30
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities: {drop: [ALL]}
+            seccompProfile: {type: RuntimeDefault}
+      volumes:
+        - name: results
+          persistentVolumeClaim: {claimName: beyond-llm-results}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: benchmark-backend}
+spec:
+  selector: {app: beyond-llm-backend}
+  ports: [{name: http, port: 8080, targetPort: http}]
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: {name: beyond-llm-api}
+spec:
+  to: {kind: Service, name: benchmark-backend}
+  port: {targetPort: http}
+  tls: {termination: edge, insecureEdgeTerminationPolicy: Redirect}

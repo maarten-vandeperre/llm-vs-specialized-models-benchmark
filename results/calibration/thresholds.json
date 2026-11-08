@@ -1,0 +1,240 @@
+{
+  "split" : "calibration",
+  "records" : 208,
+  "targetSelectiveAccuracy" : 0.95,
+  "definition" : "score = min(p(intent), p(complaint)); correct = both intent and complaint correct; failures count as incorrect with score 0",
+  "gliner" : 0.9649,
+  "glinerDetails" : {
+    "model" : "gliner2.5-base",
+    "threshold" : 0.9649,
+    "riskAtThreshold" : {
+      "threshold" : 0.9649,
+      "coverage" : 0.1635,
+      "risk" : 0.0294
+    },
+    "calibration" : {
+      "n" : 208,
+      "brier" : 0.2655,
+      "ece" : 0.2842,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 1,
+        "meanConfidence" : 0.2749,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 5,
+        "meanConfidence" : 0.3584,
+        "accuracy" : 0.2
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 21,
+        "meanConfidence" : 0.4652,
+        "accuracy" : 0.0476
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 33,
+        "meanConfidence" : 0.5493,
+        "accuracy" : 0.2121
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 26,
+        "meanConfidence" : 0.6474,
+        "accuracy" : 0.3077
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 34,
+        "meanConfidence" : 0.7466,
+        "accuracy" : 0.4412
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 32,
+        "meanConfidence" : 0.8495,
+        "accuracy" : 0.4063
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 56,
+        "meanConfidence" : 0.9695,
+        "accuracy" : 0.8929
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.101,
+        "accuracy" : 1.0,
+        "threshold" : 0.9957
+      }, {
+        "coverage" : 0.2019,
+        "accuracy" : 0.9048,
+        "threshold" : 0.9438
+      }, {
+        "coverage" : 0.2981,
+        "accuracy" : 0.8226,
+        "threshold" : 0.8775
+      }, {
+        "coverage" : 0.399,
+        "accuracy" : 0.7229,
+        "threshold" : 0.8188
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.6442,
+        "threshold" : 0.7523
+      }, {
+        "coverage" : 0.601,
+        "accuracy" : 0.64,
+        "threshold" : 0.684
+      }, {
+        "coverage" : 0.7019,
+        "accuracy" : 0.5822,
+        "threshold" : 0.606
+      }, {
+        "coverage" : 0.7981,
+        "accuracy" : 0.5482,
+        "threshold" : 0.5477
+      }, {
+        "coverage" : 0.899,
+        "accuracy" : 0.4973,
+        "threshold" : 0.4788
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.4615,
+        "threshold" : 0.2749
+      } ]
+    }
+  },
+  "kev" : 0.5862,
+  "kevDetails" : {
+    "model" : "kev-0.8b",
+    "threshold" : 0.5862,
+    "riskAtThreshold" : {
+      "threshold" : 0.5862,
+      "coverage" : 0.1923,
+      "risk" : 0.05
+    },
+    "calibration" : {
+      "n" : 208,
+      "brier" : 0.2308,
+      "ece" : 0.173,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 33,
+        "meanConfidence" : 0.2674,
+        "accuracy" : 0.3939
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 52,
+        "meanConfidence" : 0.3528,
+        "accuracy" : 0.4808
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 53,
+        "meanConfidence" : 0.4424,
+        "accuracy" : 0.6415
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 37,
+        "meanConfidence" : 0.5452,
+        "accuracy" : 0.6757
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 18,
+        "meanConfidence" : 0.6432,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 12,
+        "meanConfidence" : 0.7629,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 3,
+        "meanConfidence" : 0.8284,
+        "accuracy" : 1.0
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.101,
+        "accuracy" : 1.0,
+        "threshold" : 0.659
+      }, {
+        "coverage" : 0.2019,
+        "accuracy" : 0.9286,
+        "threshold" : 0.5759
+      }, {
+        "coverage" : 0.2981,
+        "accuracy" : 0.8226,
+        "threshold" : 0.5204
+      }, {
+        "coverage" : 0.399,
+        "accuracy" : 0.8193,
+        "threshold" : 0.4727
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.7788,
+        "threshold" : 0.4242
+      }, {
+        "coverage" : 0.601,
+        "accuracy" : 0.744,
+        "threshold" : 0.3983
+      }, {
+        "coverage" : 0.7019,
+        "accuracy" : 0.7192,
+        "threshold" : 0.3593
+      }, {
+        "coverage" : 0.7981,
+        "accuracy" : 0.6867,
+        "threshold" : 0.3177
+      }, {
+        "coverage" : 0.899,
+        "accuracy" : 0.6471,
+        "threshold" : 0.2732
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.625,
+        "threshold" : 0.2102
+      } ]
+    }
+  }
+}

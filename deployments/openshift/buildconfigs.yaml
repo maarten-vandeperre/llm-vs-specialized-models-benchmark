@@ -1,0 +1,51 @@
+# Binary Docker-strategy builds: the build context is uploaded from your machine with `oc start-build --from-dir`.
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata: {name: beyond-llm-backend}
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata: {name: beyond-llm-gliner}
+---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata: {name: beyond-llm-frontend}
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata: {name: beyond-llm-backend}
+spec:
+  source: {type: Binary}
+  strategy:
+    type: Docker
+    dockerStrategy: {dockerfilePath: Containerfile.prebuilt}
+  output: {to: {kind: ImageStreamTag, name: "beyond-llm-backend:latest"}}
+  resources:
+    requests: {cpu: 500m, memory: 1Gi}
+    limits: {cpu: "2", memory: 2Gi}
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata: {name: beyond-llm-gliner}
+spec:
+  source: {type: Binary}
+  strategy:
+    type: Docker
+    dockerStrategy: {dockerfilePath: Containerfile}
+  output: {to: {kind: ImageStreamTag, name: "beyond-llm-gliner:latest"}}
+  resources:
+    requests: {cpu: 500m, memory: 2Gi}
+    limits: {cpu: "2", memory: 4Gi}
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata: {name: beyond-llm-frontend}
+spec:
+  source: {type: Binary}
+  strategy:
+    type: Docker
+    dockerStrategy: {dockerfilePath: Containerfile}
+  output: {to: {kind: ImageStreamTag, name: "beyond-llm-frontend:latest"}}
+  resources:
+    requests: {cpu: 500m, memory: 1Gi}
+    limits: {cpu: "2", memory: 2Gi}

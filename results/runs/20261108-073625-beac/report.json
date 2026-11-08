@@ -1,0 +1,1594 @@
+{
+  "runId" : "20261108-073625-beac",
+  "label" : "cloud-smoke",
+  "status" : "COMPLETED",
+  "createdAt" : "2026-11-08T07:36:25.897777Z",
+  "finishedAt" : "2026-11-08T07:39:00.205259Z",
+  "synthetic" : true,
+  "disclaimer" : "Synthetic, fictional coffee-shop dataset. Results do not generalize to production customers.",
+  "datasetVersion" : "coffee-v1",
+  "environment" : {
+    "timestamp" : "2026-11-08T07:36:25.914548Z",
+    "os.name" : "Mac OS X",
+    "os.version" : "26.6.2",
+    "os.arch" : "aarch64",
+    "cpu.count" : 10,
+    "macos.productVersion" : "26.6.2",
+    "cpu.brand" : "Apple M1 Max",
+    "memory.bytes" : 68719476736,
+    "cpu.performanceCores" : "8",
+    "cpu.efficiencyCores" : "2",
+    "loadavg" : "{ 4.88 5.26 3.81 }",
+    "appleSilicon" : true,
+    "mlxSupported" : "yes (Apple Silicon; Ollama MLX runner)",
+    "gpu" : "Apple integrated GPU (unified memory); utilization not measured (requires root powermetrics)",
+    "disk.freeBytes" : 6497828864,
+    "java.version" : "25.0.2",
+    "java.vendor" : "Oracle Corporation",
+    "java.vm" : "OpenJDK 64-Bit Server VM",
+    "quarkus.version" : "3.40.1.1",
+    "quarkus.launchMode" : "NORMAL",
+    "ollama.baseUrl" : "http://localhost:11434",
+    "ollama.version" : "0.40.15",
+    "ollama.numParallel" : "not set (server default)",
+    "ollama.models" : {
+      "numind/nuextract3:q4_k_m" : {
+        "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91",
+        "parameterSize" : "4.2B",
+        "sizeBytes" : 3384386487,
+        "quantization" : "Q4_K_M"
+      },
+      "qwen3.5:4b" : {
+        "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+        "parameterSize" : "",
+        "sizeBytes" : 3973305013,
+        "quantization" : "nvfp4"
+      },
+      "kev:0.8b-mlx-bf16" : {
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "parameterSize" : "",
+        "sizeBytes" : 1519780825,
+        "quantization" : "BF16"
+      },
+      "gemma4:latest" : {
+        "digest" : "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+        "parameterSize" : "8.0B",
+        "sizeBytes" : 9608350718,
+        "quantization" : "Q4_K_M"
+      },
+      "gemma3:4b" : {
+        "digest" : "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+        "parameterSize" : "4.3B",
+        "sizeBytes" : 3338801804,
+        "quantization" : "Q4_K_M"
+      },
+      "gemma4:26b" : {
+        "digest" : "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251",
+        "parameterSize" : "25.8B",
+        "sizeBytes" : 17987581215,
+        "quantization" : "Q4_K_M"
+      },
+      "gemma3:12b" : {
+        "digest" : "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+        "parameterSize" : "12.2B",
+        "sizeBytes" : 8149190253,
+        "quantization" : "Q4_K_M"
+      },
+      "gemma4-agent:latest" : {
+        "digest" : "89b70054091cc77c7034f19d433cc5a08258dab2846f1af22c32c075ad7870a8",
+        "parameterSize" : "8.0B",
+        "sizeBytes" : 9608350734,
+        "quantization" : "Q4_K_M"
+      },
+      "qwen2.5-coder:14b-instruct" : {
+        "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "parameterSize" : "14.8B",
+        "sizeBytes" : 8988124298,
+        "quantization" : "Q4_K_M"
+      },
+      "granite-code:8b-instruct" : {
+        "digest" : "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd",
+        "parameterSize" : "8.1B",
+        "sizeBytes" : 4590918937,
+        "quantization" : "Q4_0"
+      },
+      "calendar-assistant-coder:latest" : {
+        "digest" : "b6a7cfb25427efea055a9133932b55e32255b8e4b25eb0fad712f28f47e3eb37",
+        "parameterSize" : "14.8B",
+        "sizeBytes" : 8988125936,
+        "quantization" : "Q4_K_M"
+      },
+      "qwen2.5-coder:14b" : {
+        "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+        "parameterSize" : "14.8B",
+        "sizeBytes" : 8988124298,
+        "quantization" : "Q4_K_M"
+      },
+      "qwen2.5-coder:7b" : {
+        "digest" : "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364",
+        "parameterSize" : "7.6B",
+        "sizeBytes" : 4683087561,
+        "quantization" : "Q4_K_M"
+      },
+      "llama3:70b" : {
+        "digest" : "786f3184aec0e907952488b865362bdaa38180739a9881a8190d85bad8cab893",
+        "parameterSize" : "70.6B",
+        "sizeBytes" : 39969745349,
+        "quantization" : "Q4_0"
+      },
+      "mistral:latest" : {
+        "digest" : "61e88e884507ba5e06c49b40e6226884b2a16e872382c2b44a42f2d119d804a5",
+        "parameterSize" : "7B",
+        "sizeBytes" : 4109865159,
+        "quantization" : "Q4_0"
+      },
+      "llama2:latest" : {
+        "digest" : "78e26419b4469263f75331927a00a0284ef6544c1975b826b15abdaef17bb962",
+        "parameterSize" : "7B",
+        "sizeBytes" : 3826793677,
+        "quantization" : "Q4_0"
+      }
+    },
+    "gliner.baseUrl" : "http://localhost:8090",
+    "gliner.versions" : {
+      "python" : "3.12.14",
+      "gliner2" : "2.1.0",
+      "torch" : "2.15.0",
+      "transformers" : "5.22.2"
+    },
+    "gliner.models" : {
+      "fastino/gliner2.5-base-v1" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 5.359,
+        "storage_bytes" : 782713882
+      }
+    },
+    "synthetic" : true,
+    "modelOrder" : [ "claude-opus-5.5", "openai-gpt-6.1-sol", "openai-gpt-6-luna", "claude-haiku-5.5" ],
+    "records.selected" : 20,
+    "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+    "hybridThresholds" : {
+      "source" : "/Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)",
+      "kev" : 0.5862,
+      "gliner" : 0.9649
+    }
+  },
+  "config" : {
+    "models" : [ "openai-gpt-6-luna", "openai-gpt-6.1-sol", "claude-haiku-5.5", "claude-opus-5.5" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 20,
+    "warmup" : 1,
+    "repetitions" : 1,
+    "latencySampleSize" : 5,
+    "concurrency" : [ 1 ],
+    "throughputRequests" : 5,
+    "timeoutSeconds" : 180,
+    "coldStart" : false,
+    "seed" : 42,
+    "label" : "cloud-smoke"
+  },
+  "errors" : [ ],
+  "models" : [ {
+    "modelId" : "claude-opus-5.5",
+    "displayName" : "Claude Opus 5.5 (complex)",
+    "kind" : "model",
+    "runtime" : "Anthropic Messages API (commercial, hosted)",
+    "modelRef" : "claude-opus-5-5",
+    "quantization" : null,
+    "family" : "general-purpose LLM (commercial API)",
+    "notes" : "effort=low, thinking=adaptive (cannot be disabled), strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40",
+    "health" : {
+      "detail" : "anthropic API reachable",
+      "state" : "UP"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 20,
+      "success" : 20,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 13,
+      "accuracy" : 0.9231,
+      "accuracyCi" : [ 0.6669, 0.9863 ],
+      "macroF1" : 0.9308,
+      "macroF1Ci" : [ 0.6491, 1.0 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.9808,
+      "meanFieldMacroF1" : 0.9827,
+      "allFieldsCorrect" : 0.9231,
+      "fields" : {
+        "intent" : {
+          "n" : 13,
+          "accuracy" : 0.9231,
+          "accuracyCi" : [ 0.6669, 0.9863 ],
+          "macroF1" : 0.9308,
+          "macroF1Ci" : [ 0.6491, 1.0 ],
+          "macroPrecision" : 0.9643,
+          "macroRecall" : 0.9167,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "order_status" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "feedback" : {
+              "precision" : 0.8571,
+              "recall" : 1.0,
+              "f1" : 0.9231,
+              "support" : 6
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.6667,
+              "f1" : 0.8,
+              "support" : 3
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 6
+            },
+            "negative" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "neutral" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 4
+            }
+          }
+        },
+        "category" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 10
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "late_delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 10
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 13,
+      "exactMatch" : 1.0,
+      "exactMatchCi" : [ 0.7719, 1.0 ],
+      "entityPrecision" : 1.0,
+      "entityRecall" : 1.0,
+      "entityF1" : 1.0,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0,
+      "fieldAccuracy" : {
+        "orderId" : 1.0,
+        "items" : 1.0,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "accuracyCi" : [ 0.6097, 1.0 ],
+      "n" : 6,
+      "falseAutoRefunds" : 0,
+      "accuracy" : 1.0
+    },
+    "abstention" : {
+      "ambiguousN" : 3,
+      "abstentionRate" : 0.6667,
+      "falsePositiveRate" : 0.3333,
+      "coverage" : 0.8462
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 20,
+      "p50" : 1916.17,
+      "p90" : 2412.55,
+      "p95" : 3015.03,
+      "p99" : null,
+      "mean" : 2019.41,
+      "min" : 1305.85,
+      "max" : 4723.98,
+      "p50Ci" : [ 1607.43, 2148.8 ]
+    },
+    "repeatLatency" : null,
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 0,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 7,
+        "p50" : 1694.92,
+        "p90" : 3132.11,
+        "p95" : 3928.04,
+        "p99" : null,
+        "mean" : 2075.58,
+        "min" : 1326.1,
+        "max" : 4723.98,
+        "p50Ci" : [ 1412.05, 2070.87 ]
+      },
+      "COMBINED" : {
+        "n" : 6,
+        "p50" : 2178.51,
+        "p90" : 2640.34,
+        "p95" : 2782.71,
+        "p99" : null,
+        "mean" : 2284.55,
+        "min" : 2005.68,
+        "max" : 2925.08,
+        "p50Ci" : [ 2034.79, 2640.34 ]
+      },
+      "EXTRACTION" : {
+        "n" : 7,
+        "p50" : 1694.22,
+        "p90" : 2172.82,
+        "p95" : 2202.14,
+        "p99" : null,
+        "mean" : 1735.97,
+        "min" : 1305.85,
+        "max" : 2231.46,
+        "p50Ci" : [ 1439.24, 2133.73 ]
+      }
+    },
+    "coldStart" : null,
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 7.959,
+      "rps" : 0.63,
+      "p50" : 1268.22,
+      "p95" : 2151.36,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 1149.15,
+      "meanOutput" : 66.65,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 10,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 4,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 6,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 3,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 4,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 4,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 3,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 3,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1694.22,
+      "meanInputTokens" : 1153.6666666666667
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "openai-gpt-6.1-sol",
+    "displayName" : "OpenAI GPT-6.1 Sol (complex)",
+    "kind" : "model",
+    "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+    "modelRef" : "gpt-6.1-sol",
+    "quantization" : null,
+    "family" : "general-purpose LLM (commercial API)",
+    "notes" : "reasoning_effort=low, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40",
+    "health" : {
+      "detail" : "openai API reachable",
+      "state" : "UP"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 20,
+      "success" : 20,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 13,
+      "accuracy" : 0.8462,
+      "accuracyCi" : [ 0.5777, 0.9567 ],
+      "macroF1" : 0.8393,
+      "macroF1Ci" : [ 0.6, 1.0 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.9231,
+      "meanFieldMacroF1" : 0.8063,
+      "allFieldsCorrect" : 0.8462,
+      "fields" : {
+        "intent" : {
+          "n" : 13,
+          "accuracy" : 0.8462,
+          "accuracyCi" : [ 0.5777, 0.9567 ],
+          "macroF1" : 0.8393,
+          "macroF1Ci" : [ 0.6, 1.0 ],
+          "macroPrecision" : 0.9375,
+          "macroRecall" : 0.8333,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "order_status" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "feedback" : {
+              "precision" : 0.75,
+              "recall" : 1.0,
+              "f1" : 0.8571,
+              "support" : 6
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.3333,
+              "f1" : 0.5,
+              "support" : 3
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 6
+            },
+            "negative" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "neutral" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 4
+            }
+          }
+        },
+        "category" : {
+          "n" : 13,
+          "accuracy" : 0.9231,
+          "accuracyCi" : [ 0.6669, 0.9863 ],
+          "macroF1" : 0.6491,
+          "macroF1Ci" : [ 0.5833, 1.0 ],
+          "macroPrecision" : 0.6667,
+          "macroRecall" : 0.6333,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.9,
+              "f1" : 0.9474,
+              "support" : 10
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 13,
+          "accuracy" : 0.9231,
+          "accuracyCi" : [ 0.6669, 0.9863 ],
+          "macroF1" : 0.7369,
+          "macroF1Ci" : [ 0.5897, 1.0 ],
+          "macroPrecision" : 0.75,
+          "macroRecall" : 0.725,
+          "perLabel" : {
+            "taste" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "late_delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9,
+              "f1" : 0.9474,
+              "support" : 10
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 13,
+      "exactMatch" : 1.0,
+      "exactMatchCi" : [ 0.7719, 1.0 ],
+      "entityPrecision" : 1.0,
+      "entityRecall" : 1.0,
+      "entityF1" : 1.0,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0,
+      "fieldAccuracy" : {
+        "orderId" : 1.0,
+        "items" : 1.0,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "accuracyCi" : [ 0.6097, 1.0 ],
+      "n" : 6,
+      "falseAutoRefunds" : 0,
+      "accuracy" : 1.0
+    },
+    "abstention" : {
+      "ambiguousN" : 3,
+      "abstentionRate" : 0.3333,
+      "falsePositiveRate" : 0.6667,
+      "coverage" : 0.9231
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 20,
+      "p50" : 1739.36,
+      "p90" : 2112.6,
+      "p95" : 2291.18,
+      "p99" : null,
+      "mean" : 1760.91,
+      "min" : 1252.6,
+      "max" : 2825.99,
+      "p50Ci" : [ 1527.84, 1896.49 ]
+    },
+    "repeatLatency" : null,
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 0,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 7,
+        "p50" : 1478.28,
+        "p90" : 1991.01,
+        "p95" : 2043.45,
+        "p99" : null,
+        "mean" : 1592.77,
+        "min" : 1252.6,
+        "max" : 2095.88,
+        "p50Ci" : [ 1312.03, 1921.1 ]
+      },
+      "COMBINED" : {
+        "n" : 6,
+        "p50" : 1900.48,
+        "p90" : 2544.51,
+        "p95" : 2685.25,
+        "p99" : null,
+        "mean" : 2085.88,
+        "min" : 1742.8,
+        "max" : 2825.99,
+        "p50Ci" : [ 1812.66, 2544.51 ]
+      },
+      "EXTRACTION" : {
+        "n" : 7,
+        "p50" : 1685.57,
+        "p90" : 1812.06,
+        "p95" : 1854.27,
+        "p99" : null,
+        "mean" : 1650.52,
+        "min" : 1431.83,
+        "max" : 1896.49,
+        "p50Ci" : [ 1470.67, 1755.77 ]
+      }
+    },
+    "coldStart" : null,
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 7.096,
+      "rps" : 0.7,
+      "p50" : 1453.96,
+      "p95" : 1667.89,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 519.0,
+      "meanOutput" : 52.3,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 10,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 4,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 6,
+        "classificationAccuracy" : 0.8,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 3,
+        "classificationAccuracy" : 0.3333,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 4,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 4,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 3,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 3,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1470.67,
+      "meanInputTokens" : 546.3333333333334
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "openai-gpt-6-luna",
+    "displayName" : "OpenAI GPT-6 Luna (simple)",
+    "kind" : "model",
+    "runtime" : "OpenAI Chat Completions API (commercial, hosted)",
+    "modelRef" : "gpt-6-luna",
+    "quantization" : null,
+    "family" : "general-purpose LLM (commercial API)",
+    "notes" : "reasoning_effort=none, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40",
+    "health" : {
+      "detail" : "openai API reachable",
+      "state" : "UP"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 20,
+      "success" : 20,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 13,
+      "accuracy" : 0.8462,
+      "accuracyCi" : [ 0.5777, 0.9567 ],
+      "macroF1" : 0.8393,
+      "macroF1Ci" : [ 0.6, 1.0 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8846,
+      "meanFieldMacroF1" : 0.796,
+      "allFieldsCorrect" : 0.6923,
+      "fields" : {
+        "intent" : {
+          "n" : 13,
+          "accuracy" : 0.8462,
+          "accuracyCi" : [ 0.5777, 0.9567 ],
+          "macroF1" : 0.8393,
+          "macroF1Ci" : [ 0.6, 1.0 ],
+          "macroPrecision" : 0.9375,
+          "macroRecall" : 0.8333,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "order_status" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "feedback" : {
+              "precision" : 0.75,
+              "recall" : 1.0,
+              "f1" : 0.8571,
+              "support" : 6
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.3333,
+              "f1" : 0.5,
+              "support" : 3
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 6
+            },
+            "negative" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "neutral" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 4
+            }
+          }
+        },
+        "category" : {
+          "n" : 13,
+          "accuracy" : 0.7692,
+          "accuracyCi" : [ 0.4974, 0.9182 ],
+          "macroF1" : 0.6078,
+          "macroF1Ci" : [ 0.4545, 1.0 ],
+          "macroPrecision" : 0.6667,
+          "macroRecall" : 0.5667,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.7,
+              "f1" : 0.8235,
+              "support" : 10
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 13,
+          "accuracy" : 0.9231,
+          "accuracyCi" : [ 0.6669, 0.9863 ],
+          "macroF1" : 0.7369,
+          "macroF1Ci" : [ 0.5897, 1.0 ],
+          "macroPrecision" : 0.75,
+          "macroRecall" : 0.725,
+          "perLabel" : {
+            "taste" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "late_delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9,
+              "f1" : 0.9474,
+              "support" : 10
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 13,
+      "exactMatch" : 1.0,
+      "exactMatchCi" : [ 0.7719, 1.0 ],
+      "entityPrecision" : 1.0,
+      "entityRecall" : 1.0,
+      "entityF1" : 1.0,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0,
+      "fieldAccuracy" : {
+        "orderId" : 1.0,
+        "items" : 1.0,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "accuracyCi" : [ 0.6097, 1.0 ],
+      "n" : 6,
+      "falseAutoRefunds" : 0,
+      "accuracy" : 1.0
+    },
+    "abstention" : {
+      "ambiguousN" : 3,
+      "abstentionRate" : 0.3333,
+      "falsePositiveRate" : 0.6667,
+      "coverage" : 0.9231
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 20,
+      "p50" : 1026.96,
+      "p90" : 1335.2,
+      "p95" : 1367.08,
+      "p99" : null,
+      "mean" : 1079.66,
+      "min" : 855.67,
+      "max" : 1398.51,
+      "p50Ci" : [ 949.96, 1188.97 ]
+    },
+    "repeatLatency" : null,
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 0,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 7,
+        "p50" : 938.03,
+        "p90" : 1012.62,
+        "p95" : 1016.87,
+        "p99" : null,
+        "mean" : 941.61,
+        "min" : 855.67,
+        "max" : 1021.13,
+        "p50Ci" : [ 888.33, 1006.94 ]
+      },
+      "COMBINED" : {
+        "n" : 6,
+        "p50" : 1136.41,
+        "p90" : 1308.59,
+        "p95" : 1320.22,
+        "p99" : null,
+        "mean" : 1167.66,
+        "min" : 1032.8,
+        "max" : 1331.84,
+        "p50Ci" : [ 1057.99, 1308.59 ]
+      },
+      "EXTRACTION" : {
+        "n" : 7,
+        "p50" : 1152.84,
+        "p90" : 1378.66,
+        "p95" : 1388.58,
+        "p99" : null,
+        "mean" : 1142.29,
+        "min" : 911.61,
+        "max" : 1398.51,
+        "p50Ci" : [ 919.74, 1365.42 ]
+      }
+    },
+    "coldStart" : null,
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 5.126,
+      "rps" : 0.98,
+      "p50" : 1004.5,
+      "p95" : 1124.04,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 519.0,
+      "meanOutput" : 49.1,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 10,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 4,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 6,
+        "classificationAccuracy" : 0.8,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 3,
+        "classificationAccuracy" : 0.3333,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 4,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 4,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 3,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 3,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1152.84,
+      "meanInputTokens" : 546.3333333333334
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  }, {
+    "modelId" : "claude-haiku-5.5",
+    "displayName" : "Claude Haiku 5.5 (simple)",
+    "kind" : "model",
+    "runtime" : "Anthropic Messages API (commercial, hosted)",
+    "modelRef" : "claude-haiku-5-5",
+    "quantization" : null,
+    "family" : "general-purpose LLM (commercial API)",
+    "notes" : "effort=low, thinking=disabled, strict JSON-Schema structured output, max output tokens 4096, no retries, prompt qwen-system-v1.txt#3a3718d378673b40",
+    "health" : {
+      "detail" : "anthropic API reachable",
+      "state" : "UP"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 20,
+      "success" : 20,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 13,
+      "accuracy" : 0.8462,
+      "accuracyCi" : [ 0.5777, 0.9567 ],
+      "macroF1" : 0.875,
+      "macroF1Ci" : [ 0.619, 1.0 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.9039,
+      "meanFieldMacroF1" : 0.8104,
+      "allFieldsCorrect" : 0.7692,
+      "fields" : {
+        "intent" : {
+          "n" : 13,
+          "accuracy" : 0.8462,
+          "accuracyCi" : [ 0.5777, 0.9567 ],
+          "macroF1" : 0.875,
+          "macroF1Ci" : [ 0.619, 1.0 ],
+          "macroPrecision" : 0.875,
+          "macroRecall" : 0.875,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "order_status" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "feedback" : {
+              "precision" : 0.8333,
+              "recall" : 0.8333,
+              "f1" : 0.8333,
+              "support" : 6
+            },
+            "none" : {
+              "precision" : 0.6667,
+              "recall" : 0.6667,
+              "f1" : 0.6667,
+              "support" : 3
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 13,
+          "accuracy" : 1.0,
+          "accuracyCi" : [ 0.7719, 1.0 ],
+          "macroF1" : 1.0,
+          "macroF1Ci" : [ 1.0, 1.0 ],
+          "macroPrecision" : 1.0,
+          "macroRecall" : 1.0,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 6
+            },
+            "negative" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "neutral" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 4
+            }
+          }
+        },
+        "category" : {
+          "n" : 13,
+          "accuracy" : 0.8462,
+          "accuracyCi" : [ 0.5777, 0.9567 ],
+          "macroF1" : 0.6296,
+          "macroF1Ci" : [ 0.48, 1.0 ],
+          "macroPrecision" : 0.6667,
+          "macroRecall" : 0.6,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.8,
+              "f1" : 0.8889,
+              "support" : 10
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 13,
+          "accuracy" : 0.9231,
+          "accuracyCi" : [ 0.6669, 0.9863 ],
+          "macroF1" : 0.7369,
+          "macroF1Ci" : [ 0.5897, 1.0 ],
+          "macroPrecision" : 0.75,
+          "macroRecall" : 0.725,
+          "perLabel" : {
+            "taste" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "late_delivery" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.9,
+              "f1" : 0.9474,
+              "support" : 10
+            }
+          }
+        }
+      }
+    },
+    "extraction" : {
+      "n" : 13,
+      "exactMatch" : 1.0,
+      "exactMatchCi" : [ 0.7719, 1.0 ],
+      "entityPrecision" : 1.0,
+      "entityRecall" : 1.0,
+      "entityF1" : 1.0,
+      "hallucinationRate" : 0.0,
+      "hallucinatedValues" : 0,
+      "missingRate" : 0.0,
+      "fieldAccuracy" : {
+        "orderId" : 1.0,
+        "items" : 1.0,
+        "total" : 1.0,
+        "currency" : 1.0
+      },
+      "offsetAccuracy" : null,
+      "offsetN" : 0
+    },
+    "decision" : {
+      "accuracyCi" : [ 0.4365, 0.9699 ],
+      "n" : 6,
+      "falseAutoRefunds" : 0,
+      "accuracy" : 0.8333
+    },
+    "abstention" : {
+      "ambiguousN" : 3,
+      "abstentionRate" : 0.6667,
+      "falsePositiveRate" : 0.3333,
+      "coverage" : 0.7692
+    },
+    "calibration" : {
+      "available" : false,
+      "reason" : "provider returns no native label probabilities (none are invented)"
+    },
+    "latency" : {
+      "n" : 20,
+      "p50" : 1075.25,
+      "p90" : 1404.49,
+      "p95" : 1573.64,
+      "p99" : null,
+      "mean" : 1121.44,
+      "min" : 812.56,
+      "max" : 1579.88,
+      "p50Ci" : [ 1016.31, 1139.09 ]
+    },
+    "repeatLatency" : null,
+    "promptCache" : {
+      "qualityFullHits" : 0,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 0,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : null,
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 7,
+        "p50" : 984.89,
+        "p90" : 1083.69,
+        "p95" : 1101.45,
+        "p99" : null,
+        "mean" : 982.22,
+        "min" : 812.56,
+        "max" : 1119.21,
+        "p50Ci" : [ 939.25, 1060.0 ]
+      },
+      "COMBINED" : {
+        "n" : 6,
+        "p50" : 1181.82,
+        "p90" : 1419.22,
+        "p95" : 1496.27,
+        "p99" : null,
+        "mean" : 1225.7,
+        "min" : 1055.17,
+        "max" : 1573.31,
+        "p50Ci" : [ 1076.05, 1419.22 ]
+      },
+      "EXTRACTION" : {
+        "n" : 7,
+        "p50" : 1076.38,
+        "p90" : 1463.39,
+        "p95" : 1521.63,
+        "p99" : null,
+        "mean" : 1171.3,
+        "min" : 907.91,
+        "max" : 1579.88,
+        "p50Ci" : [ 1036.03, 1385.73 ]
+      }
+    },
+    "coldStart" : null,
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 4.252,
+      "rps" : 1.18,
+      "p50" : 873.13,
+      "p95" : 1001.2,
+      "errors" : 0,
+      "cacheFullHits" : 0
+    } ],
+    "tokens" : {
+      "meanInput" : 1148.15,
+      "meanOutput" : 66.4,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)",
+      "ollamaLoaded" : [ ],
+      "modelStorageBytes" : null,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 10,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 4,
+        "classificationAccuracy" : 0.3333,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 6,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "ambiguous" : {
+        "n" : 3,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "classification" : {
+        "n" : 4,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "combined" : {
+        "n" : 3,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "extraction" : {
+        "n" : 4,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "long" : {
+        "n" : 3,
+        "classificationAccuracy" : null,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      },
+      "multilingual" : {
+        "n" : 3,
+        "classificationAccuracy" : 0.6667,
+        "extractionExactMatch" : 1.0,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ {
+      "targetTokens" : 100,
+      "position" : "start",
+      "n" : 3,
+      "exactMatch" : 1.0,
+      "unsupported" : 0,
+      "failures" : 0,
+      "latencyP50" : 1139.09,
+      "meanInputTokens" : 1152.6666666666667
+    } ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  } ]
+}

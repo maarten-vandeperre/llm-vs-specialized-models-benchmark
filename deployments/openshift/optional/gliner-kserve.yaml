@@ -1,0 +1,37 @@
+# OPTIONAL: serve the same GLiNER container through OpenShift AI (KServe) as a CUSTOM ServingRuntime.
+# OpenShift AI's bundled runtimes (vLLM, OVMS, MLServer) do not serve GLiNER's span-extraction API, so a custom
+# runtime wrapping this project's FastAPI image is required. RawDeployment mode avoids Serverless/Knative.
+# This differs from gliner.yaml only in lifecycle management (KServe/OpenShift AI dashboard), not in the inference code.
+apiVersion: serving.kserve.io/v1alpha1
+kind: ServingRuntime
+metadata:
+  name: gliner2-fastapi
+  annotations:
+    openshift.io/display-name: GLiNER2 FastAPI (custom, CPU)
+spec:
+  supportedModelFormats:
+    - {name: gliner2, version: "2", autoSelect: true}
+  containers:
+    - name: kserve-container
+      image: image-registry.openshift-image-registry.svc:5000/REPLACE_NAMESPACE/beyond-llm-gliner:latest
+      env:
+        - {name: PORT, value: "8080"}
+        - {name: HF_HOME, value: /tmp/hf}
+      ports: [{containerPort: 8080, protocol: TCP}]
+      resources:
+        requests: {cpu: "1", memory: 2Gi}
+        limits: {cpu: "2", memory: 3Gi}
+---
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: gliner2-base
+  annotations:
+    serving.kserve.io/deploymentMode: RawDeployment
+spec:
+  predictor:
+    model:
+      modelFormat: {name: gliner2}
+      runtime: gliner2-fastapi
+      env:
+        - {name: GLINER_MODELS, value: fastino/gliner2.5-base-v1}

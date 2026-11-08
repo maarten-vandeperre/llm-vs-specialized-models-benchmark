@@ -1,0 +1,821 @@
+{
+  "hybrid-gliner-kev-qwen" : {
+    "health" : {
+      "modelId" : "hybrid-gliner-kev-qwen",
+      "state" : "UP",
+      "detail" : "all stages up",
+      "info" : {
+        "stages" : [ "gliner2.5-base", "kev-0.8b", "qwen3.5-4b" ]
+      }
+    },
+    "info" : {
+      "id" : "hybrid-gliner-kev-qwen",
+      "displayName" : "Hybrid GLiNER+Kev+LLM",
+      "kind" : "pipeline",
+      "runtime" : "pipeline",
+      "modelRef" : "gliner2.5-base (extract) → kev-0.8b (classify) → decision → qwen3.5-4b fallback",
+      "family" : "hybrid pipeline",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "OFFSETS", "PIPELINE" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16", "qwen3.5:4b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 1414.056666,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 30.004,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 26.036,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 22.93,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "kev:0.8b-mlx-bf16",
+      "sizeBytes" : 10156322192,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 10156322192
+    }, {
+      "name" : "qwen3.5:4b",
+      "sizeBytes" : 12573791760,
+      "contextLength" : 8192,
+      "sizeVramBytes" : 12573791760
+    } ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "gliner2.5-multi" : {
+    "health" : {
+      "modelId" : "gliner2.5-multi",
+      "state" : "UP",
+      "detail" : "loaded on cpu",
+      "info" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 31.053,
+        "storage_bytes" : 1165502487,
+        "versions" : {
+          "python" : "3.12.14",
+          "gliner2" : "2.1.0",
+          "torch" : "2.15.0",
+          "transformers" : "5.22.2"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gliner2.5-multi",
+      "displayName" : "GLiNER2.5 multi (287M)",
+      "kind" : "model",
+      "runtime" : "gliner2 python service (FastAPI)",
+      "modelRef" : "fastino/gliner2.5-multi-v1",
+      "family" : "schema-driven span extractor + classifier (encoder)",
+      "quantization" : null,
+      "processPattern" : "--port 8091",
+      "notes" : "service http://localhost:8091; threshold=0.5; label confidence is a model score, not a calibrated probability"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "ENTITY_CONFIDENCE", "OFFSETS", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 4096
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 233.139292,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.707,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.753,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 7.699,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : "--port 8091",
+      "samples" : 497,
+      "rssMeanMb" : 2042.4,
+      "rssPeakMb" : 4376.5,
+      "cpuMeanPct" : 325.0,
+      "cpuPeakPct" : 553.7,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1165502487
+  },
+  "nuextract3" : {
+    "health" : {
+      "modelId" : "nuextract3",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91",
+        "sizeBytes" : 3384386487,
+        "details" : {
+          "parent_model" : "hf.co/numind/NuExtract3-GGUF:Q4_K_M",
+          "format" : "gguf",
+          "family" : "qwen35",
+          "families" : [ "qwen35" ],
+          "parameter_size" : "4.2B",
+          "quantization_level" : "Q4_K_M",
+          "context_length" : 262144,
+          "embedding_length" : 2560,
+          "runner" : "ggml"
+        }
+      }
+    },
+    "info" : {
+      "id" : "nuextract3",
+      "displayName" : "NuExtract3 (Q4_K_M)",
+      "kind" : "model",
+      "runtime" : "ollama /api/chat (template role)",
+      "modelRef" : "numind/nuextract3:q4_k_m",
+      "family" : "generative extraction LLM",
+      "quantization" : "Q4_K_M",
+      "processPattern" : "ollama",
+      "notes" : "think=false, temperature=0, seed=42, num_ctx=16384, truncate=false"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 16384
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "numind/nuextract3:q4_k_m" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 6303.31275,
+      "loadMs" : 4846.644959,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 49.702,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 49.482,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 49.64,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "numind/nuextract3:q4_k_m",
+      "sizeBytes" : 3749424659,
+      "contextLength" : 16384,
+      "sizeVramBytes" : 3749424659
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 2765,
+      "rssMeanMb" : 8774.2,
+      "rssPeakMb" : 13020.8,
+      "cpuMeanPct" : 283.2,
+      "cpuPeakPct" : 465.2,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 3384386487
+  },
+  "gliner2.5-base" : {
+    "health" : {
+      "modelId" : "gliner2.5-base",
+      "state" : "UP",
+      "detail" : "loaded on cpu",
+      "info" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 5.359,
+        "storage_bytes" : 782713882,
+        "versions" : {
+          "python" : "3.12.14",
+          "gliner2" : "2.1.0",
+          "torch" : "2.15.0",
+          "transformers" : "5.22.2"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gliner2.5-base",
+      "displayName" : "GLiNER2.5 base (194M)",
+      "kind" : "model",
+      "runtime" : "gliner2 python service (FastAPI)",
+      "modelRef" : "fastino/gliner2.5-base-v1",
+      "family" : "schema-driven span extractor + classifier (encoder)",
+      "quantization" : null,
+      "processPattern" : "--port 8090",
+      "notes" : "service http://localhost:8090; threshold=0.5; label confidence is a model score, not a calibrated probability"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "ENTITY_CONFIDENCE", "OFFSETS", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 4096
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 199.413083,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 6.465,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 6.401,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.336,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : "--port 8090",
+      "samples" : 492,
+      "rssMeanMb" : 5097.4,
+      "rssPeakMb" : 10627.3,
+      "cpuMeanPct" : 392.2,
+      "cpuPeakPct" : 684.2,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 782713882
+  },
+  "hybrid-gliner-qwen" : {
+    "health" : {
+      "modelId" : "hybrid-gliner-qwen",
+      "state" : "UP",
+      "detail" : "all stages up",
+      "info" : {
+        "stages" : [ "gliner2.5-base", "qwen3.5-4b" ]
+      }
+    },
+    "info" : {
+      "id" : "hybrid-gliner-qwen",
+      "displayName" : "Hybrid GLiNER+LLM",
+      "kind" : "pipeline",
+      "runtime" : "pipeline",
+      "modelRef" : "gliner2.5-base (combined) → decision → qwen3.5-4b fallback",
+      "family" : "hybrid pipeline",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "OFFSETS", "PIPELINE" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "qwen3.5:4b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 2410.272584,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 29.328,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 21.318,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 21.607,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "qwen3.5:4b",
+      "sizeBytes" : 12585129488,
+      "contextLength" : 16384,
+      "sizeVramBytes" : 12585129488
+    } ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "kev-0.8b-candsel" : {
+    "health" : {
+      "modelId" : "kev-0.8b-candsel",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "sizeBytes" : 1519780825,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "BF16",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "kev-0.8b-candsel",
+      "displayName" : "Kev 0.8b (candidate selection)",
+      "kind" : "model",
+      "runtime" : "ollama /v1/systemone",
+      "modelRef" : "kev:0.8b-mlx-bf16",
+      "family" : "decision model (typed choice questions)",
+      "quantization" : "BF16",
+      "processPattern" : "ollama",
+      "notes" : "Regex candidate stage + Kev selection. Kev never generates strings; it only selects candidates or closed-set quantities."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "CANDIDATE_SELECTION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE", "COMBINED_SINGLE_CALL", "PIPELINE" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 73728
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 702.975041,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.01,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.184,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.792,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "kev:0.8b-mlx-bf16",
+      "sizeBytes" : 10217069424,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 10217069424
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 727,
+      "rssMeanMb" : 1407.0,
+      "rssPeakMb" : 1418.0,
+      "cpuMeanPct" : 46.9,
+      "cpuPeakPct" : 106.1,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1519780825
+  },
+  "gliner2.5-decide" : {
+    "health" : {
+      "modelId" : "gliner2.5-decide",
+      "state" : "UP",
+      "detail" : "loaded on cpu",
+      "info" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "span",
+        "max_tokens" : 512,
+        "load_seconds" : 43.169,
+        "storage_bytes" : 1954170394,
+        "versions" : {
+          "python" : "3.12.14",
+          "gliner2" : "2.1.0",
+          "torch" : "2.15.0",
+          "transformers" : "5.22.2"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gliner2.5-decide",
+      "displayName" : "GLiNER2.5-Decide (340M)",
+      "kind" : "model",
+      "runtime" : "gliner2 python service (FastAPI)",
+      "modelRef" : "fastino/GLiNER2.5-Decide",
+      "family" : "encoder decision/classification model",
+      "quantization" : null,
+      "processPattern" : "--port 8092",
+      "notes" : "service http://localhost:8092; threshold=0.5; label confidence is a model score, not a calibrated probability"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "LABEL_CONFIDENCE" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 4096
+    },
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 501.551875,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 18.511,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 18.368,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 18.433,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : "--port 8092",
+      "samples" : 656,
+      "rssMeanMb" : 1758.2,
+      "rssPeakMb" : 1773.6,
+      "cpuMeanPct" : 256.6,
+      "cpuPeakPct" : 272.9,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1954170394
+  },
+  "hybrid-gliner-kev" : {
+    "health" : {
+      "modelId" : "hybrid-gliner-kev",
+      "state" : "UP",
+      "detail" : "all stages up",
+      "info" : {
+        "stages" : [ "gliner2.5-base", "kev-0.8b" ]
+      }
+    },
+    "info" : {
+      "id" : "hybrid-gliner-kev",
+      "displayName" : "Hybrid GLiNER+Kev",
+      "kind" : "pipeline",
+      "runtime" : "pipeline",
+      "modelRef" : "gliner2.5-base (extract) → kev-0.8b (classify) → decision",
+      "family" : "hybrid pipeline",
+      "quantization" : null,
+      "processPattern" : null,
+      "notes" : "Routing threshold source: /Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "OFFSETS", "PIPELINE" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : null
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 704.019666,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.127,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.182,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.816,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "kev:0.8b-mlx-bf16",
+      "sizeBytes" : 10156826704,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 10156826704
+    } ],
+    "resources" : {
+      "processPattern" : null,
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "not sampled (pipeline or remote endpoint; see stage models)"
+    },
+    "modelStorageBytes" : null
+  },
+  "kev-0.8b" : {
+    "health" : {
+      "modelId" : "kev-0.8b",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "sizeBytes" : 1519780825,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "BF16",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "kev-0.8b",
+      "displayName" : "Kev 0.8b",
+      "kind" : "model",
+      "runtime" : "ollama /v1/systemone",
+      "modelRef" : "kev:0.8b-mlx-bf16",
+      "family" : "decision model (typed choice questions)",
+      "quantization" : "BF16",
+      "processPattern" : "ollama",
+      "notes" : "Native probability distributions. 'confidence' = 1 - H(p)/ln N (concentration, not calibrated correctness)."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 73728
+    },
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 722.264417,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.121,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.201,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.837,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "kev:0.8b-mlx-bf16",
+      "sizeBytes" : 10156636208,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 10156636208
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 213,
+      "rssMeanMb" : 1419.3,
+      "rssPeakMb" : 1657.5,
+      "cpuMeanPct" : 61.6,
+      "cpuPeakPct" : 125.0,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1519780825
+  },
+  "gliner2.5-small" : {
+    "health" : {
+      "modelId" : "gliner2.5-small",
+      "state" : "UP",
+      "detail" : "loaded on cpu",
+      "info" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 12.277,
+        "storage_bytes" : 303915018,
+        "versions" : {
+          "python" : "3.12.14",
+          "gliner2" : "2.1.0",
+          "torch" : "2.15.0",
+          "transformers" : "5.22.2"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gliner2.5-small",
+      "displayName" : "GLiNER2.5 small (74M)",
+      "kind" : "model",
+      "runtime" : "gliner2 python service (FastAPI)",
+      "modelRef" : "fastino/gliner2.5-small-v1",
+      "family" : "schema-driven span extractor + classifier (encoder)",
+      "quantization" : null,
+      "processPattern" : "--port 8093",
+      "notes" : "service http://localhost:8093; threshold=0.5; label confidence is a model score, not a calibrated probability"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "LABEL_CONFIDENCE", "ENTITY_CONFIDENCE", "OFFSETS", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 4096
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 123.37525,
+      "loadMs" : null,
+      "outcome" : "SUCCESS",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 3.394,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 3.356,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 3.352,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : "--port 8093",
+      "samples" : 261,
+      "rssMeanMb" : 3590.3,
+      "rssPeakMb" : 7958.7,
+      "cpuMeanPct" : 381.1,
+      "cpuPeakPct" : 672.4,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 303915018
+  },
+  "qwen3.5-4b" : {
+    "health" : {
+      "modelId" : "qwen3.5-4b",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+        "sizeBytes" : 3973305013,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "nvfp4",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "qwen3.5-4b",
+      "displayName" : "Qwen3.5 4B",
+      "kind" : "model",
+      "runtime" : "ollama /api/chat via LangChain4j ChatModel",
+      "modelRef" : "qwen3.5:4b",
+      "family" : "general-purpose LLM",
+      "quantization" : "Q4_K_M",
+      "processPattern" : "ollama",
+      "notes" : "think=false, temperature=0, seed=42, num_ctx=16384, JSON-Schema constrained output, prompt qwen-system-v1.txt#3a3718d378673b40"
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "ARBITRARY_TEXT_EXTRACTION", "STRUCTURED_EXTRACTION", "MULTILINGUAL", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION", "EXTRACTION", "COMBINED" ],
+      "maxInputTokens" : 16384
+    },
+    "compatibleRecords" : 693,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "qwen3.5:4b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 1741.999833,
+      "loadMs" : 710.50225,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 26.229,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 26.177,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 25.949,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "qwen3.5:4b",
+      "sizeBytes" : 12719789584,
+      "contextLength" : 16384,
+      "sizeVramBytes" : 12719789584
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 2313,
+      "rssMeanMb" : 3612.9,
+      "rssPeakMb" : 3619.4,
+      "cpuMeanPct" : 51.6,
+      "cpuPeakPct" : 172.8,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 3973305013
+  }
+}

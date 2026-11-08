@@ -1,0 +1,5 @@
+# Versions verified on 2026-11-07 (pip resolution on Python 3.12, macOS arm64)
+gliner2[local]==2.1.0
+fastapi==0.162.2
+uvicorn[standard]==0.54.0
+psutil==7.2.2

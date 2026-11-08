@@ -1,0 +1,26 @@
+# Quarkus backend on Java 25 / UBI 10. Multi-stage: builds with Maven inside the builder image.
+#   podman build -f backend/Containerfile -t beyond-llm-backend .      (context = repository root)
+FROM registry.access.redhat.com/ubi10/openjdk-25:latest AS build
+USER root
+WORKDIR /build
+COPY backend/pom.xml backend/pom.xml
+COPY backend/src backend/src
+RUN cd backend && mvn -B -q package -DskipTests
+
+FROM registry.access.redhat.com/ubi10/openjdk-25-runtime:latest
+ENV LANGUAGE='en_US:en' \
+    JAVA_APP_JAR=/deployments/quarkus-run.jar \
+    JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0" \
+    BENCH_DATASETS_DIR=/deployments/datasets \
+    BENCH_RESULTS_DIR=/deployments/results
+COPY --chown=185:0 --from=build /build/backend/target/quarkus-app/lib/ /deployments/lib/
+COPY --chown=185:0 --from=build /build/backend/target/quarkus-app/*.jar /deployments/
+COPY --chown=185:0 --from=build /build/backend/target/quarkus-app/app/ /deployments/app/
+COPY --chown=185:0 --from=build /build/backend/target/quarkus-app/quarkus/ /deployments/quarkus/
+COPY --chown=185:0 datasets/ /deployments/datasets/
+# arbitrary OpenShift UIDs run with GID 0 → make writable dirs group-writable
+USER root
+RUN mkdir -p /deployments/results && chgrp -R 0 /deployments && chmod -R g=u /deployments
+USER 185
+EXPOSE 8080
+ENTRYPOINT ["/opt/jboss/container/java/run/run-java.sh"]

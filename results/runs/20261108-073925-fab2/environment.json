@@ -1,0 +1,149 @@
+{
+  "timestamp" : "2026-11-08T07:39:25.031788Z",
+  "os.name" : "Mac OS X",
+  "os.version" : "26.6.2",
+  "os.arch" : "aarch64",
+  "cpu.count" : 10,
+  "macos.productVersion" : "26.6.2",
+  "cpu.brand" : "Apple M1 Max",
+  "memory.bytes" : 68719476736,
+  "cpu.performanceCores" : "8",
+  "cpu.efficiencyCores" : "2",
+  "loadavg" : "{ 3.85 4.51 3.76 }",
+  "appleSilicon" : true,
+  "mlxSupported" : "yes (Apple Silicon; Ollama MLX runner)",
+  "gpu" : "Apple integrated GPU (unified memory); utilization not measured (requires root powermetrics)",
+  "disk.freeBytes" : 7845695488,
+  "java.version" : "25.0.2",
+  "java.vendor" : "Oracle Corporation",
+  "java.vm" : "OpenJDK 64-Bit Server VM",
+  "quarkus.version" : "3.40.1.1",
+  "quarkus.launchMode" : "NORMAL",
+  "ollama.baseUrl" : "http://localhost:11434",
+  "ollama.version" : "0.40.15",
+  "ollama.numParallel" : "not set (server default)",
+  "ollama.models" : {
+    "numind/nuextract3:q4_k_m" : {
+      "parameterSize" : "4.2B",
+      "sizeBytes" : 3384386487,
+      "quantization" : "Q4_K_M",
+      "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91"
+    },
+    "qwen3.5:4b" : {
+      "parameterSize" : "",
+      "sizeBytes" : 3973305013,
+      "quantization" : "nvfp4",
+      "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13"
+    },
+    "kev:0.8b-mlx-bf16" : {
+      "parameterSize" : "",
+      "sizeBytes" : 1519780825,
+      "quantization" : "BF16",
+      "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493"
+    },
+    "gemma4:latest" : {
+      "parameterSize" : "8.0B",
+      "sizeBytes" : 9608350718,
+      "quantization" : "Q4_K_M",
+      "digest" : "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+    },
+    "gemma3:4b" : {
+      "parameterSize" : "4.3B",
+      "sizeBytes" : 3338801804,
+      "quantization" : "Q4_K_M",
+      "digest" : "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a"
+    },
+    "gemma4:26b" : {
+      "parameterSize" : "25.8B",
+      "sizeBytes" : 17987581215,
+      "quantization" : "Q4_K_M",
+      "digest" : "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251"
+    },
+    "gemma3:12b" : {
+      "parameterSize" : "12.2B",
+      "sizeBytes" : 8149190253,
+      "quantization" : "Q4_K_M",
+      "digest" : "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a"
+    },
+    "gemma4-agent:latest" : {
+      "parameterSize" : "8.0B",
+      "sizeBytes" : 9608350734,
+      "quantization" : "Q4_K_M",
+      "digest" : "89b70054091cc77c7034f19d433cc5a08258dab2846f1af22c32c075ad7870a8"
+    },
+    "qwen2.5-coder:14b-instruct" : {
+      "parameterSize" : "14.8B",
+      "sizeBytes" : 8988124298,
+      "quantization" : "Q4_K_M",
+      "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849"
+    },
+    "granite-code:8b-instruct" : {
+      "parameterSize" : "8.1B",
+      "sizeBytes" : 4590918937,
+      "quantization" : "Q4_0",
+      "digest" : "36c3c3b9683b411ee20ba5c6c6858df83a1d7bf3b65f9fd76a073791e98a18dd"
+    },
+    "calendar-assistant-coder:latest" : {
+      "parameterSize" : "14.8B",
+      "sizeBytes" : 8988125936,
+      "quantization" : "Q4_K_M",
+      "digest" : "b6a7cfb25427efea055a9133932b55e32255b8e4b25eb0fad712f28f47e3eb37"
+    },
+    "qwen2.5-coder:14b" : {
+      "parameterSize" : "14.8B",
+      "sizeBytes" : 8988124298,
+      "quantization" : "Q4_K_M",
+      "digest" : "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849"
+    },
+    "qwen2.5-coder:7b" : {
+      "parameterSize" : "7.6B",
+      "sizeBytes" : 4683087561,
+      "quantization" : "Q4_K_M",
+      "digest" : "dae161e27b0e90dd1856c8bb3209201fd6736d8eb66298e75ed87571486f4364"
+    },
+    "llama3:70b" : {
+      "parameterSize" : "70.6B",
+      "sizeBytes" : 39969745349,
+      "quantization" : "Q4_0",
+      "digest" : "786f3184aec0e907952488b865362bdaa38180739a9881a8190d85bad8cab893"
+    },
+    "mistral:latest" : {
+      "parameterSize" : "7B",
+      "sizeBytes" : 4109865159,
+      "quantization" : "Q4_0",
+      "digest" : "61e88e884507ba5e06c49b40e6226884b2a16e872382c2b44a42f2d119d804a5"
+    },
+    "llama2:latest" : {
+      "parameterSize" : "7B",
+      "sizeBytes" : 3826793677,
+      "quantization" : "Q4_0",
+      "digest" : "78e26419b4469263f75331927a00a0284ef6544c1975b826b15abdaef17bb962"
+    }
+  },
+  "gliner.baseUrl" : "http://localhost:8090",
+  "gliner.versions" : {
+    "python" : "3.12.14",
+    "gliner2" : "2.1.0",
+    "torch" : "2.15.0",
+    "transformers" : "5.22.2"
+  },
+  "gliner.models" : {
+    "fastino/gliner2.5-base-v1" : {
+      "loaded" : true,
+      "device" : "cpu",
+      "architecture" : "boundary",
+      "max_tokens" : 4096,
+      "load_seconds" : 5.359,
+      "storage_bytes" : 782713882
+    }
+  },
+  "synthetic" : true,
+  "modelOrder" : [ "claude-haiku-5.5", "claude-opus-5.5" ],
+  "records.selected" : 693,
+  "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+  "hybridThresholds" : {
+    "kev" : 0.5862,
+    "gliner" : 0.9649,
+    "source" : "/Users/maartenvandeperre/workspace/redhat/temp-workshop/benchmark-platform/results/calibration/thresholds.json (calibration split)"
+  }
+}

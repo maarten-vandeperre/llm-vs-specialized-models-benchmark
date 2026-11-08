@@ -1,0 +1,14 @@
+# Default Sandbox deployment: GLiNER (CPU) + Quarkus backend + React dashboard.
+# Large Ollama models are intentionally NOT deployed (see optional/ and docs/openshift-sandbox.md).
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+labels:
+  - pairs:
+      app.kubernetes.io/part-of: beyond-llm-benchmark
+    includeSelectors: false
+resources:
+  - buildconfigs.yaml
+  - configmap.yaml
+  - gliner.yaml
+  - backend.yaml
+  - frontend.yaml

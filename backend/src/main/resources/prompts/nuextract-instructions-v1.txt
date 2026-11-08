@@ -1,0 +1,9 @@
+The document is a customer message sent to a fictional coffee shop. It may be written in English, Dutch or French.
+intent: what the customer asks the shop to do. If a later request contradicts an earlier one, use the final request. Use "none" when no intent is clear.
+sentiment: use "neutral" for mixed or uncertain feelings.
+category: product_quality (taste or temperature), delivery (wrong, missing or late items), billing (charges), service (staff behaviour), general (anything else).
+complaint: the problem the customer complains about, or "none".
+order_id: copy the order identifier exactly as written, without a leading '#'. Use null if there is none.
+items: only the products that are part of the customer's order, with the ordered quantity. Do not include products that were only mentioned as received by mistake.
+total_amount: the total amount of the order as a number, or null if not mentioned.
+currency: the currency of the total, or null if not mentioned.

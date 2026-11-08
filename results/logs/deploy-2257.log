@@ -1,0 +1,469 @@
+imagestream.image.openshift.io/beyond-llm-backend configured
+imagestream.image.openshift.io/beyond-llm-gliner configured
+imagestream.image.openshift.io/beyond-llm-frontend configured
+buildconfig.build.openshift.io/beyond-llm-backend configured
+buildconfig.build.openshift.io/beyond-llm-gliner configured
+buildconfig.build.openshift.io/beyond-llm-frontend configured
+== build backend (prebuilt quarkus-app)
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module (file:/Users/maartenvandeperre/.sdkman/candidates/maven/current/lib/jansi-2.4.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/Users/maartenvandeperre/.sdkman/candidates/maven/current/lib/guava-32.0.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Uploading directory "/var/folders/04/4vy1gqdj593b2_dprpv22m7c0000gn/T/tmp.PiLoz0ZTHA/backend" as binary input for the build ...
+...
+Uploading finished
+build.build.openshift.io/beyond-llm-backend-2 started
+Receiving source from STDIN as archive ...
+time="2026-11-07T21:57:49Z" level=info msg="Not using native diff for overlay, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled"
+I1107 21:57:49.625809       1 defaults.go:112] Defaulting to storage driver "overlay" with options [mountopt=metacopy=on].
+Caching blobs under "/var/cache/blobs".
+
+Pulling image registry.access.redhat.com/ubi10/openjdk-25-runtime:latest ...
+Trying to pull registry.access.redhat.com/ubi10/openjdk-25-runtime:latest...
+Getting image source signatures
+Copying blob sha256:980722c432c130d8ce3d384d403de308a4a4f67d73561e751443718bd4c2b67f
+Copying blob sha256:41b5e888b5cdf3bececf953aef8cd8fe7aa0906db6e2fc8c7d43e8c2df221312
+Copying config sha256:6c1118f4e5ed08e89ed4320c9394e5cc84e45cecbba9f32bbb68e12126dfb6ef
+Writing manifest to image destination
+Adding transient rw bind mount for /run/secrets/rhsm
+STEP 1/14: FROM registry.access.redhat.com/ubi10/openjdk-25-runtime:latest
+STEP 2/14: ENV LANGUAGE='en_US:en'     JAVA_APP_JAR=/deployments/quarkus-run.jar     JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0"     BENCH_DATASETS_DIR=/deployments/datasets     BENCH_RESULTS_DIR=/deployments/results
+--> 812f736b4b30
+STEP 3/14: COPY --chown=185:0 quarkus-app/lib/ /deployments/lib/
+--> 2b87e87824fd
+STEP 4/14: COPY --chown=185:0 quarkus-app/*.jar /deployments/
+--> 3c6c3188f2e3
+STEP 5/14: COPY --chown=185:0 quarkus-app/app/ /deployments/app/
+--> 962b5fbc2483
+STEP 6/14: COPY --chown=185:0 quarkus-app/quarkus/ /deployments/quarkus/
+--> 42a6bc86a97b
+STEP 7/14: COPY --chown=185:0 datasets/ /deployments/datasets/
+--> dbd280fe8d6a
+STEP 8/14: USER root
+--> 76f9f9a4a574
+STEP 9/14: RUN mkdir -p /deployments/results && chgrp -R 0 /deployments && chmod -R g=u /deployments
+--> 37082faaada4
+STEP 10/14: USER 185
+--> 0d64fec4ea87
+STEP 11/14: EXPOSE 8080
+--> 31c2aa9ef074
+STEP 12/14: ENTRYPOINT ["/opt/jboss/container/java/run/run-java.sh"]
+--> a646f26da3d1
+STEP 13/14: ENV "OPENSHIFT_BUILD_NAME"="beyond-llm-backend-2" "OPENSHIFT_BUILD_NAMESPACE"="rh-ee-mvandepe-dev"
+--> 3d6d9f7cfc3f
+STEP 14/14: LABEL "io.openshift.build.name"="beyond-llm-backend-2" "io.openshift.build.namespace"="rh-ee-mvandepe-dev"
+COMMIT temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-backend-2:266ed33b
+--> c13a29899518
+Successfully tagged temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-backend-2:266ed33b
+c13a298995182958ab18caae288d3367b517a7e97f63d2bc18e9621528f8dddf
+
+Pushing image image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-backend:latest ...
+Getting image source signatures
+Copying blob sha256:fa55b9c77f72602c6349ce7a2b38edbeb00ec65743f72dadfc52720f457b2995
+Copying blob sha256:2ee00c35c490afaaa06e3993393cafc3ceeadd81dfca016187c071e882336958
+Copying blob sha256:41b5e888b5cdf3bececf953aef8cd8fe7aa0906db6e2fc8c7d43e8c2df221312
+Copying blob sha256:980722c432c130d8ce3d384d403de308a4a4f67d73561e751443718bd4c2b67f
+Copying blob sha256:4518afccee78df7296cab83abdcf3e96f75cc459313764593c868007c8f214ff
+Copying blob sha256:9b3c2239056576a2cb15f4b8d4d96754ae1743b980dfb35a4de415dfc6f06ef2
+Copying blob sha256:3b084923254e258e1ca64033ae4ec6e407fd7715b3a19cae25869debb011999e
+Copying blob sha256:1d831f9ab9c051537332f2b421559b9574e3205af9d54751d2f2abc4a64e85c9
+Copying config sha256:c13a298995182958ab18caae288d3367b517a7e97f63d2bc18e9621528f8dddf
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-backend@sha256:6eaf96a5b9597e0fb621c71c0875b8b8781564b43ff6b582fc72c675d58be362
+Push successful
+== build gliner
+Uploading directory "/var/folders/04/4vy1gqdj593b2_dprpv22m7c0000gn/T/tmp.PiLoz0ZTHA/gliner" as binary input for the build ...
+
+Uploading finished
+build.build.openshift.io/beyond-llm-gliner-2 started
+Receiving source from STDIN as archive ...
+time="2026-11-07T21:58:15Z" level=info msg="Not using native diff for overlay, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled"
+I1107 21:58:15.858591       1 defaults.go:112] Defaulting to storage driver "overlay" with options [mountopt=metacopy=on].
+Caching blobs under "/var/cache/blobs".
+
+Pulling image registry.access.redhat.com/ubi10/python-312-minimal:latest ...
+Trying to pull registry.access.redhat.com/ubi10/python-312-minimal:latest...
+Getting image source signatures
+Copying blob sha256:bab1a1de053f1f744dc3f7af0e5a217507f75ae36f3a837abadf2ff68f0d147f
+Copying blob sha256:41b5e888b5cdf3bececf953aef8cd8fe7aa0906db6e2fc8c7d43e8c2df221312
+Copying config sha256:5cb65b501013d471480e11fc10d9b2818b9840142fd0df1b72f9da024b5a8ece
+Writing manifest to image destination
+Adding transient rw bind mount for /run/secrets/rhsm
+STEP 1/15: FROM registry.access.redhat.com/ubi10/python-312-minimal:latest
+STEP 2/15: ARG PRELOAD_MODELS=""
+--> f83c72844d8b
+STEP 3/15: ENV HF_HOME=/models     GLINER_MODELS=fastino/gliner2.5-base-v1     GLINER_DEVICE=cpu     PORT=8090     PYTHONUNBUFFERED=1     PIP_NO_CACHE_DIR=1
+--> 228e5067642d
+STEP 4/15: WORKDIR /opt/app-root/src
+--> 56722cdc62de
+STEP 5/15: COPY requirements.txt .
+--> 5e5d9a5d1503
+STEP 6/15: RUN pip install --index-url https://download.pytorch.org/whl/cpu torch==2.15.0 &&     pip install -r requirements.txt
+Looking in indexes: https://download.pytorch.org/whl/cpu
+Collecting torch==2.15.0
+  Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.15.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (35 kB)
+Collecting filelock (from torch==2.15.0)
+  Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.13.0 (from torch==2.15.0)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting setuptools>=77.0.3 (from torch==2.15.0)
+  Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting sympy>=1.13.3 (from torch==2.15.0)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx>=2.5.1 (from torch==2.15.0)
+  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting jinja2 (from torch==2.15.0)
+  Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch==2.15.0)
+  Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.15.0)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.15.0)
+  Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading https://download-r2.pytorch.org/whl/cpu/torch-2.15.0%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl (209.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 209.5/209.5 MB 369.0 MB/s eta 0:00:00
+Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 97.8 MB/s eta 0:00:00
+Downloading https://download.pytorch.org/whl/setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 312.7 MB/s eta 0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 192.2 MB/s eta 0:00:00
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+Downloading https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading https://download.pytorch.org/whl/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 462.4 MB/s eta 0:00:00
+Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 setuptools-78.1.0 sympy-1.14.0 torch-2.15.0+cpu typing-extensions-4.16.0
+Collecting gliner2==2.1.0 (from gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading gliner2-2.1.0-py3-none-any.whl.metadata (57 kB)
+Collecting fastapi==0.162.2 (from -r requirements.txt (line 3))
+  Downloading fastapi-0.162.2-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.54.0 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading uvicorn-0.54.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting psutil==7.2.2 (from -r requirements.txt (line 5))
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting pydantic<3,>=2.0 (from gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+Collecting requests<3,>=2.28 (from gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Collecting tqdm<5,>=4.64 (from gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Collecting urllib3<3,>=1.26 (from gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting starlette>=0.46.0 (from fastapi==0.162.2->-r requirements.txt (line 3))
+  Downloading starlette-1.10.0-py3-none-any.whl.metadata (6.6 kB)
+Requirement already satisfied: typing-extensions>=4.8.0 in /opt/app-root/lib64/python3.12/site-packages (from fastapi==0.162.2->-r requirements.txt (line 3)) (4.16.0)
+Collecting typing-inspection>=0.4.2 (from fastapi==0.162.2->-r requirements.txt (line 3))
+  Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi==0.162.2->-r requirements.txt (line 3))
+  Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+Collecting opentelemetry-api>=1.44.0 (from fastapi==0.162.2->-r requirements.txt (line 3))
+  Downloading opentelemetry_api-1.45.2-py3-none-any.whl.metadata (1.4 kB)
+Collecting click>=7.0 (from uvicorn==0.54.0->uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.54.0->uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting numpy<3,>=1.24 (from gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting peft<1,>=0.10 (from gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading peft-0.21.2-py3-none-any.whl.metadata (15 kB)
+Collecting safetensors<1,>=0.4 (from gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.2 kB)
+Requirement already satisfied: torch<3,>=2.1 in /opt/app-root/lib64/python3.12/site-packages (from gliner2[local]==2.1.0->-r requirements.txt (line 2)) (2.15.0+cpu)
+Collecting transformers<6,>=4.43 (from gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading transformers-5.22.2-py3-none-any.whl.metadata (31 kB)
+Collecting httptools>=0.8.0 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (3.5 kB)
+Collecting python-dotenv>=0.13 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting websockets>=13.0 (from uvicorn[standard]==0.54.0->-r requirements.txt (line 4))
+  Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting packaging>=20.0 (from peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting accelerate>=0.21.0 (from peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading accelerate-1.15.0-py3-none-any.whl.metadata (19 kB)
+Collecting huggingface_hub>=0.25.0 (from peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading huggingface_hub-2.4.0-py3-none-any.whl.metadata (16 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3,>=2.0->gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.50.4 (from pydantic<3,>=2.0->gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+Collecting charset_normalizer<4,>=2 (from requests<3,>=2.28->gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+Collecting idna<4,>=2.5 (from requests<3,>=2.28->gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting certifi>=2023.5.7 (from requests<3,>=2.28->gliner2==2.1.0->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+Collecting anyio<5,>=4.0.0 (from starlette>=0.46.0->fastapi==0.162.2->-r requirements.txt (line 3))
+  Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+Requirement already satisfied: filelock in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (4.2.4)
+Requirement already satisfied: setuptools>=77.0.3 in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (78.1.0)
+Requirement already satisfied: sympy>=1.13.3 in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (3.7)
+Requirement already satisfied: jinja2 in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in /opt/app-root/lib64/python3.12/site-packages (from torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (2026.9.0)
+Collecting regex>=2025.10.22 (from transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading regex-2026.11.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting tokenizers<0.24.0,>=0.23.1 (from transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.8 kB)
+Collecting typer (from transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading typer-0.28.0-py3-none-any.whl.metadata (16 kB)
+Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface_hub>=0.25.0->peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.9 kB)
+Collecting httpx2<3,>=2.0.0 (from huggingface_hub>=0.25.0->peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/app-root/lib64/python3.12/site-packages (from sympy>=1.13.3->torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /opt/app-root/lib64/python3.12/site-packages (from jinja2->torch<3,>=2.1->gliner2[local]==2.1.0->-r requirements.txt (line 2)) (3.0.3)
+Collecting shellingham>=1.3.0 (from typer->transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting rich>=13.8.0 (from typer->transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting httpcore2==2.16.0 (from httpx2<3,>=2.0.0->huggingface_hub>=0.25.0->peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface_hub>=0.25.0->peft<1,>=0.10->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.8.0->typer->transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.8.0->typer->transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.8.0->typer->transformers<6,>=4.43->gliner2[local]==2.1.0->-r requirements.txt (line 2))
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading gliner2-2.1.0-py3-none-any.whl (355 kB)
+Downloading fastapi-0.162.2-py3-none-any.whl (151 kB)
+Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Downloading click-8.5.1-py3-none-any.whl (126 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (552 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 552.8/552.8 kB 45.4 MB/s eta 0:00:00
+Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 278.4 MB/s eta 0:00:00
+Downloading opentelemetry_api-1.45.2-py3-none-any.whl (60 kB)
+Downloading peft-0.21.2-py3-none-any.whl (835 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 835.4/835.4 kB 78.7 MB/s eta 0:00:00
+Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 500.3 MB/s eta 0:00:00
+Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 328.5 MB/s eta 0:00:00
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Downloading starlette-1.10.0-py3-none-any.whl (80 kB)
+Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Downloading transformers-5.22.2-py3-none-any.whl (13.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 208.2 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Downloading uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (4.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 321.3 MB/s eta 0:00:00
+Downloading watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (458 kB)
+Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+Downloading accelerate-1.15.0-py3-none-any.whl (394 kB)
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+Downloading huggingface_hub-2.4.0-py3-none-any.whl (857 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 857.0/857.0 kB 584.4 MB/s eta 0:00:00
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading regex-2026.11.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (808 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 808.4/808.4 kB 137.9 MB/s eta 0:00:00
+Downloading tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 218.9 MB/s eta 0:00:00
+Downloading typer-0.28.0-py3-none-any.whl (123 kB)
+Downloading hf_xet-1.8.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 219.9 MB/s eta 0:00:00
+Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 33.2 MB/s eta 0:00:00
+Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Installing collected packages: websockets, uvloop, urllib3, typing-inspection, truststore, tqdm, shellingham, safetensors, regex, pyyaml, python-dotenv, pygments, pydantic-core, psutil, packaging, opentelemetry-api, numpy, mdurl, idna, httptools, hf-xet, h11, click, charset_normalizer, certifi, annotated-types, annotated-doc, uvicorn, requests, pydantic, markdown-it-py, httpcore2, anyio, watchfiles, starlette, rich, httpx2, gliner2, typer, huggingface_hub, fastapi, tokenizers, accelerate, transformers, peft
+Successfully installed accelerate-1.15.0 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.16.0 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 fastapi-0.162.2 gliner2-2.1.0 h11-0.16.0 hf-xet-1.8.0 httpcore2-2.16.0 httptools-0.9.0 httpx2-2.16.0 huggingface_hub-2.4.0 idna-3.20 markdown-it-py-4.2.0 mdurl-0.1.2 numpy-2.5.4 opentelemetry-api-1.45.2 packaging-26.3 peft-0.21.2 psutil-7.2.2 pydantic-2.14.3 pydantic-core-2.50.4 pygments-2.21.0 python-dotenv-1.2.4 pyyaml-6.0.3 regex-2026.11.7 requests-2.34.2 rich-15.0.0 safetensors-0.8.0 shellingham-1.5.4 starlette-1.10.0 tokenizers-0.23.3 tqdm-4.70.1 transformers-5.22.2 truststore-0.10.5 typer-0.28.0 typing-inspection-0.4.5 urllib3-2.8.0 uvicorn-0.54.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.4
+
+[notice] A new release of pip is available: 24.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip
+--> d3fda75ff7c7
+STEP 7/15: COPY app.py .
+--> 2a114829ce47
+STEP 8/15: USER 0
+--> 6dee72ec552d
+STEP 9/15: RUN mkdir -p /models && chgrp -R 0 /models /opt/app-root && chmod -R g=u /models /opt/app-root
+--> 60a9ceed3122
+STEP 10/15: USER 1001
+--> 36c6485766e9
+STEP 11/15: RUN if [ -n "$PRELOAD_MODELS" ]; then python -c "import os;from gliner2 import AutoExtractor;[AutoExtractor.from_pretrained(m) for m in os.environ['PRELOAD_MODELS'].split(',')]"; fi
+--> a6f688efd4a7
+STEP 12/15: EXPOSE 8090
+--> 7862ff502988
+STEP 13/15: CMD ["sh","-c","uvicorn app:app --host 0.0.0.0 --port ${PORT}"]
+--> 85d83cd8c370
+STEP 14/15: ENV "OPENSHIFT_BUILD_NAME"="beyond-llm-gliner-2" "OPENSHIFT_BUILD_NAMESPACE"="rh-ee-mvandepe-dev"
+--> dcfa3bea8eef
+STEP 15/15: LABEL "io.openshift.build.name"="beyond-llm-gliner-2" "io.openshift.build.namespace"="rh-ee-mvandepe-dev"
+COMMIT temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-gliner-2:39792c5b
+--> 89be75729313
+Successfully tagged temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-gliner-2:39792c5b
+89be75729313247da9958d1a6eaaf326004e8402408cdd5b97f6ee685adb8249
+
+Pushing image image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-gliner:latest ...
+Getting image source signatures
+Copying blob sha256:506726a3e3a008a4f3b4849f917b560240cf5706823ea73c0fe799cb18e3cdc8
+Copying blob sha256:df965c03361f62e5657d08eee3a51f2556949588df59a571d4764a345b98d9b2
+Copying blob sha256:af3ede7dbb3e06a144b891ba642f8443ef712c86116a92be6f872c90fc02255d
+Copying blob sha256:bab1a1de053f1f744dc3f7af0e5a217507f75ae36f3a837abadf2ff68f0d147f
+Copying blob sha256:418c6063747f8b92af5c10a6fed120875860ec0204e0eb5d575767071f90fe8e
+Copying blob sha256:41b5e888b5cdf3bececf953aef8cd8fe7aa0906db6e2fc8c7d43e8c2df221312
+Copying blob sha256:f8de5efbbc28f8ef46b1cc6b67708a78283b5d83a2cd8ba453e562376c9d525f
+Copying config sha256:89be75729313247da9958d1a6eaaf326004e8402408cdd5b97f6ee685adb8249
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-gliner@sha256:24a9aee927bc2cbb27f9ec76ebe0a3b524d707432f5154142137b6c0cdcd1cce
+Push successful
+== build frontend
+Uploading directory "/var/folders/04/4vy1gqdj593b2_dprpv22m7c0000gn/T/tmp.PiLoz0ZTHA/frontend" as binary input for the build ...
+
+Uploading finished
+build.build.openshift.io/beyond-llm-frontend-2 started
+Receiving source from STDIN as archive ...
+time="2026-11-07T22:01:36Z" level=info msg="Not using native diff for overlay, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled"
+I1107 22:01:36.586461       1 defaults.go:112] Defaulting to storage driver "overlay" with options [mountopt=metacopy=on].
+Caching blobs under "/var/cache/blobs".
+
+Pulling image registry.access.redhat.com/ubi9/nginx-124 ...
+Trying to pull registry.access.redhat.com/ubi9/nginx-124:latest...
+Getting image source signatures
+Copying blob sha256:d467906256a96c2085afd7d9fbe5fcf674db4ca4cbd9a32e61d43a30ca3e7c09
+Copying blob sha256:db98f125c76df4cc6155198662cac7110f9ca82ff5b3acd20e663a51df0e101b
+Copying blob sha256:ddb2bba7ca5113d92be5b15e4cb9cd21a20bc09609cff86b112f0161bf8b7b25
+Copying config sha256:5f07c567af6033c8d4bf494026a4d73beb710a76c135347c538e7144849235d0
+Writing manifest to image destination
+
+Pulling image registry.access.redhat.com/ubi9/nodejs-22 ...
+Trying to pull registry.access.redhat.com/ubi9/nodejs-22:latest...
+Getting image source signatures
+Copying blob sha256:4554e2d5bfb99fdfb66250657099887e19a9b706c09b5c1ea463df83e493a177
+Copying blob sha256:db98f125c76df4cc6155198662cac7110f9ca82ff5b3acd20e663a51df0e101b
+Copying blob sha256:ddb2bba7ca5113d92be5b15e4cb9cd21a20bc09609cff86b112f0161bf8b7b25
+Copying config sha256:02f336ff6514fdd7458fe39997cf59b47acb1588d9dedc26b2a5a57beb37c9b1
+Writing manifest to image destination
+Adding transient rw bind mount for /run/secrets/rhsm
+[1/2] STEP 1/6: FROM registry.access.redhat.com/ubi9/nodejs-22 AS build
+[1/2] STEP 2/6: WORKDIR /opt/app-root/src
+--> 3ea59799778a
+[1/2] STEP 3/6: COPY --chown=1001:0 package.json package-lock.json ./
+--> 44b48cae5aaf
+[1/2] STEP 4/6: RUN npm ci --no-audit --no-fund
+
+added 87 packages in 5s
+--> ed6354d0f3fd
+[1/2] STEP 5/6: COPY --chown=1001:0 . .
+--> 5346dfa03d86
+[1/2] STEP 6/6: RUN npm run build
+
+> benchmark-platform-frontend@0.1.0 build
+> tsc -p tsconfig.json --noEmit && vite build
+
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 480 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                           0.48 kB │ gzip:   0.32 kB
+dist/assets/index-BJIuzB69.css           21.38 kB │ gzip:   4.86 kB
+dist/assets/RunPicker-CfVKPZtt.js         1.10 kB │ gzip:   0.66 kB
+dist/assets/Playground-Cc_x_BKH.js        5.55 kB │ gzip:   1.94 kB
+dist/assets/PredictionView-Bi423eYY.js    5.98 kB │ gzip:   1.75 kB
+dist/assets/ui-CjbaYM1P.js                6.36 kB │ gzip:   2.41 kB
+dist/assets/Runner-B7vQvt5o.js            9.96 kB │ gzip:   3.35 kB
+dist/assets/Inspect-BrhjZC4f.js          11.27 kB │ gzip:   3.23 kB
+dist/assets/Results-ym6BCHCg.js          74.12 kB │ gzip:  19.13 kB
+dist/assets/index-CS6TwNhB.js           263.42 kB │ gzip:  84.25 kB
+dist/assets/BarChart-CerNNico.js        365.76 kB │ gzip: 105.75 kB
+
+✓ built in 1.02s
+--> 532322c6d249
+[2/2] STEP 1/12: FROM registry.access.redhat.com/ubi9/nginx-124
+[2/2] STEP 2/12: USER 0
+--> bf3de25b6a9e
+[2/2] STEP 3/12: COPY --from=build /opt/app-root/src/dist/ /opt/app-root/src/
+--> e2aca6611350
+[2/2] STEP 4/12: COPY deploy/nginx.conf.template /opt/app-root/etc/nginx.conf.template
+--> d565cc385a97
+[2/2] STEP 5/12: COPY deploy/start.sh /opt/app-root/bin/start-frontend.sh
+--> b337fc1aeea4
+[2/2] STEP 6/12: RUN chmod 0755 /opt/app-root/bin/start-frontend.sh &&     chgrp -R 0 /opt/app-root/src /opt/app-root/etc &&     chmod -R g=u /opt/app-root/src /opt/app-root/etc
+--> 84bc59b67910
+[2/2] STEP 7/12: USER 1001
+--> c6bebad7f3bd
+[2/2] STEP 8/12: ENV BACKEND_URL=http://benchmark-backend:8080
+--> dc5684f20909
+[2/2] STEP 9/12: EXPOSE 8080
+--> ae15c43cc1d1
+[2/2] STEP 10/12: CMD ["/opt/app-root/bin/start-frontend.sh"]
+--> 2063f24ac186
+[2/2] STEP 11/12: ENV "OPENSHIFT_BUILD_NAME"="beyond-llm-frontend-2" "OPENSHIFT_BUILD_NAMESPACE"="rh-ee-mvandepe-dev"
+--> 6ac360201623
+[2/2] STEP 12/12: LABEL "io.openshift.build.name"="beyond-llm-frontend-2" "io.openshift.build.namespace"="rh-ee-mvandepe-dev"
+[2/2] COMMIT temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-frontend-2:3b2990e0
+--> da7daa2d1695
+Successfully tagged temp.builder.openshift.io/rh-ee-mvandepe-dev/beyond-llm-frontend-2:3b2990e0
+da7daa2d1695daef7e74414b50c753b7138f9f0247e8a83379babf032825b18f
+
+Pushing image image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-frontend:latest ...
+Getting image source signatures
+Copying blob sha256:0d493b82c87f4094693ad219ba269ffc5f3a84f53be4a790fd04eb78d8c80394
+Copying blob sha256:ddb2bba7ca5113d92be5b15e4cb9cd21a20bc09609cff86b112f0161bf8b7b25
+Copying blob sha256:e558eac7d5a184e5f6bda1dcce5c9b90e8078c401c84b3dfbc04b8e98d422197
+Copying blob sha256:54efc1139d429deabbdf7fb7f6ec4081e563ead665073d0ee9ac7d9ac7d0a8f4
+Copying blob sha256:db98f125c76df4cc6155198662cac7110f9ca82ff5b3acd20e663a51df0e101b
+Copying blob sha256:d467906256a96c2085afd7d9fbe5fcf674db4ca4cbd9a32e61d43a30ca3e7c09
+Copying blob sha256:d939683196d6e9157f19aad07c444e4023cd531c4c825c023d4c76dd5058cd1f
+Copying config sha256:da7daa2d1695daef7e74414b50c753b7138f9f0247e8a83379babf032825b18f
+Writing manifest to image destination
+Successfully pushed image-registry.openshift-image-registry.svc:5000/rh-ee-mvandepe-dev/beyond-llm-frontend@sha256:ab3f3a56f6d2fcfc7bc73427d3368cc5ac779a1bc4261297380a4cea7f2f30b0
+Push successful
+== apply manifests
+configmap/beyond-llm-config unchanged
+service/benchmark-backend unchanged
+service/beyond-llm-frontend unchanged
+service/beyond-llm-gliner unchanged
+persistentvolumeclaim/beyond-llm-gliner-models unchanged
+persistentvolumeclaim/beyond-llm-results unchanged
+deployment.apps/beyond-llm-backend unchanged
+deployment.apps/beyond-llm-frontend unchanged
+deployment.apps/beyond-llm-gliner configured
+buildconfig.build.openshift.io/beyond-llm-backend configured
+buildconfig.build.openshift.io/beyond-llm-frontend configured
+buildconfig.build.openshift.io/beyond-llm-gliner configured
+imagestream.image.openshift.io/beyond-llm-backend configured
+imagestream.image.openshift.io/beyond-llm-frontend configured
+imagestream.image.openshift.io/beyond-llm-gliner configured
+route.route.openshift.io/beyond-llm-api unchanged
+route.route.openshift.io/beyond-llm-dashboard unchanged
+Waiting for deployment "beyond-llm-gliner" rollout to finish: 0 of 1 updated replicas are available...
+deployment "beyond-llm-gliner" successfully rolled out
+deployment "beyond-llm-backend" successfully rolled out
+deployment "beyond-llm-frontend" successfully rolled out
+Dashboard: https://beyond-llm-dashboard-rh-ee-mvandepe-dev.apps.rm1.0a51.p1.openshiftapps.com
+API:       https://beyond-llm-api-rh-ee-mvandepe-dev.apps.rm1.0a51.p1.openshiftapps.com/api/models
