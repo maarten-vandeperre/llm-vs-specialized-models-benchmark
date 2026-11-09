@@ -156,6 +156,50 @@ probabilities), control over when the model behind the name changes, and keeping
 infrastructure. Those are often the real reasons to run a model yourself, and this benchmark cannot weigh them for
 you.
 
+### When is running it yourself actually cheaper?
+
+The API bill above is small for two reasons. Our run was small (944 calls per model), but more importantly every
+call is small: about 600 input tokens and 40–60 output tokens of JSON, with no reasoning tokens. The number that
+scales is the cost per 1,000 calls, and at $0.08 for GPT-6 Luna, that is hard to beat.
+
+Bigger requests do not tip the balance automatically. API cost grows linearly with input tokens: at about 5,000
+input tokens per call, Luna costs about $0.52 per 1,000 calls, Sol about $10.50 and Opus about $21. But local
+models pay for long inputs too, in time instead of money: 3–6 s per 5,000-token document on our laptop against
+well under a second for short messages, so each machine handles fewer requests. A local model has no per-call
+price. Its cost is the machine, and that machine costs the same whether it is busy or idle. **The break-even point
+is driven by sustained volume more than by request size.**
+
+To make that concrete, here is an *illustration, not a measurement*: assume a server at $500 a month all-in
+(hardware, power, some operations time), running flat out at the throughput we measured on the MacBook.
+
+| Local model | Throughput | Max calls / month | Local cost per 1,000 calls |
+|---|---|---|---|
+| GLiNER2.5-base | 6.2 req/s | ~16M | ~$0.03 |
+| Kev 0.8B | 5.6 req/s | ~14M | ~$0.035 |
+| Qwen3.5-4B | 1.5 req/s | ~3.9M | ~$0.13 |
+
+Against Claude Opus 5.5 ($6.22 per 1,000), that server pays for itself at about 80,000 calls a month, and a busy
+one is 50–200× cheaper. Against GPT-6.1 Sol it breaks even at about 300,000 calls a month. Against GPT-6 Luna, the
+small specialists are only 2–3× cheaper, and only near full utilization (about 6M calls a month), while a local
+Qwen3.5-4B is *more* expensive per call than Luna. Proper GPU serving with batching would likely do much better
+than our laptop's flat throughput, but we did not measure that.
+
+So running a model yourself is *way* cheaper when:
+
+* the task is narrow and repetitive (intent, sentiment, entity extraction) and a small specialist is accurate
+  enough for it,
+* volume is high and steady, or the work is batch jobs you can schedule to keep machines busy,
+* inputs are long and volume is high, so per-token pricing adds up while your hardware cost stays fixed,
+* the alternative is a mid-tier or large hosted model, not the cheapest tier, or
+* you already own the hardware.
+
+It is not cheaper when traffic is low or bursty (an idle server still costs money, an idle API costs nothing),
+when the comparison is against the cheapest tiers (where engineering time easily exceeds the API bill), or when
+errors are expensive: an 81% vs 92% intent accuracy gap can cost more in misrouted messages than the savings are
+worth. Prompt caching would also lower the API side for long, repeated system prompts. To get real numbers for
+your case, measure the monthly cost of your target hardware and its sustained requests per second at your typical
+input size, and compare that with the cost per 1,000 calls.
+
 ## The benchmarking traps we fell into (so you do not have to)
 
 Our first full run reported **over 300 requests per second for Kev**. That was wrong. Kev's endpoint has no
@@ -201,6 +245,8 @@ The honest answer is "it depends", but now it depends on numbers you can reprodu
   `OLLAMA_NUM_PARALLEL` were not explored.
 * Each configuration was measured in one full run. Run-to-run variation in median latency was up to 7.4%.
 * GPU utilization and energy were not measured, and nothing was estimated.
+* The local cost figures in "When is running it yourself actually cheaper?" assume a $500/month server and
+  full utilization. They show how the trade-off works and are not measured costs.
 
 ## Reproduce it
 
