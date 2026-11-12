@@ -1,0 +1,42 @@
+{
+  "timestamp" : "2026-11-10T11:37:53.207681081Z",
+  "os.name" : "Linux",
+  "os.version" : "5.14.0-570.135.1.el9_6.x86_64",
+  "os.arch" : "amd64",
+  "cpu.count" : 1,
+  "cpu.brand" : "Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz",
+  "memory.meminfo" : "32387188 kB",
+  "cgroup.memory.max" : "1073741824",
+  "cgroup.cpu.max" : "100000 100000",
+  "loadavg" : "0.32 0.98 1.27 4/1597 1818",
+  "mlxSupported" : "no (not macOS)",
+  "gpu" : "not detected by the benchmark (no NVIDIA/ROCm probing)",
+  "disk.freeBytes" : 208869257216,
+  "java.version" : "25.0.5",
+  "java.vendor" : "Red Hat, Inc.",
+  "java.vm" : "OpenJDK 64-Bit Server VM",
+  "quarkus.version" : "3.40.1.1",
+  "quarkus.launchMode" : "NORMAL",
+  "ollama.baseUrl" : "http://beyond-llm-ollama:11434",
+  "ollama.version" : "0.40.15",
+  "ollama.numParallel" : "not set (server default)",
+  "ollama.models" : {
+    "gemma4:12b" : {
+      "parameterSize" : "11.9B",
+      "sizeBytes" : 8021618941,
+      "quantization" : "Q4_K_M",
+      "digest" : "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b"
+    }
+  },
+  "gliner.baseUrl" : "http://beyond-llm-gliner:8090",
+  "gliner" : "unavailable",
+  "synthetic" : true,
+  "modelOrder" : [ "gemma4-12b-decision" ],
+  "records.selected" : 160,
+  "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+  "hybridThresholds" : {
+    "kev" : 0.8,
+    "gliner" : 0.8,
+    "source" : "configuration defaults"
+  }
+}

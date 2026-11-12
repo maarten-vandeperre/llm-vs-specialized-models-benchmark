@@ -1,0 +1,156 @@
+{
+  "decisio-gemma-12b" : {
+    "health" : {
+      "modelId" : "decisio-gemma-12b",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "f7a2d8611829d1b4268db2a89d6b8f23c7f758472912b857ef4df2367d3c04ae",
+        "sizeBytes" : 7662533323,
+        "details" : {
+          "parent_model" : "sha256-3962624dcd25b947d889dc9ae1bf275b61db6cd4dbe694057f34fffef1671509",
+          "format" : "gguf",
+          "family" : "gemma4",
+          "families" : [ "gemma4" ],
+          "parameter_size" : "11.9B",
+          "quantization_level" : "Q4_K_M",
+          "context_length" : 131072,
+          "embedding_length" : 3840,
+          "runner" : "ggml"
+        }
+      }
+    },
+    "info" : {
+      "id" : "decisio-gemma-12b",
+      "displayName" : "decisio-gemma q4_k_m",
+      "kind" : "model",
+      "runtime" : "ollama /v1/systemone",
+      "modelRef" : "aminroudaki/decisio-gemma:q4_k_m",
+      "family" : "decision model (typed choice questions)",
+      "quantization" : "Q4_K_M",
+      "processPattern" : "ollama",
+      "notes" : "Native probability distributions. 'confidence' = 1 - H(p)/ln N (concentration, not calibrated correctness)."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 73728
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "aminroudaki/decisio-gemma:q4_k_m" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : false,
+      "clientMs" : 3.73275,
+      "loadMs" : null,
+      "outcome" : "INFRA_ERROR",
+      "note" : "runtime does not support unloading from the client; first request after start-up is not a guaranteed cold start"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 0.109,
+      "errors" : 40
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 0.031,
+      "errors" : 40
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 0.022,
+      "errors" : 40
+    } ],
+    "ollamaLoaded" : [ ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 1,
+      "rssMeanMb" : 116.2,
+      "rssPeakMb" : 116.2,
+      "cpuMeanPct" : 9.9,
+      "cpuPeakPct" : 9.9,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 7662533323
+  },
+  "kev-0.8b" : {
+    "health" : {
+      "modelId" : "kev-0.8b",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "sizeBytes" : 1519780825,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "BF16",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "kev-0.8b",
+      "displayName" : "Kev 0.8b",
+      "kind" : "model",
+      "runtime" : "ollama /v1/systemone",
+      "modelRef" : "kev:0.8b-mlx-bf16",
+      "family" : "decision model (typed choice questions)",
+      "quantization" : "BF16",
+      "processPattern" : "ollama",
+      "notes" : "Native probability distributions. 'confidence' = 1 - H(p)/ln N (concentration, not calibrated correctness)."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 73728
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 856.299375,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 0.454,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 0.215,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 0.243,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "sizeBytes" : 6638654544,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 6638654544,
+      "name" : "kev:0.8b-mlx-bf16"
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 18,
+      "rssMeanMb" : 1304.3,
+      "rssPeakMb" : 1720.2,
+      "cpuMeanPct" : 73.1,
+      "cpuPeakPct" : 142.6,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1519780825
+  }
+}

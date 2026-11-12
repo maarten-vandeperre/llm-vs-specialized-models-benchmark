@@ -1,0 +1,101 @@
+{
+  "timestamp" : "2026-11-10T10:52:49.734410Z",
+  "os.name" : "Mac OS X",
+  "os.version" : "26.6.2",
+  "os.arch" : "aarch64",
+  "cpu.count" : 10,
+  "macos.productVersion" : "26.6.2",
+  "cpu.brand" : "Apple M1 Max",
+  "memory.bytes" : 68719476736,
+  "cpu.performanceCores" : "8",
+  "cpu.efficiencyCores" : "2",
+  "loadavg" : "{ 8.58 20.71 26.68 }",
+  "appleSilicon" : true,
+  "mlxSupported" : "yes (Apple Silicon; Ollama MLX runner)",
+  "gpu" : "Apple integrated GPU (unified memory); utilization not measured (requires root powermetrics)",
+  "disk.freeBytes" : 413298147328,
+  "java.version" : "25.0.2",
+  "java.vendor" : "Oracle Corporation",
+  "java.vm" : "OpenJDK 64-Bit Server VM",
+  "quarkus.version" : "3.40.1.1",
+  "quarkus.launchMode" : "NORMAL",
+  "ollama.baseUrl" : "http://localhost:11434",
+  "ollama.version" : "0.40.15",
+  "ollama.numParallel" : "not set (server default)",
+  "ollama.models" : {
+    "aminroudaki/decisio-gemma:q4_k_m" : {
+      "sizeBytes" : 7662533323,
+      "quantization" : "Q4_K_M",
+      "digest" : "f7a2d8611829d1b4268db2a89d6b8f23c7f758472912b857ef4df2367d3c04ae",
+      "parameterSize" : "11.9B"
+    },
+    "gemma4:latest" : {
+      "sizeBytes" : 9461576343,
+      "quantization" : "",
+      "digest" : "eb2177adf7646d15faead94fdad6d3e170dc8015653418a3b7d5d52a6380be5b",
+      "parameterSize" : ""
+    },
+    "gemma4:12b" : {
+      "sizeBytes" : 7714091504,
+      "quantization" : "",
+      "digest" : "c7597fc90b86aff6965317f37dd5465402284e26382d9b4bf2dfe3ef1491f4b6",
+      "parameterSize" : ""
+    },
+    "kev:0.8b-q8_0" : {
+      "sizeBytes" : 812429182,
+      "quantization" : "Q8_0",
+      "digest" : "a2f47e09befbeaf7548572310d46f794b05c010a20ea5e64e9947eb479c23b31",
+      "parameterSize" : "752.92M"
+    },
+    "qwen3.5:4b" : {
+      "sizeBytes" : 3973305013,
+      "quantization" : "nvfp4",
+      "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+      "parameterSize" : ""
+    },
+    "numind/nuextract3:q4_k_m" : {
+      "sizeBytes" : 3384386487,
+      "quantization" : "Q4_K_M",
+      "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91",
+      "parameterSize" : "4.2B"
+    },
+    "kev:0.8b-mlx-bf16" : {
+      "sizeBytes" : 1519780825,
+      "quantization" : "BF16",
+      "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+      "parameterSize" : ""
+    },
+    "gemma3:4b" : {
+      "sizeBytes" : 3338801804,
+      "quantization" : "Q4_K_M",
+      "digest" : "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "parameterSize" : "4.3B"
+    }
+  },
+  "gliner.baseUrl" : "http://localhost:8090",
+  "gliner.versions" : {
+    "python" : "3.12.14",
+    "gliner2" : null,
+    "torch" : null,
+    "transformers" : null
+  },
+  "gliner.models" : {
+    "fastino/gliner2.5-base-v1" : {
+      "loaded" : true,
+      "device" : "cpu",
+      "architecture" : "boundary",
+      "max_tokens" : 4096,
+      "load_seconds" : 5.359,
+      "storage_bytes" : 782713882
+    }
+  },
+  "synthetic" : true,
+  "modelOrder" : [ "decisio-gemma-12b", "kev-0.8b" ],
+  "records.selected" : 20,
+  "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+  "hybridThresholds" : {
+    "gliner" : 0.9649,
+    "source" : "/Users/maartenvandeperre/workspace/redhat/llm-vs-specialized-models-benchmark/results/calibration/thresholds.json (calibration split)",
+    "kev" : 0.5862
+  }
+}

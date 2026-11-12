@@ -1,0 +1,72 @@
+{
+  "gemma4-12b-decision" : {
+    "health" : {
+      "modelId" : "gemma4-12b-decision",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "6114515d63c17436a7c0417d82820ac65ad643e2806c5a3c89cb62846436ed0b",
+        "sizeBytes" : 8021618941,
+        "details" : {
+          "parent_model" : "imatrix-20260927-12b/model-q4_K_M.gguf",
+          "format" : "gguf",
+          "family" : "gemma4",
+          "families" : [ "gemma4" ],
+          "parameter_size" : "11.9B",
+          "quantization_level" : "Q4_K_M",
+          "context_length" : 262144,
+          "embedding_length" : 3840,
+          "runner" : "llamacpp"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gemma4-12b-decision",
+      "displayName" : "Gemma 4 12B (decision, letter probabilities)",
+      "kind" : "model",
+      "runtime" : "ollama /api/chat (letter log-probabilities)",
+      "modelRef" : "gemma4:12b",
+      "family" : "decision model (general LLM + letter-probability decision layer)",
+      "quantization" : null,
+      "processPattern" : "ollama",
+      "notes" : "One call per label field, options lettered A.., num_predict=1, temperature=0, think=false, num_ctx=16384, truncate=false. Probabilities = softmax over the option letters' logprobs (top 20). 'confidence' = 1 - H(p)/ln N, as for Kev."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 16384
+    },
+    "compatibleRecords" : 107,
+    "incompatibleRecords" : 53,
+    "concurrentlyLoadedRuntimeModels" : [ "gemma4:12b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 113967.984047,
+      "loadMs" : 62984.464112,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 10,
+      "wallSeconds" : 526.037,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "name" : "gemma4:12b",
+      "sizeBytes" : 6734594701,
+      "contextLength" : 16384,
+      "sizeVramBytes" : 0
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 0,
+      "rssMeanMb" : null,
+      "rssPeakMb" : null,
+      "cpuMeanPct" : null,
+      "cpuPeakPct" : null,
+      "note" : "ps unavailable: Cannot run program \"ps\": Exec failed, error: 2 (No such file or directory) "
+    },
+    "modelStorageBytes" : 8021618941
+  }
+}

@@ -31,6 +31,7 @@ What the inspection found in this Sandbox:
 | GLiNER2.5-base | ✅ custom CPU workload (FastAPI image, PVC for weights) | 194M-parameter encoder, ~0.8 GB weights, works on 1–2 vCPU |
 | Quarkus backend + dashboard | ✅ | small JVM / nginx |
 | Kev `*-mlx-*` | ❌ not deployable | the MLX runner needs Apple Silicon |
+| Gemma 4 12B as a decision model (`gemma4-12b-decision`) | ⚠️ optional (`optional/ollama-cpu.yaml` + `ollama pull gemma4:12b`), verified 2026-11-10 | runs, but ≈ 54 s per message on CPU and needs > 16 Gi memory (24 Gi limit); see benchmark-results.md |
 | Qwen3.5-4B, NuExtract3 | ⚠️ not deployed by default | 3–4 GB models on shared CPU are slow and consume most of the 3-CPU request quota; optional manifest provided |
 
 When no Ollama endpoint is reachable, the backend reports the Ollama-based candidates as `DOWN` and the benchmark

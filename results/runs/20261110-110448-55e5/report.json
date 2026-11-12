@@ -1,0 +1,571 @@
+{
+  "runId" : "20261110-110448-55e5",
+  "label" : "smoke-gemma4-decision",
+  "status" : "COMPLETED",
+  "createdAt" : "2026-11-10T11:04:48.675071Z",
+  "finishedAt" : "2026-11-10T11:05:45.906156Z",
+  "synthetic" : true,
+  "disclaimer" : "Synthetic, fictional coffee-shop dataset. Results do not generalize to production customers.",
+  "datasetVersion" : "coffee-v1",
+  "environment" : {
+    "timestamp" : "2026-11-10T11:04:48.693383Z",
+    "os.name" : "Mac OS X",
+    "os.version" : "26.6.2",
+    "os.arch" : "aarch64",
+    "cpu.count" : 10,
+    "macos.productVersion" : "26.6.2",
+    "cpu.brand" : "Apple M1 Max",
+    "memory.bytes" : 68719476736,
+    "cpu.performanceCores" : "8",
+    "cpu.efficiencyCores" : "2",
+    "loadavg" : "{ 20.35 12.41 17.28 }",
+    "appleSilicon" : true,
+    "mlxSupported" : "yes (Apple Silicon; Ollama MLX runner)",
+    "gpu" : "Apple integrated GPU (unified memory); utilization not measured (requires root powermetrics)",
+    "disk.freeBytes" : 415044067328,
+    "java.version" : "25.0.2",
+    "java.vendor" : "Oracle Corporation",
+    "java.vm" : "OpenJDK 64-Bit Server VM",
+    "quarkus.version" : "3.40.1.1",
+    "quarkus.launchMode" : "NORMAL",
+    "ollama.baseUrl" : "http://localhost:11434",
+    "ollama.version" : "0.40.15",
+    "ollama.numParallel" : "not set (server default)",
+    "ollama.models" : {
+      "aminroudaki/decisio-gemma:q4_k_m" : {
+        "digest" : "f7a2d8611829d1b4268db2a89d6b8f23c7f758472912b857ef4df2367d3c04ae",
+        "parameterSize" : "11.9B",
+        "sizeBytes" : 7662533323,
+        "quantization" : "Q4_K_M"
+      },
+      "gemma4:latest" : {
+        "digest" : "eb2177adf7646d15faead94fdad6d3e170dc8015653418a3b7d5d52a6380be5b",
+        "parameterSize" : "",
+        "sizeBytes" : 9461576343,
+        "quantization" : ""
+      },
+      "gemma4:12b" : {
+        "digest" : "c7597fc90b86aff6965317f37dd5465402284e26382d9b4bf2dfe3ef1491f4b6",
+        "parameterSize" : "",
+        "sizeBytes" : 7714091504,
+        "quantization" : ""
+      },
+      "kev:0.8b-q8_0" : {
+        "digest" : "a2f47e09befbeaf7548572310d46f794b05c010a20ea5e64e9947eb479c23b31",
+        "parameterSize" : "752.92M",
+        "sizeBytes" : 812429182,
+        "quantization" : "Q8_0"
+      },
+      "qwen3.5:4b" : {
+        "digest" : "7f3251fa6878a78a606bcb3c074283306e5ad2ea411a7774a9dd98a4bc7f2d13",
+        "parameterSize" : "",
+        "sizeBytes" : 3973305013,
+        "quantization" : "nvfp4"
+      },
+      "numind/nuextract3:q4_k_m" : {
+        "digest" : "d688f2bc1405353a3fbf8e48bbbff45a49c79f81a6111adc6d2a09739cebbf91",
+        "parameterSize" : "4.2B",
+        "sizeBytes" : 3384386487,
+        "quantization" : "Q4_K_M"
+      },
+      "kev:0.8b-mlx-bf16" : {
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "parameterSize" : "",
+        "sizeBytes" : 1519780825,
+        "quantization" : "BF16"
+      },
+      "gemma3:4b" : {
+        "digest" : "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+        "parameterSize" : "4.3B",
+        "sizeBytes" : 3338801804,
+        "quantization" : "Q4_K_M"
+      }
+    },
+    "gliner.baseUrl" : "http://localhost:8090",
+    "gliner.versions" : {
+      "python" : "3.12.14",
+      "gliner2" : null,
+      "torch" : null,
+      "transformers" : null
+    },
+    "gliner.models" : {
+      "fastino/gliner2.5-base-v1" : {
+        "loaded" : true,
+        "device" : "cpu",
+        "architecture" : "boundary",
+        "max_tokens" : 4096,
+        "load_seconds" : 5.359,
+        "storage_bytes" : 782713882
+      }
+    },
+    "synthetic" : true,
+    "modelOrder" : [ "gemma4-12b-decision" ],
+    "records.selected" : 20,
+    "datasetSha256" : "627e6d79f1b9c54031c6f9c421686e108c133d2327338c87956cc99db631d49d",
+    "hybridThresholds" : {
+      "kev" : 0.5862,
+      "gliner" : 0.9649,
+      "source" : "/Users/maartenvandeperre/workspace/redhat/llm-vs-specialized-models-benchmark/results/calibration/thresholds.json (calibration split)"
+    }
+  },
+  "config" : {
+    "models" : [ "gemma4-12b-decision" ],
+    "dataset" : "coffee-v1",
+    "groups" : [ "classification" ],
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 20,
+    "warmup" : 2,
+    "repetitions" : 1,
+    "latencySampleSize" : 5,
+    "concurrency" : [ 1 ],
+    "throughputRequests" : 5,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "smoke-gemma4-decision"
+  },
+  "errors" : [ ],
+  "models" : [ {
+    "modelId" : "gemma4-12b-decision",
+    "displayName" : "Gemma 4 12B (decision, letter probabilities)",
+    "kind" : "model",
+    "runtime" : "ollama /api/chat (letter log-probabilities)",
+    "modelRef" : "gemma4:12b",
+    "quantization" : null,
+    "family" : "decision model (general LLM + letter-probability decision layer)",
+    "notes" : "One call per label field, options lettered A.., num_predict=1, temperature=0, think=false, num_ctx=16384, truncate=false. Probabilities = softmax over the option letters' logprobs (top 20). 'confidence' = 1 - H(p)/ln N, as for Kev.",
+    "health" : {
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15"
+    },
+    "skipped" : null,
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "counts" : {
+      "total" : 20,
+      "success" : 20,
+      "abstained" : 0,
+      "unsupported" : 0,
+      "malformed" : 0,
+      "timeout" : 0,
+      "infraError" : 0,
+      "malformedRate" : 0.0,
+      "timeoutRate" : 0.0
+    },
+    "classification" : {
+      "n" : 20,
+      "accuracy" : 0.95,
+      "accuracyCi" : [ 0.7639, 0.9911 ],
+      "macroF1" : 0.8182,
+      "macroF1Ci" : [ 0.7455, 1.0 ],
+      "headlineField" : "intent",
+      "meanFieldAccuracy" : 0.8875,
+      "meanFieldMacroF1" : 0.8213,
+      "allFieldsCorrect" : 0.65,
+      "fields" : {
+        "intent" : {
+          "n" : 20,
+          "accuracy" : 0.95,
+          "accuracyCi" : [ 0.7639, 0.9911 ],
+          "macroF1" : 0.8182,
+          "macroF1Ci" : [ 0.7455, 1.0 ],
+          "macroPrecision" : 0.8333,
+          "macroRecall" : 0.8056,
+          "perLabel" : {
+            "refund" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 6
+            },
+            "replacement" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "order_status" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "cancel_order" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "feedback" : {
+              "precision" : 1.0,
+              "recall" : 0.8333,
+              "f1" : 0.9091,
+              "support" : 6
+            },
+            "none" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 0
+            }
+          }
+        },
+        "sentiment" : {
+          "n" : 20,
+          "accuracy" : 0.8,
+          "accuracyCi" : [ 0.584, 0.9193 ],
+          "macroF1" : 0.619,
+          "macroF1Ci" : [ 0.5556, 0.6566 ],
+          "macroPrecision" : 0.5833,
+          "macroRecall" : 0.6667,
+          "perLabel" : {
+            "positive" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 4
+            },
+            "negative" : {
+              "precision" : 0.75,
+              "recall" : 1.0,
+              "f1" : 0.8571,
+              "support" : 12
+            },
+            "neutral" : {
+              "precision" : 0.0,
+              "recall" : 0.0,
+              "f1" : 0.0,
+              "support" : 4
+            }
+          }
+        },
+        "category" : {
+          "n" : 20,
+          "accuracy" : 0.85,
+          "accuracyCi" : [ 0.6396, 0.9476 ],
+          "macroF1" : 0.8779,
+          "macroF1Ci" : [ 0.694, 0.9706 ],
+          "macroPrecision" : 0.8869,
+          "macroRecall" : 0.9063,
+          "perLabel" : {
+            "product_quality" : {
+              "precision" : 0.7143,
+              "recall" : 1.0,
+              "f1" : 0.8333,
+              "support" : 5
+            },
+            "delivery" : {
+              "precision" : 0.8333,
+              "recall" : 1.0,
+              "f1" : 0.9091,
+              "support" : 5
+            },
+            "billing" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "general" : {
+              "precision" : 1.0,
+              "recall" : 0.625,
+              "f1" : 0.7692,
+              "support" : 8
+            }
+          }
+        },
+        "complaint" : {
+          "n" : 20,
+          "accuracy" : 0.95,
+          "accuracyCi" : [ 0.7639, 0.9911 ],
+          "macroF1" : 0.9701,
+          "macroF1Ci" : [ 0.8413, 1.0 ],
+          "macroPrecision" : 0.9643,
+          "macroRecall" : 0.9821,
+          "perLabel" : {
+            "temperature" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 3
+            },
+            "taste" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "wrong_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "missing_item" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 1
+            },
+            "late_delivery" : {
+              "precision" : 0.75,
+              "recall" : 1.0,
+              "f1" : 0.8571,
+              "support" : 3
+            },
+            "overcharged" : {
+              "precision" : 1.0,
+              "recall" : 1.0,
+              "f1" : 1.0,
+              "support" : 2
+            },
+            "none" : {
+              "precision" : 1.0,
+              "recall" : 0.875,
+              "f1" : 0.9333,
+              "support" : 8
+            }
+          }
+        }
+      }
+    },
+    "extraction" : null,
+    "decision" : null,
+    "abstention" : {
+      "ambiguousN" : 0,
+      "abstentionRate" : null,
+      "falsePositiveRate" : null,
+      "coverage" : 0.95
+    },
+    "calibration" : {
+      "available" : true,
+      "reason" : null,
+      "definition" : "top-label score of the chosen label (Kev: probabilities[choice]; GLiNER: label confidence), pooled over intent/sentiment/category/complaint; failed fields without a score are excluded here but counted in accuracy",
+      "fieldsWithoutScore" : 0,
+      "n" : 80,
+      "brier" : 0.103,
+      "ece" : 0.1011,
+      "reliability" : [ {
+        "binLower" : 0.0,
+        "binUpper" : 0.1,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.1,
+        "binUpper" : 0.2,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.2,
+        "binUpper" : 0.3,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.3,
+        "binUpper" : 0.4,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.4,
+        "binUpper" : 0.5,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.5,
+        "binUpper" : 0.6,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.6,
+        "binUpper" : 0.7,
+        "count" : 2,
+        "meanConfidence" : 0.6403,
+        "accuracy" : 0.5
+      }, {
+        "binLower" : 0.7,
+        "binUpper" : 0.8,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.8,
+        "binUpper" : 0.9,
+        "count" : 0,
+        "meanConfidence" : null,
+        "accuracy" : null
+      }, {
+        "binLower" : 0.9,
+        "binUpper" : 1.0,
+        "count" : 78,
+        "meanConfidence" : 0.9975,
+        "accuracy" : 0.8974
+      } ],
+      "coverageCurve" : [ {
+        "coverage" : 0.1,
+        "accuracy" : 1.0,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.2,
+        "accuracy" : 1.0,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.3,
+        "accuracy" : 1.0,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.4,
+        "accuracy" : 0.9688,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.5,
+        "accuracy" : 0.95,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.6,
+        "accuracy" : 0.9583,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.7,
+        "accuracy" : 0.9643,
+        "threshold" : 1.0
+      }, {
+        "coverage" : 0.8,
+        "accuracy" : 0.9688,
+        "threshold" : 0.9998
+      }, {
+        "coverage" : 0.9,
+        "accuracy" : 0.9306,
+        "threshold" : 0.9972
+      }, {
+        "coverage" : 1.0,
+        "accuracy" : 0.8875,
+        "threshold" : 0.6013
+      } ],
+      "riskAtThreshold" : {
+        "threshold" : 0.8,
+        "coverage" : 0.975,
+        "risk" : 0.1026
+      }
+    },
+    "latency" : {
+      "n" : 19,
+      "p50" : 2379.27,
+      "p90" : 2488.4,
+      "p95" : 2496.5,
+      "p99" : null,
+      "mean" : 2394.73,
+      "min" : 2293.53,
+      "max" : 2569.05,
+      "p50Ci" : [ 2332.55, 2442.86 ]
+    },
+    "repeatLatency" : null,
+    "promptCache" : {
+      "qualityFullHits" : 1,
+      "repeatFullHits" : 0,
+      "repeatRequests" : 0,
+      "note" : "full hit = at most 8 prompt tokens left uncached by Ollama (input seen before); excluded from headline and per-length latency"
+    },
+    "serverLatency" : {
+      "n" : 19,
+      "p50" : 2373.09,
+      "p90" : 2469.95,
+      "p95" : 2487.28,
+      "p99" : null,
+      "mean" : 2384.01,
+      "min" : 2280.8,
+      "max" : 2559.85,
+      "p50Ci" : [ 2318.12, 2436.52 ]
+    },
+    "latencyByTask" : {
+      "CLASSIFICATION" : {
+        "n" : 19,
+        "p50" : 2379.27,
+        "p90" : 2488.4,
+        "p95" : 2496.5,
+        "p99" : null,
+        "mean" : 2394.73,
+        "min" : 2293.53,
+        "max" : 2569.05,
+        "p50Ci" : [ 2332.55, 2442.86 ]
+      }
+    },
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 4497.443833,
+      "loadMs" : 1958.069001,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 1.848,
+      "rps" : 2.71,
+      "p50" : 365.86,
+      "p95" : 389.13,
+      "errors" : 0,
+      "cacheFullHits" : 5
+    } ],
+    "tokens" : {
+      "meanInput" : 686.95,
+      "meanOutput" : 4.0,
+      "outputTokensPerSecond" : null,
+      "tokensNote" : "Ollama eval_count/eval_duration for generative models; Kev usage.output_tokens are internal scoring tokens, not generated text"
+    },
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 114,
+      "rssMeanMb" : 7370.0,
+      "rssPeakMb" : 7613.1,
+      "cpuMeanPct" : 25.2,
+      "cpuPeakPct" : 173.0,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)",
+      "ollamaLoaded" : [ {
+        "sizeVramBytes" : 22615382004,
+        "name" : "gemma4:12b",
+        "sizeBytes" : 22615382004,
+        "contextLength" : 16384
+      } ],
+      "modelStorageBytes" : 7714091504,
+      "gpu" : "not measured (Apple GPU utilization requires root powermetrics; no NVIDIA GPU)",
+      "energy" : "not measured (no reliable unprivileged energy measurement available)"
+    },
+    "perLanguage" : {
+      "en" : {
+        "n" : 14,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "fr" : {
+        "n" : 2,
+        "classificationAccuracy" : 0.5,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      },
+      "nl" : {
+        "n" : 4,
+        "classificationAccuracy" : 1.0,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perGroup" : {
+      "classification" : {
+        "n" : 20,
+        "classificationAccuracy" : 0.95,
+        "extractionExactMatch" : null,
+        "failures" : 0
+      }
+    },
+    "perLength" : [ ],
+    "fallbackRate" : null,
+    "infraFailureRate" : 0.0
+  } ]
+}

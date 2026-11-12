@@ -1,0 +1,32 @@
+{
+  "runId" : "20261110-105249-3ead",
+  "label" : "smoke-decisio-gemma",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 462,
+    "total" : 462,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "decisio-gemma-12b", "kev-0.8b" ],
+    "dataset" : "coffee-v1",
+    "groups" : [ "classification" ],
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 20,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "smoke-decisio-gemma"
+  },
+  "createdAt" : "2026-11-10T10:52:49.714355Z",
+  "startedAt" : "2026-11-10T10:52:49.733444Z",
+  "finishedAt" : "2026-11-10T10:52:59.770620Z"
+}

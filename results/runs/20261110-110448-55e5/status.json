@@ -1,0 +1,32 @@
+{
+  "runId" : "20261110-110448-55e5",
+  "label" : "smoke-gemma4-decision",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 28,
+    "total" : 28,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "gemma4-12b-decision" ],
+    "dataset" : "coffee-v1",
+    "groups" : [ "classification" ],
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 20,
+    "warmup" : 2,
+    "repetitions" : 1,
+    "latencySampleSize" : 5,
+    "concurrency" : [ 1 ],
+    "throughputRequests" : 5,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "smoke-gemma4-decision"
+  },
+  "createdAt" : "2026-11-10T11:04:48.675071Z",
+  "startedAt" : "2026-11-10T11:04:48.692562Z",
+  "finishedAt" : "2026-11-10T11:05:45.906156Z"
+}

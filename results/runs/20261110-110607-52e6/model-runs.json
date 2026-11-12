@@ -1,0 +1,158 @@
+{
+  "gemma4-12b-decision" : {
+    "health" : {
+      "modelId" : "gemma4-12b-decision",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "c7597fc90b86aff6965317f37dd5465402284e26382d9b4bf2dfe3ef1491f4b6",
+        "sizeBytes" : 7714091504,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gemma4-12b-decision",
+      "displayName" : "Gemma 4 12B (decision, letter probabilities)",
+      "kind" : "model",
+      "runtime" : "ollama /api/chat (letter log-probabilities)",
+      "modelRef" : "gemma4:12b",
+      "family" : "decision model (general LLM + letter-probability decision layer)",
+      "quantization" : null,
+      "processPattern" : "ollama",
+      "notes" : "One call per label field, options lettered A.., num_predict=1, temperature=0, think=false, num_ctx=16384, truncate=false. Probabilities = softmax over the option letters' logprobs (top 20). 'confidence' = 1 - H(p)/ln N, as for Kev."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 16384
+    },
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "concurrentlyLoadedRuntimeModels" : [ "gemma4:12b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 5875.0115,
+      "loadMs" : 3371.317834,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 97.987,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 100.095,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 96.419,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "sizeBytes" : 22490945236,
+      "contextLength" : 16384,
+      "sizeVramBytes" : 22490945236,
+      "name" : "gemma4:12b"
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 3449,
+      "rssMeanMb" : 7524.1,
+      "rssPeakMb" : 7686.6,
+      "cpuMeanPct" : 22.3,
+      "cpuPeakPct" : 133.0,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 7714091504
+  },
+  "kev-0.8b" : {
+    "health" : {
+      "modelId" : "kev-0.8b",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "f8bb3dfed81d9d83efbfb03a0bd963625b690760a9e837b9094b4d9ac49c1493",
+        "sizeBytes" : 1519780825,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "BF16",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "kev-0.8b",
+      "displayName" : "Kev 0.8b",
+      "kind" : "model",
+      "runtime" : "ollama /v1/systemone",
+      "modelRef" : "kev:0.8b-mlx-bf16",
+      "family" : "decision model (typed choice questions)",
+      "quantization" : "BF16",
+      "processPattern" : "ollama",
+      "notes" : "Native probability distributions. 'confidence' = 1 - H(p)/ln N (concentration, not calibrated correctness)."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE", "COMBINED_SINGLE_CALL" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 73728
+    },
+    "compatibleRecords" : 446,
+    "incompatibleRecords" : 247,
+    "concurrentlyLoadedRuntimeModels" : [ "kev:0.8b-mlx-bf16" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 725.573292,
+      "loadMs" : null,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 40,
+      "wallSeconds" : 7.174,
+      "errors" : 0
+    }, {
+      "concurrency" : 4,
+      "requests" : 40,
+      "wallSeconds" : 7.548,
+      "errors" : 0
+    }, {
+      "concurrency" : 8,
+      "requests" : 40,
+      "wallSeconds" : 6.989,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "sizeBytes" : 10156764336,
+      "contextLength" : 73728,
+      "sizeVramBytes" : 10156764336,
+      "name" : "kev:0.8b-mlx-bf16"
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 222,
+      "rssMeanMb" : 1389.9,
+      "rssPeakMb" : 1408.5,
+      "cpuMeanPct" : 68.0,
+      "cpuPeakPct" : 109.0,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 1519780825
+  }
+}

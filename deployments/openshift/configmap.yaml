@@ -11,4 +11,4 @@ data:
   # endpoint (e.g. optional/ollama-cpu.yaml or an external host) to enable Kev/NuExtract3/Qwen candidates.
   BENCH_OLLAMA_BASE_URL: http://beyond-llm-ollama:11434
   BENCH_TIMEOUT_SECONDS: "300"
-  BENCH_MODELS_ENABLED: "kev-0.8b,kev-0.8b-candsel,gliner2.5-base,nuextract3,qwen3.5-4b,hybrid-gliner-kev,hybrid-gliner-kev-qwen,hybrid-gliner-qwen"
+  BENCH_MODELS_ENABLED: "kev-0.8b,gemma4-12b-decision,kev-0.8b-candsel,gliner2.5-base,nuextract3,qwen3.5-4b,hybrid-gliner-kev,hybrid-gliner-kev-qwen,hybrid-gliner-qwen"

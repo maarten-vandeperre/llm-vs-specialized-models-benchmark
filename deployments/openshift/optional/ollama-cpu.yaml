@@ -4,6 +4,9 @@
 # will be slow (seconds to tens of seconds per request). Apply only if you accept that:
 #   oc apply -f deployments/openshift/optional/ollama-cpu.yaml
 #   oc exec deploy/beyond-llm-ollama -- ollama pull qwen3.5:4b
+# Gemma 4 12B as a decision model (gemma4-12b-decision; on Linux Ollama pulls an 8.0 GB GGUF Q4_K_M build). Expect
+# about 20-25 s per question on Sandbox CPU, i.e. ~90 s per message (four questions):
+#   oc exec deploy/beyond-llm-ollama -- ollama pull gemma4:12b
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata: {name: beyond-llm-ollama-models}
@@ -31,8 +34,10 @@ spec:
             - {name: OLLAMA_HOST, value: "0.0.0.0:11434"}
             - {name: OLLAMA_NUM_PARALLEL, value: "1"}
           resources:
-            requests: {cpu: "1", memory: 6Gi}
-            limits: {cpu: "4", memory: 10Gi}
+            # Gemma 4 12B Q4_K_M needs more than 16 Gi: 8.0 GB weights plus the llama.cpp prompt cache, which grows over a
+            # run (OOMKilled at a 16 Gi limit on 2026-11-10). 6-10 Gi is enough for the 4B models.
+            requests: {cpu: "1", memory: 10Gi}
+            limits: {cpu: "8", memory: 24Gi}
           volumeMounts: [{name: models, mountPath: /models}]
           readinessProbe:
             httpGet: {path: /api/version, port: http}

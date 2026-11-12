@@ -194,7 +194,7 @@ public class KevModel implements BenchmarkModel {
 
     // ---- request building -------------------------------------------------------------------------------------
 
-    static String instructionFor(String field) {
+    public static String instructionFor(String field) {
         return switch (field) {
             case LabelSchema.INTENT -> "What does the customer want the coffee shop to do? If the final request contradicts an earlier one, the final request counts.";
             case LabelSchema.SENTIMENT -> "What is the customer's overall sentiment?";

@@ -16,6 +16,9 @@ same run directory.
 | [`20261107-220443-d679`](../results/runs/20261107-220443-d679/report.md) | OpenShift Developer Sandbox | COMPLETED, 944 calls, 0 failures | **canonical Sandbox results** (GLiNER2.5-base only) |
 | [`20261108-073920-b0b4`](../results/runs/20261108-073920-b0b4/report.md) | MacBook client → OpenAI API | COMPLETED, 1,888 calls, 0 failures | **commercial API comparison** (GPT-6 Luna, GPT-6.1 Sol) |
 | [`20261108-073925-fab2`](../results/runs/20261108-073925-fab2/report.md) | MacBook client → Anthropic API | COMPLETED, 1,888 calls, 0 failures | **commercial API comparison** (Claude Haiku 5.5, Claude Opus 5.5) |
+| [`20261110-110607-52e6`](../results/runs/20261110-110607-52e6/report.md) | MacBook (M1 Max) | COMPLETED, 1,394 requests (Gemma: 4 Ollama calls each), 0 failures | **Gemma 4 12B as a decision model** (+ Kev 0.8B same-day reference) |
+| [`20261110-113753-b245`](../results/runs/20261110-113753-b245/report.md) | OpenShift Developer Sandbox | COMPLETED, 120 requests, 0 failures | **Gemma 4 12B decision model on CPU** (reduced run: 160 stratified records) |
+| [`20261110-111019-5216`](../results/runs/20261110-111019-5216/SUPERSEDED.md) | Sandbox | superseded | Ollama pod OOMKilled at a 16 Gi limit; 95 of 107 requests failed |
 | [`20261108-073625-beac`](../results/runs/20261108-073625-beac/SMOKE.md) | MacBook client → both APIs | smoke test, 20 records | adapter check only, not a result |
 | [`20261107-202221-3633`](../results/runs/20261107-202221-3633/SUPERSEDED.md) | MacBook | superseded | Kev throughput measured the prompt cache (see below) |
 | [`20261107-203609-bdb2`](../results/runs/20261107-203609-bdb2/SUPERSEDED.md) | Sandbox | superseded | GLiNER pod OOMKilled; latency/throughput invalid |
@@ -225,6 +228,107 @@ The quality numbers are identical to the MacBook's, so the model and service beh
 platforms. The latencies are **not like-for-like:** the Sandbox has a shared Xeon vCPU, CPU-only torch, a
 container limit of 2 CPUs, and an extra network hop through the backend service. Kev (MLX), Qwen3.5-4B and
 NuExtract3 were not deployed in the Sandbox (see [openshift-sandbox.md](openshift-sandbox.md)).
+
+## Gemma 4 12B as a decision model (2026-11-10)
+
+A Gemma-based decision model was added on request. The only Gemma decision model in the Ollama registry, the
+community `aminroudaki/decisio-gemma`, is rejected by Ollama 0.40.15 ("downloaded in a format that is no longer
+supported", also right after a fresh pull). Its documented method is simple: unmodified Gemma 4 12B, "Answer with
+the letter only", softmax over the option letters. The benchmark applies that method itself to the official
+`gemma4:12b` (`gemma4-12b-decision`, see [model-limitations.md](model-limitations.md)): one Ollama `/api/chat` call
+per label, the same questions and options Kev receives, one output token, probabilities from the letters'
+log-probabilities. That is **four forward passes per message**. Same dataset, split, seed and phase parameters as
+the canonical MacBook run; Kev 0.8B ran again in the same run and reproduced its canonical numbers exactly.
+
+```bash
+ollama pull gemma4:12b
+cd backend && java -jar target/quarkus-app/quarkus-run.jar benchmark --warmup=10 --repetitions=5 --latency-sample=30 \
+  --concurrency=1,4,8 --throughput-requests=40 --cold-start=true --seed=42 --label=full-macbook-gemma4-decision \
+  --models=gemma4-12b-decision,kev-0.8b
+```
+
+MacBook model build: `gemma4:12b`, MLX runner, `nvfp4`, digest c7597fc9 (7.7 GB on disk). Power: AC throughout.
+
+### Quality (the same 446 classification records for every row)
+
+| Candidate | Intent acc [95% CI] | Sentiment | Category | Complaint | All 4 labels | Predicted `none` on ambiguous |
+|---|---|---|---|---|---|---|
+| **gemma4-12b-decision** | **85.7%** [82.1–88.6] | 89.9% | 80.5% | 93.0% | 66.4% | 14.1% |
+| kev-0.8b | 70.0% [65.5–74.0] | 86.3% | 74.2% | 87.2% | 38.3% | 21.9% |
+| qwen3.5-4b | 81.4% [77.5–84.7] | 94.4% | 84.1% | 94.4% | 64.6% | 26.6% |
+| *claude-haiku-5.5* | *85.0%* | *93.9%* | *88.8%* | *93.7%* | *76.5%* | *48.4%* |
+| *openai-gpt-6-luna* | *88.6%* | *97.3%* | *97.5%* | *97.3%* | *84.8%* | *45.3%* |
+| *claude-opus-5.5* | *91.9%* | *97.8%* | *99.1%* | *98.9%* | *89.5%* | *65.6%* |
+
+(Other rows recomputed from the canonical and commercial runs' `predictions.csv`, restricted to the same 446 record
+IDs. The label metrics of those runs were already computed on exactly these records, so the numbers match the
+tables above.) Zero failures.
+
+* **Intent:** Gemma is right on 31 records where Qwen3.5-4B is wrong and wrong on 12 where Qwen is right (exact
+  two-sided sign test on the discordant pairs, p = 0.005). Against Claude Haiku 5.5 it is a tie (26 vs 23,
+  p = 0.78); GPT-6 Luna is better (9 vs 22, p = 0.03).
+* **The other three labels** are *lower* than Qwen's (sentiment −4.5, category −3.6, complaint −1.4 points). Mean
+  accuracy over the four labels: Gemma 87.3%, Qwen 88.6%. All four right: 66.4% vs 64.6%.
+* **Ambiguous messages** cause 55 of Gemma's 64 intent errors. It predicted `none` on only 14.1% of the 64
+  ambiguous records, the lowest of all generative models (Qwen 26.6%, Opus 65.6%).
+* **Languages** (intent en / nl / fr): 88.9 / 82.0 / 80.2% (n = 261 / 89 / 96). Kev in the same run: 74.0 / 62.9 /
+  65.6%.
+
+### Confidence
+
+| Candidate | Brier | ECE | Risk at score ≥ 0.80 (coverage) |
+|---|---|---|---|
+| gemma4-12b-decision | 0.12 | 0.12 | 11.7% (97.8%) |
+| kev-0.8b | 0.17 | 0.20 | 3.2% (16.0%) |
+
+Gemma's letter probabilities are better calibrated overall than Kev's (lower Brier and ECE) but almost always
+near 1: 97.8% of labels score at least 0.80, and the median top-label probability on its *wrong* intents is 0.999.
+A threshold cannot separate its errors from its correct answers, so these scores are of little use for routing
+to a fallback. Kev's scores are more useful for that, despite the lower accuracy.
+
+### Speed and resources (MacBook, concurrency 1, prompt-reuse hits excluded)
+
+| Candidate | p50 ms [CI] | p95 | p99 | Cold start (load) | Throughput c=1 / 4 / 8 | Ollama loaded size | RSS peak |
+|---|---|---|---|---|---|---|---|
+| gemma4-12b-decision | 2,541 [2,525–2,557] | 2,710 | 2,748 | 5,875 ms (3,371) | 0.41 / 0.40 / 0.41 | 20.95 GiB | 7,687 MB |
+| kev-0.8b | 186 [185–187] | 205 | 214 | 726 ms | 5.58 / 5.30 / 5.72 | 9.46 GiB | 1,409 MB |
+
+A message takes about 2.5 s: four calls of ≈ 0.6 s each. That is 3.9× Qwen3.5-4B's classification-only p50
+(650 ms) and 14× Kev's. Throughput is flat under concurrency, as for every local model on this machine.
+
+### OpenShift Developer Sandbox (CPU only, reduced run)
+
+`deployments/openshift/optional/ollama-cpu.yaml` (Ollama 0.40.15, limit 8 CPU / 24 Gi) plus the backend, on a
+different Sandbox cluster than the GLiNER run (`api.rm2.thpm.p1.openshiftapps.com`, Intel Xeon Platinum 8259CL).
+On Linux, `gemma4:12b` resolves to a GGUF `Q4_K_M` build (digest 6114515d, 8.0 GB). At about 54 s per message a
+full canonical run would take roughly 18 hours, so this run used a stratified sample of 160 evaluation records
+(107 classifiable), warm-up 2, one latency repetition over 10 inputs and 10 throughput requests at concurrency 1.
+
+```bash
+curl -s https://$API/api/benchmarks -H 'Content-Type: application/json' -d '{
+  "models":["gemma4-12b-decision"],"dataset":"coffee-v1","split":"evaluation","limit":160,"warmup":2,
+  "repetitions":1,"latencySampleSize":10,"concurrency":[1],"throughputRequests":10,"timeoutSeconds":300,
+  "coldStart":true,"seed":42,"label":"reduced-openshift-sandbox-gemma4-decision-v2"}'
+```
+
+| Metric | Sandbox (GGUF Q4_K_M, CPU) | MacBook (MLX nvfp4), same 107 records |
+|---|---|---|
+| Intent / sentiment / category / complaint | 78.5% / 89.7% / 83.2% / 86.9% | 77.6% / 86.0% / 73.8% / 90.7% |
+| Same label as the other build | intent 98.1%, sentiment 92.5%, category 90.7%, complaint 94.4% | |
+| Latency p50 / p95 / p99 | 54,468 / 62,035 / 67,042 ms | ≈ 2,500 ms |
+| Cold start (load) | 113,968 ms (62,984) | 5,875 ms (3,371) |
+| Throughput c=1 | 0.02 req/s | 0.41 req/s |
+| Ollama memory | 6.27 GiB loaded (`/api/ps`); pod working set ≈ 17 GiB at the end of the run | 20.95 GiB loaded |
+
+* The sample is harder than the full set (27 of 107 records are ambiguous, against 64 of 446), so its intent
+  accuracy is lower than the full MacBook figure. On the *same* records the two builds agree: 98.1% identical
+  intent labels and 77.6% vs 78.5% intent accuracy. The other labels differ by up to 9 points between the MLX
+  and GGUF builds on this small sample.
+* **Speed:** ≈ 54 s per message (four questions, ≈ 740 prompt tokens per message in total) on shared CPU, about
+  21× the MacBook. This is not a usable latency for an online classifier.
+* **Memory:** the first attempt ([`20261110-111019-5216`](../results/runs/20261110-111019-5216/SUPERSEDED.md))
+  was OOMKilled at a 16 Gi limit. The pod's memory grows with llama.cpp's in-memory prompt cache; it reached
+  ≈ 17 GiB, well above the 8 GB model file.
 
 ## Commercial API models (opt-in comparison, 2026-11-08)
 

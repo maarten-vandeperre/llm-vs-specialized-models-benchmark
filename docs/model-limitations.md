@@ -24,6 +24,32 @@ installed libraries, unless marked as vendor-reported.
 * **Not benchmarked here:** `kev:4b-mlx-bf16` (8.4 GB) did not fit the free disk of the benchmark machine. It is
   reported as `MODEL_MISSING`, not as a result.
 
+## Gemma 4 12B as a decision model (`gemma4:12b`, candidate `gemma4-12b-decision`)
+
+Verified on 2026-11-10.
+
+* **Why not a native Gemma decision model:** the only Gemma-based decision model in the Ollama registry is the
+  community `aminroudaki/decisio-gemma` (Gemma 4 12B, Q4_K_M). Ollama 0.40.15 rejects it on every
+  `/v1/systemone` call with *"was downloaded in a format that is no longer supported"*, even directly after a
+  fresh pull (its page targets Ollama 0.35.1). Its own description of the method is: unmodified Gemma 4 12B, the
+  system prompt "Answer with the letter only", and a softmax over the option letters. The benchmark therefore
+  applies **that same method itself** to the official `gemma4:12b` weights (`LetterDecisionModel`).
+* **Protocol:** Ollama `POST /api/chat`, **one call per label field** (four per message), `num_predict=1`,
+  `temperature=0`, `seed=42`, `think=false`, `num_ctx=16384`, `truncate=false`, `logprobs=true`,
+  `top_logprobs=20`. The options are lettered A, B, C, … with the same option descriptions and questions Kev
+  receives, including an explicit `none` option. The customer message comes first in the prompt, so the four
+  calls of a message share a prompt prefix.
+* **Probabilities** are the softmax over the option letters' log-probabilities of that one token: the model's
+  own token probabilities, not numbers it writes. A letter that is not among the top 20 tokens gets probability 0.
+  `confidence` is 1 − H(p)/ln N, as for Kev. No answer without an option letter in the top 20 was observed; such
+  an answer would count as `MALFORMED`.
+* **Not the same build everywhere:** on the MacBook Ollama serves `gemma4:12b` as an MLX `nvfp4` build (digest
+  c7597fc9, 7.7 GB); in the OpenShift Sandbox (Linux, CPU) the same tag resolves to a GGUF `Q4_K_M` build
+  (digest 6114515d, 8.0 GB).
+* **Cost of the method:** four forward passes per message instead of one. Prefix caching across the four calls
+  softens this but does not remove it.
+* Classification only, like Kev.
+
 ## GLiNER2.5 (`fastino/gliner2.5-base-v1`, small, multi; `fastino/GLiNER2.5-Decide`)
 
 * **Library:** official `gliner2==2.1.0`, loaded with `AutoExtractor.from_pretrained` (boundary architecture for

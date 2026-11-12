@@ -18,6 +18,7 @@ open-weight models. As a reference point we then ran the same benchmark against 
 | Candidate | What it is | How it is called |
 |---|---|---|
 | **Kev 0.8B** (`kev:0.8b-mlx-bf16`) | a *decision model*: answers typed questions with a probability distribution, no text generation | Ollama `/v1/systemone` |
+| **Gemma 4 12B as a decision model** (`gemma4:12b`) | a general LLM turned into a decision model: one multiple-choice question per label, probabilities from the answer letter's log-probabilities | Ollama `/api/chat`, one output token per question |
 | **GLiNER2.5** base / small / multi, **GLiNER2.5-Decide** | encoder models for schema-driven span extraction and classification | official `gliner2` library behind FastAPI |
 | **NuExtract3** (4.2B, Q4_K_M) | a generative model trained specifically for extraction | Ollama, template protocol |
 | **Qwen3.5-4B** | a general-purpose LLM | Ollama via LangChain4j, JSON-Schema output, thinking off |
@@ -34,6 +35,8 @@ routing thresholds were tuned on a separate calibration split, never on the eval
 The main run used an Apple M1 Max (64 GB) with 10 warm-up requests, a full quality pass, 5 latency repetitions,
 and throughput tests at concurrency 1, 4 and 8. That is 9,890 calls with zero failures. The commercial models
 ran the next day with identical parameters from the same laptop: 3,776 calls, zero failures, $7.69 in total.
+Gemma 4 12B as a decision model was added two days later, again with identical parameters on the same laptop
+(1,394 requests, zero failures), with Kev 0.8B re-run alongside it. Kev reproduced its earlier numbers exactly.
 
 ## Finding 1: for extraction, a specialized 4B model beats the local generalist
 
@@ -62,9 +65,10 @@ and a weaker structure builder.
 
 | | Intent acc [95% CI] | Sentiment | Complaint | All 4 labels right |
 |---|---|---|---|---|
-| **Qwen3.5-4B** | **81.4%** [77.5–84.7] | 94.4% | 94.4% | 64.6% |
+| Qwen3.5-4B | 81.4% [77.5–84.7] | **94.4%** | **94.4%** | 64.6% |
 | NuExtract3 | 79.1% [75.1–82.7] | 92.8% | 83.4% | 55.4% |
 | GLiNER2.5-Decide | 75.8% [71.6–79.5] | 66.1% | 67.9% | 16.6% |
+| Gemma 4 12B as a decision model | **85.7%** [82.1–88.6] | 89.9% | 93.0% | 66.4% |
 | Kev 0.8B | 70.0% [65.5–74.0] | 86.3% | 87.2% | 38.3% |
 | GLiNER2.5-base | 62.8% [58.2–67.1] | 60.8% | 71.1% | 27.4% |
 
@@ -75,13 +79,33 @@ GLiNER2.5-base dropped to 46.1% intent accuracy in Dutch.
 
 The commercial models raise the bar further. Claude Opus 5.5 reached **91.9%** intent accuracy [89.0–94.1] and got
 all four labels right on 89.5% of messages (Qwen: 64.6%). It was also the only model as good in Dutch and French as
-in English. Even the cheapest tiers beat the best local model: GPT-6 Luna 88.6%, Claude Haiku 5.5 85.0%. Most of
+in English. Even the cheapest tiers beat Qwen: GPT-6 Luna 88.6%, Claude Haiku 5.5 85.0% (only Gemma 4 12B as a decision model,
+below, matches Haiku). Most of
 their remaining errors are on the deliberately ambiguous messages, where Opus answered "no clear intent" most often
 (65.6%, against 26.6% for Qwen).
 
 Kev 0.8B is the smallest model here, and its intent accuracy is clearly below Qwen's: the confidence intervals do
 not overlap. A larger Kev (4B) exists, but we could not test it on this machine (disk space), so this verdict is
 about the 0.8B model only.
+
+### Can you turn a general LLM into a decision model?
+
+We also wanted a Gemma-based decision model. The only one in the Ollama registry, a community build of Gemma 4
+12B, no longer loads on the Ollama version we use. Its recipe is simple, though, so we applied it ourselves to the
+official `gemma4:12b`: ask one multiple-choice question per label, options lettered A, B, C, let the model produce
+a single token, and read the probabilities from the log-probabilities of the letters. No fine-tuning, no JSON,
+and a full probability distribution per label, like Kev.
+
+It works better than we expected on intent. **Gemma 4 12B as a decision model reached 85.7% intent accuracy**, the
+best local result. On the same records it beat Qwen3.5-4B (right on 31 messages where Qwen was wrong, wrong on 12
+where Qwen was right; p = 0.005), tied with Claude Haiku 5.5, and stayed below GPT-6 Luna (p = 0.03). It is also
+much steadier across languages than Kev (88.9 / 82.0 / 80.2% for en/nl/fr). But it is not a free win:
+
+* On the other three labels it is *below* Qwen (sentiment −4.5, category −3.6, complaint −1.4 points). Averaged
+  over all four labels the two are about even (87.3% vs 88.6%).
+* It rarely says "no clear intent". On the deliberately ambiguous messages it chose `none` only 14% of the time,
+  and those messages account for 55 of its 64 intent errors.
+* It is slow for a classifier: four forward passes of a 12B model per message, about 2.5 s on the laptop.
 
 ## Finding 3: the specialists are 4–16× faster
 
@@ -90,6 +114,7 @@ about the 0.8B model only.
 | GLiNER2.5-small | 85 ms | 11.8 |
 | GLiNER2.5-base | 161 ms | 6.2 |
 | Kev 0.8B (classification) | 182 ms | 5.6 |
+| Gemma 4 12B as a decision model (classification) | 2,541 ms | 0.4 |
 | NuExtract3 | 1,359 ms | 0.8 |
 | Qwen3.5-4B | 1,398 ms (classification only: 650 ms) | 1.5 |
 | *Claude Haiku 5.5 (API)* | *1,002 ms (classification only: 888 ms)* | *1.0 at c=1, 7.6 at c=8* |
@@ -111,7 +136,9 @@ hosted model, and a local 4B LLM on a laptop (Qwen, 645 ms) beat all of them.
 
 We also ran GLiNER2.5-base on a Red Hat OpenShift Developer Sandbox, which has no GPU and a shared CPU. Quality
 was identical to the MacBook, and the median latency was 776 ms. That shows CPU-only deployment works for an
-encoder model. It also shows that "small" models still need care: the pod reached a 6.1 GiB memory peak on the
+encoder model. It does not work for a 12B LLM: Gemma 4 12B as a decision model needed about 54 s per message on
+Sandbox CPU (same answers as on the laptop for 98% of intents), and its pod was OOMKilled at 16 GiB before we
+raised the limit. It also shows that "small" models still need care: the pod reached a 6.1 GiB memory peak on the
 longest inputs, and our first deployment with a 3 GiB limit was OOMKilled halfway through the run.
 
 ## Finding 4: native confidence is the specialists' secret weapon, if it is honest
@@ -123,6 +150,11 @@ something.
 * **Kev 0.8B is conservative.** Among labels scored at least 0.80, only 3.2% were wrong, but only 16% of labels
   reached that score.
 * **GLiNER2.5-base is overconfident.** Among labels scored at least 0.80, 24.1% were wrong.
+* **Gemma 4 12B as a decision model is almost always certain.** 97.8% of its labels scored at least 0.80, and
+  11.7% of those were wrong. The median probability on its *wrong* intents was 0.999. Its scores are better
+  calibrated on average than Kev's (Brier 0.12 vs 0.17), but no threshold separates its errors from its correct
+  answers, so they are of little use for routing. Raw token probabilities of an LLM are not a confidence signal
+  by default.
 
 A raw score is not a calibrated probability. If you build automation on one, calibrate it on held-out data first.
 
@@ -147,7 +179,7 @@ A hybrid is an economic bet on your traffic. It pays off when most messages are 
 | Claude Opus 5.5 | **91.9%** | 100.0% | 1,659 ms | $6.22 |
 
 Costs come from the token counts each provider reported, at the list prices on the day of the run. With these
-short prompts, the cheap tiers cost cents per thousand messages and beat every local model we ran on
+short prompts, the cheap tiers cost cents per thousand messages and matched or beat every local model we ran on
 classification. The expensive tiers buy a few more points of intent accuracy at 20–80× the price. None of them used any
 reasoning tokens at these settings.
 
@@ -177,11 +209,13 @@ To make that concrete, here is an *illustration, not a measurement*: assume a se
 | GLiNER2.5-base | 6.2 req/s | ~16M | ~$0.03 |
 | Kev 0.8B | 5.6 req/s | ~14M | ~$0.035 |
 | Qwen3.5-4B | 1.5 req/s | ~3.9M | ~$0.13 |
+| Gemma 4 12B as a decision model | 0.41 req/s | ~1.1M | ~$0.47 |
 
 Against Claude Opus 5.5 ($6.22 per 1,000), that server pays for itself at about 80,000 calls a month, and a busy
 one is 50–200× cheaper. Against GPT-6.1 Sol it breaks even at about 300,000 calls a month. Against GPT-6 Luna, the
 small specialists are only 2–3× cheaper, and only near full utilization (about 6M calls a month), while a local
-Qwen3.5-4B is *more* expensive per call than Luna. Proper GPU serving with batching would likely do much better
+Qwen3.5-4B is *more* expensive per call than Luna, and Gemma 4 12B as a decision model, which needs four calls per
+message, costs about six times as much as Luna while being less accurate. Proper GPU serving with batching would likely do much better
 than our laptop's flat throughput, but we did not measure that.
 
 So running a model yourself is *way* cheaper when:
@@ -228,7 +262,9 @@ On this benchmark:
   robust to long inputs where that LLM failed, and in the same range as the largest commercial models.
 * **Nuanced, multilingual intent classification:** a general LLM still earned its place, and a large one most of
   all. The specialized classifiers we could run were 6–21 points below local Qwen, and Qwen was 10 points below
-  Claude Opus 5.5. If you can send the text to an API, even the cheapest commercial tier beat every local model here.
+  Claude Opus 5.5. The best local intent result came from a general LLM *used as* a decision model (Gemma 4 12B,
+  85.7%), at the price of 2.5 s per message and overconfident scores. If you can send the text to an API, the
+  cheap commercial tiers matched or beat every local model here.
 * **Volume or latency budgets:** encoders and decision models are 4–16× faster, and some of them give you
   confidence scores. For high-volume, mostly simple traffic, they can be the right primary model with an LLM
   fallback, as long as the fallback rate stays low enough to pay off.
@@ -241,7 +277,9 @@ The honest answer is "it depends", but now it depends on numbers you can reprodu
 * All local models ran on one machine (M1 Max) and one Sandbox node. The two are not comparable like-for-like.
   The commercial models ran on unknown hardware behind a network, measured on one day (2026-11-08). Their
   latency varies over time, and the model behind an API name can change.
-* Only Kev 0.8B was tested. Qwen3.5-4B ran with thinking disabled, and other quantizations, thinking modes and
+* Only Kev 0.8B was tested. The Gemma decision model is our own implementation of a community recipe on the
+  official `gemma4:12b` weights, not a published decision model; a native or fine-tuned Gemma decision model could
+  behave differently. Qwen3.5-4B ran with thinking disabled, and other quantizations, thinking modes and
   `OLLAMA_NUM_PARALLEL` were not explored.
 * Each configuration was measured in one full run. Run-to-run variation in median latency was up to 7.4%.
 * GPU utilization and energy were not measured, and nothing was estimated.

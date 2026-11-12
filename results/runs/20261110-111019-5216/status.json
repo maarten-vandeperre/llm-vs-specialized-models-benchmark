@@ -1,0 +1,32 @@
+{
+  "runId" : "20261110-111019-5216",
+  "label" : "reduced-openshift-sandbox-gemma4-decision",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 120,
+    "total" : 120,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "gemma4-12b-decision" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : 160,
+    "warmup" : 2,
+    "repetitions" : 1,
+    "latencySampleSize" : 10,
+    "concurrency" : [ 1 ],
+    "throughputRequests" : 10,
+    "timeoutSeconds" : 300,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "reduced-openshift-sandbox-gemma4-decision"
+  },
+  "createdAt" : "2026-11-10T11:10:19.028765986Z",
+  "startedAt" : "2026-11-10T11:10:19.051980165Z",
+  "finishedAt" : "2026-11-10T11:23:34.829533088Z"
+}

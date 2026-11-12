@@ -6,6 +6,7 @@ import dev.beyondllm.infrastructure.gliner.GlinerModel;
 import dev.beyondllm.infrastructure.hybrid.HybridPipelineModel;
 import dev.beyondllm.infrastructure.hybrid.HybridThresholds;
 import dev.beyondllm.infrastructure.kev.KevModel;
+import dev.beyondllm.infrastructure.letterdecision.LetterDecisionModel;
 import dev.beyondllm.infrastructure.nuextract.NuExtractModel;
 import dev.beyondllm.infrastructure.ollama.OllamaAdminClient;
 import dev.beyondllm.infrastructure.qwen.QwenModel;
@@ -41,6 +42,7 @@ public class ModelFactory {
     private final Optional<List<String>> enabled;
     private final String kevTag;
     private final String kevLargeTag;
+    private final String gemmaDecisionTag;
     private final String nuextractTag;
     private final String qwenTag;
     private final String openaiKey;
@@ -61,6 +63,7 @@ public class ModelFactory {
                         @ConfigProperty(name = "bench.models.enabled") Optional<List<String>> enabled,
                         @ConfigProperty(name = "bench.models.kev.tag", defaultValue = "kev:0.8b-mlx-bf16") String kevTag,
                         @ConfigProperty(name = "bench.models.kev-large.tag", defaultValue = "kev:4b-mlx-bf16") String kevLargeTag,
+                        @ConfigProperty(name = "bench.models.gemma-decision.tag", defaultValue = "gemma4:12b") String gemmaDecisionTag,
                         @ConfigProperty(name = "bench.models.nuextract.tag", defaultValue = "numind/nuextract3:q4_k_m") String nuextractTag,
                         @ConfigProperty(name = "bench.models.qwen.tag", defaultValue = "qwen3.5:4b") String qwenTag,
                         @ConfigProperty(name = "bench.openai.api-key") Optional<String> openaiKey,
@@ -81,6 +84,7 @@ public class ModelFactory {
         this.enabled = enabled;
         this.kevTag = kevTag;
         this.kevLargeTag = kevLargeTag;
+        this.gemmaDecisionTag = gemmaDecisionTag;
         this.nuextractTag = nuextractTag;
         this.qwenTag = qwenTag;
         this.openaiKey = openaiKey.orElse("");
@@ -95,6 +99,9 @@ public class ModelFactory {
         put(m, new KevModel("kev-0.8b", kevTag, false, ollama, timeout, keepAlive));
         put(m, new KevModel("kev-0.8b-candsel", kevTag, true, ollama, timeout, keepAlive));
         put(m, new KevModel("kev-4b", kevLargeTag, false, ollama, timeout, keepAlive));
+        // Gemma 4 12B used as a decision model: letter log-probabilities, one call per label field (classification only).
+        put(m, new LetterDecisionModel("gemma4-12b-decision", "Gemma 4 12B (decision, letter probabilities)", gemmaDecisionTag,
+                ollama, timeout, keepAlive, numCtx));
         put(m, new GlinerModel("gliner2.5-base", "fastino/gliner2.5-base-v1", "GLiNER2.5 base (194M)", all, false, glinerUrl, timeout, glinerThreshold));
         put(m, new GlinerModel("gliner2.5-small", "fastino/gliner2.5-small-v1", "GLiNER2.5 small (74M)", all, false, glinerSmallUrl, timeout, glinerThreshold));
         put(m, new GlinerModel("gliner2.5-multi", "fastino/gliner2.5-multi-v1", "GLiNER2.5 multi (287M)", all, true, glinerMultiUrl, timeout, glinerThreshold));

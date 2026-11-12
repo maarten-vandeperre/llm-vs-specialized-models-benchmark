@@ -1,0 +1,32 @@
+{
+  "runId" : "20261110-110607-52e6",
+  "label" : "full-macbook-gemma4-decision",
+  "status" : "COMPLETED",
+  "progress" : {
+    "completed" : 1394,
+    "total" : 1394,
+    "phase" : "done",
+    "currentModel" : null
+  },
+  "errors" : [ ],
+  "config" : {
+    "models" : [ "gemma4-12b-decision", "kev-0.8b" ],
+    "dataset" : "coffee-v1",
+    "groups" : null,
+    "split" : "evaluation",
+    "languages" : null,
+    "limit" : null,
+    "warmup" : 10,
+    "repetitions" : 5,
+    "latencySampleSize" : 30,
+    "concurrency" : [ 1, 4, 8 ],
+    "throughputRequests" : 40,
+    "timeoutSeconds" : 180,
+    "coldStart" : true,
+    "seed" : 42,
+    "label" : "full-macbook-gemma4-decision"
+  },
+  "createdAt" : "2026-11-10T11:06:07.177248Z",
+  "startedAt" : "2026-11-10T11:06:07.200297Z",
+  "finishedAt" : "2026-11-10T11:36:42.937567Z"
+}

@@ -20,6 +20,7 @@
 │  benchmark/      BenchmarkRunner, ReportBuilder, MarkdownReport                               │
 │  infrastructure/                                                                              │
 │    kev/          Kev  → POST /v1/systemone        (dedicated HTTP adapter, typed questions)   │
+│    letterdecision/ Gemma 4 12B → POST /api/chat   (letter log-probabilities, 1 call/label)    │
 │    nuextract/    NuExtract3 → POST /api/chat      (template-role protocol, dedicated adapter) │
 │    qwen/         Qwen3.5 → LangChain4j ChatModel  (JSON-Schema structured output)             │
 │    gliner/       GLiNER2.5 → Python FastAPI service                                           │

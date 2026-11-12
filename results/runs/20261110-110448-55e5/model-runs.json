@@ -1,0 +1,70 @@
+{
+  "gemma4-12b-decision" : {
+    "health" : {
+      "modelId" : "gemma4-12b-decision",
+      "state" : "UP",
+      "detail" : "Ollama 0.40.15",
+      "info" : {
+        "ollamaVersion" : "0.40.15",
+        "digest" : "c7597fc90b86aff6965317f37dd5465402284e26382d9b4bf2dfe3ef1491f4b6",
+        "sizeBytes" : 7714091504,
+        "details" : {
+          "parent_model" : "",
+          "format" : "safetensors",
+          "family" : "",
+          "families" : null,
+          "parameter_size" : "",
+          "quantization_level" : "",
+          "runner" : "mlx"
+        }
+      }
+    },
+    "info" : {
+      "id" : "gemma4-12b-decision",
+      "displayName" : "Gemma 4 12B (decision, letter probabilities)",
+      "kind" : "model",
+      "runtime" : "ollama /api/chat (letter log-probabilities)",
+      "modelRef" : "gemma4:12b",
+      "family" : "decision model (general LLM + letter-probability decision layer)",
+      "quantization" : null,
+      "processPattern" : "ollama",
+      "notes" : "One call per label field, options lettered A.., num_predict=1, temperature=0, think=false, num_ctx=16384, truncate=false. Probabilities = softmax over the option letters' logprobs (top 20). 'confidence' = 1 - H(p)/ln N, as for Kev."
+    },
+    "capabilities" : {
+      "features" : [ "CLASSIFICATION", "PROBABILITY_DISTRIBUTION", "LABEL_CONFIDENCE" ],
+      "tasks" : [ "CLASSIFICATION" ],
+      "maxInputTokens" : 16384
+    },
+    "compatibleRecords" : 20,
+    "incompatibleRecords" : 0,
+    "concurrentlyLoadedRuntimeModels" : [ "gemma4:12b" ],
+    "coldStart" : {
+      "unloadedBeforeRequest" : true,
+      "clientMs" : 4497.443833,
+      "loadMs" : 1958.069001,
+      "outcome" : "SUCCESS"
+    },
+    "throughput" : [ {
+      "concurrency" : 1,
+      "requests" : 5,
+      "wallSeconds" : 1.848,
+      "errors" : 0
+    } ],
+    "ollamaLoaded" : [ {
+      "sizeVramBytes" : 22615382004,
+      "name" : "gemma4:12b",
+      "sizeBytes" : 22615382004,
+      "contextLength" : 16384
+    } ],
+    "resources" : {
+      "processPattern" : "ollama",
+      "samples" : 114,
+      "rssMeanMb" : 7370.0,
+      "rssPeakMb" : 7613.1,
+      "cpuMeanPct" : 25.2,
+      "cpuPeakPct" : 173.0,
+      "note" : "ps sampling every 500 ms; CPU% is per-core percentage summed over matched processes (can exceed 100)"
+    },
+    "modelStorageBytes" : 7714091504
+  }
+}

@@ -8,6 +8,7 @@ Anthropic) are available as an opt-in comparison point; they never run unless yo
 | Candidate | Family | Runtime | Protocol |
 |---|---|---|---|
 | `kev-0.8b` (`kev:0.8b-mlx-bf16`) | decision model | Ollama ≥ 0.40.4 (MLX) | `/v1/systemone` typed questions + probability distributions |
+| `gemma4-12b-decision` (`gemma4:12b`) | general LLM used as a decision model | Ollama `/api/chat` | one call per label, options lettered A, B, …; probabilities = softmax over the letters' log-probabilities |
 | `kev-0.8b-candsel` | decision model + regex candidates | Ollama | candidate-selection extraction experiment (separately labelled) |
 | `gliner2.5-base` / `-small` / `-multi` | schema-driven span extractor + classifier (encoder) | Python FastAPI + official `gliner2` | entities with offsets + label confidences |
 | `gliner2.5-decide` (`fastino/GLiNER2.5-Decide`) | encoder decision/classification model | Python FastAPI | classification only (optional fifth model) |
